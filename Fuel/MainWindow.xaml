@@ -5,12 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fuel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Формы документов" Height="520" Width="690" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center" Closed="Window_Closed">
     <Grid>
-        <TextBox x:Name="fileName" HorizontalAlignment="Left" Height="23" Margin="131,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="279,36,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBlock x:Name="textN" HorizontalAlignment="Left" Margin="210,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="67" Width="144"/>
-        <Button x:Name="Jp" Content="jp" HorizontalAlignment="Left" Margin="405,152,0,0" VerticalAlignment="Top" Width="75" Click="Jp_Click"/>
+        <TextBox x:Name="fileName" HorizontalAlignment="Left" Height="23" Margin="20,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="145,289,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TextBlock x:Name="textN" HorizontalAlignment="Left" Margin="248,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="144"/>
+        <StackPanel HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="517" Orientation="Horizontal"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="254" Margin="0,27,0,0" VerticalAlignment="Top" Width="517">
+            <TabItem Header="БашНефть">
+                <Grid Background="#FFE5E5E5" Margin="0,-2,0,2">
+                    <Label x:Name="label" Content="№ КАРТЫ" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="card" HorizontalAlignment="Left" Height="23" Margin="76,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label1" Content="НОМЕРА СТОЛБЦОВ В ФАЙЛЕ" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label_Copy" Content="ДЕРЖАТЕЛЬ" HorizontalAlignment="Left" Margin="109,28,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="holder" HorizontalAlignment="Left" Height="23" Margin="186,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label_Copy1" Content="АЗС" HorizontalAlignment="Left" Margin="223,28,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="azs" HorizontalAlignment="Left" Height="23" Margin="260,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label_Copy2" Content="АДРЕС" HorizontalAlignment="Left" Margin="290,28,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="adres" HorizontalAlignment="Left" Height="23" Margin="336,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label_Copy3" Content="ДАТА" HorizontalAlignment="Left" Margin="367,28,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="date" HorizontalAlignment="Left" Height="23" Margin="409,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label_Copy4" Content="ВИД ТОПЛИВА" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="fuelT" HorizontalAlignment="Left" Height="23" Margin="103,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label_Copy5" Content="КОЛИЧЕСТВО" HorizontalAlignment="Left" Margin="137,71,0,0" VerticalAlignment="Top" Cursor=""/>
+                    <TextBox x:Name="count" HorizontalAlignment="Left" Height="23" Margin="225,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <Label x:Name="label_Copy6" Content="СХЕМА ОБСЛУЖИВАНИЯ" HorizontalAlignment="Left" Margin="258,71,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="scheme" HorizontalAlignment="Left" Height="23" Margin="409,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Фирмы" HorizontalAlignment="Left" Height="20" VerticalAlignment="Bottom" Width="55" Margin="7,0,-7,0">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="CompanyGrid" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="178" Width="491" IsSynchronizedWithCurrentItem="True" ClipToBounds="True" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" ColumnWidth="Auto" CanUserAddRows="False" IsReadOnly="True" MouseDoubleClick="CompanyGrid_MouseDoubleClick"/>
+                    <Button x:Name="add" Content="Button" HorizontalAlignment="Left" Margin="405,10,0,0" VerticalAlignment="Top" Width="75" Click="add_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

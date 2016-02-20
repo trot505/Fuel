@@ -16,3 +16,9 @@ D:\VS\Fuel\Fuel\obj\Debug\Fuel.pdb
 D:\VS\Fuel\Fuel\obj\Debug\Fuel.csproj.ResolveComReference.cache
 D:\VS\Fuel\Fuel\bin\Debug\Newtonsoft.Json.dll
 D:\VS\Fuel\Fuel\bin\Debug\Newtonsoft.Json.xml
+D:\VS\Fuel\Fuel\bin\Debug\EPPlus.dll
+D:\VS\Fuel\Fuel\bin\Debug\EPPlus.xml
+D:\VS\Fuel\Fuel\obj\Debug\addcompany.g.cs
+D:\VS\Fuel\Fuel\obj\Debug\addcompany.baml
+D:\VS\Fuel\Fuel\obj\Debug\upDel.g.cs
+D:\VS\Fuel\Fuel\obj\Debug\upDel.baml
