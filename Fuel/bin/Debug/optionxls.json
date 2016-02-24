@@ -1,0 +1,22 @@
+{
+  "Bash": {
+    "CellAdressAzs": "24",
+    "CellCompany": "4",
+    "CellCard": "2",
+    "CellCountFuel": "3",
+    "CellDateFill": "4",
+    "CellOperation": "5",
+    "CellServicePoint": "6",
+    "CellTypeFuel": "7"
+  },
+  "Luk": {
+    "CellAdressAzs": "1",
+    "CellCompany": "4",
+    "CellCard": "2",
+    "CellCountFuel": "3",
+    "CellDateFill": "4",
+    "CellOperation": "5",
+    "CellServicePoint": "6",
+    "CellTypeFuel": "7"
+  }
+}

@@ -1,0 +1,17 @@
+﻿<Window x:Class="Fuel.upDel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fuel"
+        mc:Ignorable="d"
+        Title="Выбор действия" Height="149" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="updateC" Content="Изменить" HorizontalAlignment="Left" Margin="17,80,0,0" VerticalAlignment="Top" Width="75" Click="updateC_Click" Height="28"/>
+        <Button x:Name="delC" Content="Удалить" HorizontalAlignment="Left" Margin="106,80,0,0" VerticalAlignment="Top" Width="75" Click="delC_Click" Height="28"/>
+        <Button x:Name="cancel" Content="Отменить" HorizontalAlignment="Left" Margin="194,80,0,0" VerticalAlignment="Top" Width="75" Click="cancel_Click" Height="28"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="19,10,34,43" TextWrapping="Wrap" Text="ВЫБЕРЕТЕ ДЕЙСТВИЕ НАД ВЫБРАННОЙ КОМПАНИЕЙ" FontSize="18.667" Width="239"/>
+
+    </Grid>
+</Window>
+
