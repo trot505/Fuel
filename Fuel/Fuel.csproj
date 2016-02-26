@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="class\cellExcel.cs" />
     <Compile Include="class\Out.cs" />
     <Compile Include="upDel.xaml.cs">
       <DependentUpon>upDel.xaml</DependentUpon>

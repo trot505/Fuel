@@ -11,7 +11,7 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="145,289,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <StackPanel HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="517" Orientation="Horizontal"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="254" Margin="0,27,0,0" VerticalAlignment="Top" Width="517">
-            <TabItem Header="БашНефть">
+            <TabItem x:Name="parseTab" Header="Парсинг">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,0,2">
                     <Label x:Name="label" Content="№ КАРТЫ" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
                     <TextBox x:Name="card" HorizontalAlignment="Left" Height="23" Margin="76,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
@@ -27,18 +27,18 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
                     <Label x:Name="label_Copy4" Content="ВИД ТОПЛИВА" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
                     <TextBox x:Name="fuelT" HorizontalAlignment="Left" Height="23" Margin="103,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
                     <Label x:Name="label_Copy5" Content="КОЛИЧЕСТВО" HorizontalAlignment="Left" Margin="137,71,0,0" VerticalAlignment="Top" Cursor="" IsHitTestVisible="False"/>
-                    <TextBox x:Name="count" HorizontalAlignment="Left" Height="23" Margin="225,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+                    <TextBox x:Name="countF" HorizontalAlignment="Left" Height="23" Margin="225,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
                     <Label x:Name="label_Copy6" Content="ОПЕРАЦИЯ" HorizontalAlignment="Left" Margin="258,71,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
                     <TextBox x:Name="operation" HorizontalAlignment="Left" Height="23" Margin="336,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
                     <Label x:Name="label_Copy7" Content="ИНТЕРВАЛ" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
-                    <TextBox x:Name="upS" HorizontalAlignment="Left" Height="23" Margin="160,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="5.692,0.652"/>
+                    <TextBox x:Name="first" HorizontalAlignment="Left" Height="23" Margin="160,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="5.692,0.652"/>
                     <Label x:Name="label_Copy8" Content="начать с -" HorizontalAlignment="Left" Margin="94,108,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
                     <Label x:Name="label_Copy9" Content="закончить -" HorizontalAlignment="Left" Margin="196,108,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
-                    <TextBox x:Name="endS" HorizontalAlignment="Left" Height="23" Margin="273,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="5.692,0.652"/>
+                    <TextBox x:Name="last" HorizontalAlignment="Left" Height="23" Margin="273,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="5.692,0.652"/>
                     <Label x:Name="label_Copy10" Content="строкой" HorizontalAlignment="Left" Margin="304,108,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
                     <Button x:Name="folderBtn" Content="Путь до папки" HorizontalAlignment="Left" Height="25" Margin="170,155,0,0" VerticalAlignment="Top" Width="100" Click="folderBtn_Click"/>
                     <TextBox x:Name="folderPatch" HorizontalAlignment="Left" Height="23" Margin="41,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" RenderTransformOrigin="5.692,0.652"/>
-                    <ComboBox x:Name="month" HorizontalAlignment="Left" Margin="290,157,0,0" VerticalAlignment="Top" Width="120">
+                    <ComboBox x:Name="folderMonth" HorizontalAlignment="Left" Margin="290,157,0,0" VerticalAlignment="Top" Width="120">
                         <ListBoxItem Content="Январь"/>
                         <ListBoxItem Content="Февраль"/>
                         <ListBoxItem Content="Март"/>
@@ -54,9 +54,11 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
                     </ComboBox>
                     <RadioButton x:Name="radioBash" Content="Башнефть" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" Checked="radioBash_Checked"/>
                     <RadioButton x:Name="radioLuk" Content="Лукойл" HorizontalAlignment="Left" Margin="395,8,0,0" VerticalAlignment="Top" Checked="radioLuk_Checked"/>
+                    <Label x:Name="label_Copy11" Content="СТРАНИЦА xls" HorizontalAlignment="Left" Margin="360,71,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
+                    <TextBox x:Name="listExl" HorizontalAlignment="Left" Height="23" Margin="454,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Фирмы" HorizontalAlignment="Left" Width="55" Margin="7,0,-7,0">
+            <TabItem x:Name="CompanyTab" Header="Фирмы" HorizontalAlignment="Left" Width="55" Margin="7,0,-7,0">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="CompanyGrid" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="178" Width="491" IsSynchronizedWithCurrentItem="True" ClipToBounds="True" CanUserReorderColumns="False" CanUserResizeColumns="False" ColumnWidth="Auto" CanUserAddRows="False" MinColumnWidth="150" IsReadOnly="True" >
                         <!--<DataGrid.Columns>
@@ -80,9 +82,9 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
                 </Grid>
             </TabItem>
         </TabControl>
-        <DataGrid x:Name="dg" HorizontalAlignment="Left" Margin="287,289,0,0" VerticalAlignment="Top" Height="93" Width="282"/>
-        <TextBlock x:Name="tb" HorizontalAlignment="Left" Height="64" Margin="26,318,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="227"/>
-        <Button x:Name="parseBtn" Content="Парсинг" HorizontalAlignment="Left" Height="26" Margin="405,246,0,0" VerticalAlignment="Top" Width="95"/>
+        <DataGrid x:Name="dg" HorizontalAlignment="Left" Margin="10,342,0,0" VerticalAlignment="Top" Height="137" Width="662"/>
+        <Button x:Name="parseBtn" Content="Парсинг" HorizontalAlignment="Left" Height="26" Margin="547,298,0,0" VerticalAlignment="Top" Width="95" Click="parseBtn_Click"/>
+        <TextBlock x:Name="tb" HorizontalAlignment="Left" Margin="297,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="39"/>
 
     </Grid>
 </Window>

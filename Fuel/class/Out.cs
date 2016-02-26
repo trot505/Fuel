@@ -11,7 +11,7 @@ namespace Fuel
         //номер карты    
         public string Card { get; set; }
         // точка обслуживания (АЗС)
-        public string ServicePoint { get; set; }
+        public string Azs { get; set; }
         // адрес АЗС
         public string AdressAzs { get; set; }
         // дата заправки
@@ -22,16 +22,19 @@ namespace Fuel
         public string TypeFuel { get; set; }
         // колличество 
         public string CountFuel { get; set; }
+        // компания 
+        public string NameCompany { get; set; }
 
-        public Out(string c,string s, string a, string d, string o, string t, string co)
+        public Out(string c,string s, string a, string d, string o, string t, string co, string n)
         {
             Card = c;
-            ServicePoint = s;
+            Azs = s;
             AdressAzs = a;
             DateFill = d;
             Operation = o;
             TypeFuel = t;
             CountFuel = co;
+            NameCompany = n;
         }        
 
     }
