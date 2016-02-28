@@ -82,9 +82,11 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
                 </Grid>
             </TabItem>
         </TabControl>
-        <DataGrid x:Name="dg" HorizontalAlignment="Left" Margin="10,342,0,0" VerticalAlignment="Top" Height="137" Width="662"/>
         <Button x:Name="parseBtn" Content="Парсинг" HorizontalAlignment="Left" Height="26" Margin="547,298,0,0" VerticalAlignment="Top" Width="95" Click="parseBtn_Click"/>
         <TextBlock x:Name="tb" HorizontalAlignment="Left" Margin="297,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="39"/>
-
+        <Grid Name="pg" Margin="0,0,10,0" HorizontalAlignment="Right" Width="662" Height="490" VerticalAlignment="Top" Background="White" Visibility="Hidden">
+            <TextBlock Name="pgText" Margin="0,105,50,0" Height="65" VerticalAlignment="Top" HorizontalAlignment="Right" Width="562" FontWeight="Bold" TextAlignment="Center" FontSize="18.667"/>
+            <ProgressBar x:Name="pgBar" Margin="131,232"/>
+        </Grid>
     </Grid>
 </Window>
