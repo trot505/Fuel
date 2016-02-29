@@ -229,37 +229,40 @@ namespace Fuel
             pgBar.Value = 0;
 
             string provider = (radioBash.IsChecked.Value) ? "Башнефть" : "Лукойл";
-            string outDir = folderPatch.Text + DIR_SEPARATOR + folderMonth.Text + DIR_SEPARATOR + provider;            
+            string outD = folderPatch.Text + DIR_SEPARATOR + folderMonth.Text;
+            string outDir =  outD + DIR_SEPARATOR + provider;            
             if (!Directory.Exists(outDir))
             {
                 Directory.CreateDirectory(outDir);
             }
 
             // создание файла Сводной таблицы по всем компаниям
-            ExcelPackage totalPack = new ExcelPackage(new FileInfo(outDir + DIR_SEPARATOR + "Общий отчет.xlsx"));
+            ExcelPackage totalPack = new ExcelPackage(new FileInfo(outD + DIR_SEPARATOR + "Общий отчет "+provider+".xlsx"));
             ExcelWorksheet totalPage = totalPack.Workbook.Worksheets.Add("Сводная таблица");
 
             totalPage.PrinterSettings.Orientation = eOrientation.Landscape;
             totalPage.PrinterSettings.PaperSize = ePaperSize.A4;
             totalPage.PrinterSettings.LeftMargin = 0.7m;
             totalPage.PrinterSettings.RightMargin = totalPage.PrinterSettings.TopMargin = totalPage.PrinterSettings.BottomMargin = 0.5m;
-            totalPage.DefaultColWidth = 15;
-            totalPage.Column(1).Width = 25;            
+            totalPage.DefaultColWidth = 11;
+            totalPage.Column(1).Width = 20;
+            totalPage.Column(2).Width = 25;
 
             totalPage.Cells[1, 1].Value = @"СВОДНЫЙ ОТЧЕТ ПО ОРГАНИЗАЦИЯМ";
             totalPage.Cells[1, 1, 1, 8].Merge = true;
             totalPage.Cells[2, 1].Value = @"за " +folderMonth.Text+" "+DateTime.Now.Year.ToString()+" г";
-            totalPage.Cells[2, 1, 2, 8].Merge = true;
+            totalPage.Cells[2, 1, 2, 9].Merge = true;
 
-            totalPage.Cells[4, 1].Value = @"НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ";
-            totalPage.Cells[4, 2].Value = @"АИ-80";
-            totalPage.Cells[4, 3].Value = @"АИ-92";
-            totalPage.Cells[4, 4].Value = @"АИ-95";
-            totalPage.Cells[4, 5].Value = @"АИ-98";
-            totalPage.Cells[4, 6].Value = @"ДТ";
-            totalPage.Cells[4, 7].Value = @"ГАЗ";
-            totalPage.Cells[4, 8].Value = @"ИТОГО";
-            using (var tp = totalPage.Cells[1,1,4,8])
+            totalPage.Cells[4, 1].Value = @"ГРУППА";
+            totalPage.Cells[4, 2].Value = @"НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ";
+            totalPage.Cells[4, 3].Value = @"АИ-80";
+            totalPage.Cells[4, 4].Value = @"АИ-92";
+            totalPage.Cells[4, 5].Value = @"АИ-95";
+            totalPage.Cells[4, 6].Value = @"АИ-98";
+            totalPage.Cells[4, 7].Value = @"ДТ";
+            totalPage.Cells[4, 8].Value = @"ГАЗ";
+            totalPage.Cells[4, 9].Value = @"ИТОГО";
+            using (var tp = totalPage.Cells[1,1,4,9])
             {
                 tp.Style.Font.Bold = true;
                 tp.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -291,6 +294,7 @@ namespace Fuel
                     {
                         CompanyTab.IsSelected = true;
                         searchText.Text = row.Key;
+                        Directory.Delete(outDir);
                         break;
                     }
                 }
@@ -316,7 +320,7 @@ namespace Fuel
                     }                    
                 }
 
-                ExcelPackage compPack = new ExcelPackage(new FileInfo(outDir + DIR_SEPARATOR + nameCompFile + ".xlsx"));
+                ExcelPackage compPack = new ExcelPackage(new FileInfo(outDir + DIR_SEPARATOR + row.Key +" ("+nameCompFile + ").xlsx"));
                 var str = outArr.Where(r => r.NameCompany == row.Key);
                 
                 ExcelWorksheet compPage = compPack.Workbook.Worksheets.Add("Отчет по картам");
@@ -402,6 +406,7 @@ namespace Fuel
                         compPage.Cells[compLine, 2].Value = r.DateFill;
                         compPage.Cells[compLine, 3].Value = r.Azs;
                         compPage.Cells[compLine, 4].Value = r.AdressAzs;
+                        compPage.Cells[compLine, 4].Style.Font.Size = 9;
                         double total = (provider == "Башнефть") ? -Convert.ToDouble(r.CountFuel) : Convert.ToDouble(r.CountFuel);
                         if (mr80.Success)
                         {
@@ -460,8 +465,8 @@ namespace Fuel
                         cel.Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
                         cel.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                         cel.Style.Font.Bold = true;                        
-                        cel.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                        cel.Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
+                        //cel.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        //cel.Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
                         var border = cel.Style.Border;
                         border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
                     }
@@ -481,8 +486,8 @@ namespace Fuel
                         re.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                         re.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                         re.Style.Font.Bold = true;
-                        re.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                        re.Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
+                        //re.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        //re.Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
                         var border = re.Style.Border;
                         border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
                     }
@@ -527,8 +532,8 @@ namespace Fuel
                     res.Style.VerticalAlignment = ExcelVerticalAlignment.Top;
                     res.Style.WrapText = true;
                     res.Style.Border.BorderAround(ExcelBorderStyle.Thin);
-                    res.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                    res.Style.Fill.BackgroundColor.SetColor(Color.IndianRed);
+                    //res.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    //res.Style.Fill.BackgroundColor.SetColor(Color.IndianRed);
                     var border = res.Style.Border;
                     border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
                 }
@@ -547,16 +552,17 @@ namespace Fuel
                 compPack.Dispose(); //закрытие файла компании
 
                 // формирование данных в сводном отчете
-                totalPage.Cells[aLine, 1].Value = nameCompFile;
-                totalPage.Cells[aLine, 2].Value = cai80;
-                totalPage.Cells[aLine, 3].Value = cai92;
-                totalPage.Cells[aLine, 4].Value = cai95;
-                totalPage.Cells[aLine, 5].Value = cai98;
-                totalPage.Cells[aLine, 6].Value = cdt;
-                totalPage.Cells[aLine, 7].Value = cgaz;
-                totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "B" + aLine, "G" + aLine);
+                totalPage.Cells[aLine, 1].Value = row.Key;
+                totalPage.Cells[aLine, 2].Value = nameCompFile;
+                totalPage.Cells[aLine, 3].Value = cai80;
+                totalPage.Cells[aLine, 4].Value = cai92;
+                totalPage.Cells[aLine, 5].Value = cai95;
+                totalPage.Cells[aLine, 6].Value = cai98;
+                totalPage.Cells[aLine, 7].Value = cdt;
+                totalPage.Cells[aLine, 8].Value = cgaz;
+                totalPage.Cells[aLine, 9].Formula = string.Format("SUM({0}:{1})", "B" + aLine, "G" + aLine);
 
-                using (var ares = totalPage.Cells[aLine, 1, aLine, 8])
+                using (var ares = totalPage.Cells[aLine, 1, aLine, 9])
                 {
                     ares.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     ares.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -572,20 +578,20 @@ namespace Fuel
             }
 
             totalPage.Cells[aLine, 2].Value = @"ОБЩИЕ ИТОГИ :";
-            totalPage.Cells[aLine, 2].Formula = string.Format("SUM({0}:{1})", "B5", "B" + (aLine-1));
-            totalPage.Cells[aLine, 3].Formula = string.Format("SUM({0}:{1})", "C5", "C" + (aLine-1));
-            totalPage.Cells[aLine, 4].Formula = string.Format("SUM({0}:{1})", "D5", "D" + (aLine-1));
-            totalPage.Cells[aLine, 5].Formula = string.Format("SUM({0}:{1})", "E5", "E" + (aLine-1));
-            totalPage.Cells[aLine, 6].Formula = string.Format("SUM({0}:{1})", "F5", "F" + (aLine-1));
-            totalPage.Cells[aLine, 7].Formula = string.Format("SUM({0}:{1})", "G5", "G" + (aLine-1));
-            totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "H5", "H" + (aLine-1));
-            using(var at = totalPage.Cells[aLine, 1, aLine, 8])
+            totalPage.Cells[aLine, 3].Formula = string.Format("SUM({0}:{1})", "B5", "B" + (aLine-1));
+            totalPage.Cells[aLine, 4].Formula = string.Format("SUM({0}:{1})", "C5", "C" + (aLine-1));
+            totalPage.Cells[aLine, 5].Formula = string.Format("SUM({0}:{1})", "D5", "D" + (aLine-1));
+            totalPage.Cells[aLine, 6].Formula = string.Format("SUM({0}:{1})", "E5", "E" + (aLine-1));
+            totalPage.Cells[aLine, 7].Formula = string.Format("SUM({0}:{1})", "F5", "F" + (aLine-1));
+            totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "G5", "G" + (aLine-1));
+            totalPage.Cells[aLine, 9].Formula = string.Format("SUM({0}:{1})", "H5", "H" + (aLine-1));
+            using(var at = totalPage.Cells[aLine, 1, aLine, 9])
             {
                 at.Style.Font.Bold = true;
                 at.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 at.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-                at.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                at.Style.Fill.BackgroundColor.SetColor(Color.IndianRed);
+                //at.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                //at.Style.Fill.BackgroundColor.SetColor(Color.IndianRed);
                 var border = at.Style.Border;
                 border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
             }

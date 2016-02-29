@@ -13,7 +13,6 @@ D:\VS\Fuel\Fuel\obj\Debug\Fuel.Properties.Resources.resources
 D:\VS\Fuel\Fuel\obj\Debug\Fuel.csproj.GenerateResource.Cache
 D:\VS\Fuel\Fuel\obj\Debug\Fuel.exe
 D:\VS\Fuel\Fuel\obj\Debug\Fuel.pdb
-D:\VS\Fuel\Fuel\obj\Debug\Fuel.csproj.ResolveComReference.cache
 D:\VS\Fuel\Fuel\bin\Debug\Newtonsoft.Json.dll
 D:\VS\Fuel\Fuel\bin\Debug\Newtonsoft.Json.xml
 D:\VS\Fuel\Fuel\bin\Debug\EPPlus.dll
@@ -44,3 +43,6 @@ C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.Properties.Resources.resource
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.csproj.GenerateResource.Cache
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\EPPlus.dll
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\EPPlus.Extensions.dll
+D:\VS\Fuel\Fuel\bin\Debug\EPPlus.Extensions.dll
+D:\VS\Fuel\Fuel\obj\Debug\App.baml
+D:\VS\Fuel\Fuel\obj\Debug\ico.baml

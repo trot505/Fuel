@@ -13,6 +13,9 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="254" Margin="0,27,0,0" VerticalAlignment="Top" Width="517">
             <TabItem x:Name="parseTab" Header="Парсинг">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,0,2">
+                    <!--<Viewbox Width="70" Height="70">
+                        <Path Stretch="Fill" Data="{StaticResource close}" Stroke="#FF1E3D80"/>
+                    </Viewbox>-->
                     <Label x:Name="label" Content="№ КАРТЫ" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
                     <TextBox x:Name="card" HorizontalAlignment="Left" Height="23" Margin="76,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
                     <Label x:Name="label1" Content="НОМЕРА СТОЛБЦОВ В ФАЙЛЕ" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
@@ -83,7 +86,6 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
             </TabItem>
         </TabControl>
         <Button x:Name="parseBtn" Content="Парсинг" HorizontalAlignment="Left" Height="26" Margin="547,298,0,0" VerticalAlignment="Top" Width="95" Click="parseBtn_Click"/>
-        <TextBlock x:Name="tb" HorizontalAlignment="Left" Margin="297,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="39"/>
         <Grid Name="pg" Margin="0,0,10,0" HorizontalAlignment="Right" Width="662" Height="490" VerticalAlignment="Top" Background="White" Visibility="Hidden">
             <TextBlock Name="pgText" Margin="0,105,50,0" Height="65" VerticalAlignment="Top" HorizontalAlignment="Right" Width="562" FontWeight="Bold" TextAlignment="Center" FontSize="18.667"/>
             <ProgressBar x:Name="pgBar" Margin="131,232"/>
