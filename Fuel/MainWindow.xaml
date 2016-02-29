@@ -11,9 +11,9 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="145,289,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <StackPanel HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="517" Orientation="Horizontal"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="254" Margin="0,27,0,0" VerticalAlignment="Top" Width="517">
-            <TabItem x:Name="parseTab" Header="Парсинг">
+            <TabItem x:Name="parseTab" Header="Парсинг" Margin="-2,-2,-10,-1">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,0,2">
-                    <!--<Viewbox Width="70" Height="70">
+                    <!--<Viewbox Width="70" Height="70">                    
                         <Path Stretch="Fill" Data="{StaticResource close}" Stroke="#FF1E3D80"/>
                     </Viewbox>-->
                     <Label x:Name="label" Content="№ КАРТЫ" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
@@ -61,7 +61,7 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
                     <TextBox x:Name="listExl" HorizontalAlignment="Left" Height="23" Margin="454,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="CompanyTab" Header="Фирмы" HorizontalAlignment="Left" Width="55" Margin="7,0,-7,0">
+            <TabItem x:Name="CompanyTab" Header="Фирмы" Margin="12,0,-36,0">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="CompanyGrid" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="178" Width="491" IsSynchronizedWithCurrentItem="True" ClipToBounds="True" CanUserReorderColumns="False" CanUserResizeColumns="False" ColumnWidth="Auto" CanUserAddRows="False" MinColumnWidth="150" IsReadOnly="True" >
                         <!--<DataGrid.Columns>
@@ -70,16 +70,25 @@ Title="Формы документов" Height="520" Width="690" WindowStartupLo
 <DataGridTextColumn Header="как в Лукойл" Binding="{Binding Path=NameLuk}"/>
 </DataGrid.Columns>-->
                     </DataGrid>
-                    <StackPanel HorizontalAlignment="Left" Height="40" Margin="10,0,0,188" VerticalAlignment="Bottom" Width="491" Orientation="Horizontal">
-                        <StackPanel HorizontalAlignment="Left" Height="40" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="250" Orientation="Horizontal">
-                            <TextBox x:Name="searchText" HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" TextChanged="searchText_TextChanged"/>
-                            <Button x:Name="clearSearch" Content="Очистить" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="55" Background="{x:Null}" Click="clearSearch_Click"/>
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Left" Height="40" Margin="50,0,0,0" VerticalAlignment="Bottom" Width="150" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Left" Height="40" Margin="10,-6,0,169" VerticalAlignment="Bottom" Width="491" Orientation="Horizontal">
+                        
+                            <ToolBar Width="480" Height="35" Margin="0,7,0,-2">
+                            <Grid ToolTip="Поиск">
+                                <TextBox x:Name="searchText" HorizontalAlignment="Left" Height="30" Margin="5,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="5,5,32,5" Width="200" TextChanged="searchText_TextChanged"/>
+                                <Grid Height="27" Width="27" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,2,4,0">
+                                    <Path Opacity=".6" Width="20" Height="20" Stretch="Fill" Fill="{StaticResource FillPath}" Data="{StaticResource magnify}" />
+                                </Grid>
+                            </Grid>  
+                                <Button x:Name="clearSearch" ToolTip="Очистить" Width="27" Height="27" Panel.ZIndex="13" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFF0C589" SnapsToDevicePixels="True" VerticalAlignment="Center" Margin="0,2" Padding="5" OverridesDefaultStyle="True" Click="clearSearch_Click_1">
+                                    <Path Width="15" Height="15" Stretch="Fill" Fill="#FFF54949" Data="{StaticResource close}" />
+                                </Button>
+                                                      
+                        
+                        
                             <Button x:Name="delC" Content="Удалить" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="55" Background="{x:Null}" Click="delC_Click"/>
                             <Button x:Name="addC" Content="Добавить" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="55" Click="add_Click" Background="{x:Null}"/>
                             <Button x:Name="updateC" Content="Изменить" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="55" Background="{x:Null}" Click="updateC_Click"/>
-                        </StackPanel>
+                        </ToolBar>  
 
                     </StackPanel>
                 </Grid>

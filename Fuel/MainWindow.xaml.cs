@@ -156,13 +156,7 @@ namespace Fuel
                 folderPatch.Text = folder.SelectedPath;
             }
         }
-
-        private void clearSearch_Click(object sender, RoutedEventArgs e)
-        {
-            searchText.Text = "";
-            CompanyGrid.ItemsSource = company;
-        }
-
+        
         private void CellText()
         {
             card.Text = cell.CellCard.ToString();
@@ -244,25 +238,24 @@ namespace Fuel
             totalPage.PrinterSettings.PaperSize = ePaperSize.A4;
             totalPage.PrinterSettings.LeftMargin = 0.7m;
             totalPage.PrinterSettings.RightMargin = totalPage.PrinterSettings.TopMargin = totalPage.PrinterSettings.BottomMargin = 0.5m;
-            totalPage.DefaultColWidth = 11;
+            totalPage.DefaultColWidth = 15;
             totalPage.Column(1).Width = 20;
             totalPage.Column(2).Width = 25;
 
             totalPage.Cells[1, 1].Value = @"СВОДНЫЙ ОТЧЕТ ПО ОРГАНИЗАЦИЯМ";
             totalPage.Cells[1, 1, 1, 8].Merge = true;
             totalPage.Cells[2, 1].Value = @"за " +folderMonth.Text+" "+DateTime.Now.Year.ToString()+" г";
-            totalPage.Cells[2, 1, 2, 9].Merge = true;
+            totalPage.Cells[2, 1, 2, 8].Merge = true;
 
             totalPage.Cells[4, 1].Value = @"ГРУППА";
             totalPage.Cells[4, 2].Value = @"НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ";
             totalPage.Cells[4, 3].Value = @"АИ-80";
-            totalPage.Cells[4, 4].Value = @"АИ-92";
-            totalPage.Cells[4, 5].Value = @"АИ-95";
-            totalPage.Cells[4, 6].Value = @"АИ-98";
-            totalPage.Cells[4, 7].Value = @"ДТ";
-            totalPage.Cells[4, 8].Value = @"ГАЗ";
-            totalPage.Cells[4, 9].Value = @"ИТОГО";
-            using (var tp = totalPage.Cells[1,1,4,9])
+            totalPage.Cells[4, 4].Value = @"АИ-92";            
+            totalPage.Cells[4, 5].Value = @"АИ-98";
+            totalPage.Cells[4, 6].Value = @"ДТ";
+            totalPage.Cells[4, 7].Value = @"ГАЗ";
+            totalPage.Cells[4, 8].Value = @"ИТОГО";
+            using (var tp = totalPage.Cells[1,1,4,8])
             {
                 tp.Style.Font.Bold = true;
                 tp.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -277,8 +270,8 @@ namespace Fuel
             int pgC = 0;
             foreach (var row in oneC)
             {
-                double cai80 = 0, cai92 = 0, cai95 = 0, cai98 = 0, cdt = 0, cgaz = 0;
-                double ai80 = 0, ai92 = 0, ai95 = 0, ai98 = 0, dt = 0, gaz = 0;
+                double cai80 = 0, cai92 = 0, cai95 = 0, cdt = 0, cgaz = 0;
+                double ai80 = 0, ai92 = 0, ai95 = 0, dt = 0, gaz = 0;
                 var s = (radioBash.IsChecked.Value) ? company.Where(c => c.NameBash.ToLower() == row.Key.ToLower()).Select(k => k.Name)
                     : (radioLuk.IsChecked.Value) ? company.Where(c => c.NameLuk.ToLower() == row.Key.ToLower()).Select(k => k.Name)
                     : company.Where(c => c.Name.ToLower() == row.Key.ToLower()).Select(k => k.Name);
@@ -330,12 +323,12 @@ namespace Fuel
                 compPage.PrinterSettings.LeftMargin = 0.7m;
                 compPage.PrinterSettings.RightMargin = totalPage.PrinterSettings.TopMargin = totalPage.PrinterSettings.BottomMargin = 0.5m;
                 compPage.Column(1).Width = 15;
-                compPage.Column(2).Width = 20;
+                compPage.Column(2).Width = 30;
                 compPage.Column(3).Width = 21;
-                compPage.Column(4).Width = 25;
-                compPage.Column(5).Width = 17;
-                compPage.Column(6).Width = 17;
-                compPage.Column(7).Width = 17;
+                compPage.Column(4).Width = 20;                
+                compPage.Column(5).Width = 15;
+                compPage.Column(6).Width = 15;
+                compPage.Column(7).Width = 15;
 
 
 
@@ -357,8 +350,8 @@ namespace Fuel
 
                 compPage.Cells[7, 1].Value = @"№ КАРТЫ";
                 compPage.Cells[7, 2].Value = @"ДАТА";
-                compPage.Cells[7, 3].Value = @"№ АЗС";
-                compPage.Cells[7, 4].Value = @"АДРЕС АЗС";
+                compPage.Cells[7, 3].Value = @"АДРЕС АЗС";
+                compPage.Cells[7, 4].Value = @"№ АЗС";                
                 compPage.Cells[7, 5].Value = @"ТИП ТОПЛИВА";
                 compPage.Cells[7, 6].Value = @"ВИД ОПЕРАЦИИ";
                 compPage.Cells[7, 7].Value = @"КОЛИЧЕСТВО ЗАПРАВЛЕННОГО ТОПЛИВА";
@@ -386,7 +379,7 @@ namespace Fuel
                     compPage.Cells[compLine, 1].Value = cr.Key;
 
                     //переменный для каждой карты количество топлива
-                    ai80 = 0; ai92 = 0; ai95 = 0; ai98 = 0; dt = 0; gaz = 0;
+                    ai80 = 0; ai92 = 0; ai95 = 0; dt = 0; gaz = 0;
                     // собираем и формируем отчет по каждой отдельной карте
                     foreach (var r in crd)
                     {
@@ -396,17 +389,16 @@ namespace Fuel
                         Regex r92 = new Regex(@"92", RegexOptions.IgnoreCase);
                         Match mr92 = r92.Match(r.TypeFuel);
                         Regex r95 = new Regex(@"95", RegexOptions.IgnoreCase);
-                        Match mr95 = r95.Match(r.TypeFuel);
-                        Regex r98 = new Regex(@"98", RegexOptions.IgnoreCase);
-                        Match mr98 = r98.Match(r.TypeFuel);
+                        Match mr95 = r95.Match(r.TypeFuel);                        
                         Regex rdt = new Regex(@"дт|диз+", RegexOptions.IgnoreCase);
                         Match mrdt = rdt.Match(r.TypeFuel);
                         Regex rgaz = new Regex(@"газ", RegexOptions.IgnoreCase);
                         Match mrgaz = rgaz.Match(r.TypeFuel);
-                        compPage.Cells[compLine, 2].Value = r.DateFill;
+                        
+                        compPage.Cells[compLine, 2].Value = r.AdressAzs;
+                        compPage.Cells[compLine, 2].Style.Font.Size = 9;
                         compPage.Cells[compLine, 3].Value = r.Azs;
-                        compPage.Cells[compLine, 4].Value = r.AdressAzs;
-                        compPage.Cells[compLine, 4].Style.Font.Size = 9;
+                        compPage.Cells[compLine, 4].Value = r.DateFill;
                         double total = (provider == "Башнефть") ? -Convert.ToDouble(r.CountFuel) : Convert.ToDouble(r.CountFuel);
                         if (mr80.Success)
                         {
@@ -422,12 +414,7 @@ namespace Fuel
                         {
                             compPage.Cells[compLine, 5].Value = "АИ-95";
                             ai95 += total;
-                        }
-                        if (mr98.Success)
-                        {
-                            compPage.Cells[compLine, 5].Value = "АИ-98";
-                            ai98 += total;
-                        }
+                        }                       
                         if (mrdt.Success)
                         {
                             compPage.Cells[compLine, 5].Value = "ДТ";
@@ -439,6 +426,7 @@ namespace Fuel
                             gaz += total;
                         }
                         compPage.Cells[compLine, 6].Value = r.Operation;
+                        compPage.Cells[compLine, 6].Style.Font.Size = 9;
                         compPage.Cells[compLine, 7].Value = total;
                         
                         using (var allR = compPage.Cells[compLine, 1, compLine, 7])
@@ -457,7 +445,7 @@ namespace Fuel
                     //формирование раздела итогов по каждой отдельной карте
                     compPage.Cells[compLine, 1].Value = @"ИТОГО по карте ("+cr.Key+") :";
                     compPage.Cells[compLine, 1, compLine, 5].Merge = true;
-                    compPage.Cells[compLine, 6].Value = ai80 + ai92 + ai95 + ai98 + dt + gaz;
+                    compPage.Cells[compLine, 6].Value = ai80 + ai92 + ai95 + dt + gaz;
                     compPage.Cells[compLine, 6, compLine, 7].Merge = true;                   
                     
                     using (var cel = compPage.Cells[compLine, 1,compLine,7])
@@ -473,11 +461,10 @@ namespace Fuel
 
                     compLine++;
 
-                    compPage.Cells[compLine, 1].Value = @"в том числе:";
-                    compPage.Cells[compLine, 2].Value = @"АИ-80 :  " + ai80 + "л.";
-                    compPage.Cells[compLine, 3].Value = @"АИ-92 :  " + ai92 + "л.";
-                    compPage.Cells[compLine, 4].Value = @"АИ-95 :  " + ai95 + "л.";
-                    compPage.Cells[compLine, 5].Value = @"АИ-98 :  " + ai98 + "л.";
+                    compPage.Cells[compLine, 2].Value = @"в том числе:";
+                    compPage.Cells[compLine, 3].Value = @"АИ-80 :  " + ai80 + "л.";
+                    compPage.Cells[compLine, 4].Value = @"АИ-92 :  " + ai92 + "л.";
+                    compPage.Cells[compLine, 5].Value = @"АИ-95 :  " + ai95 + "л.";                    
                     compPage.Cells[compLine, 6].Value = @"ДТ :  " + dt + "л.";
                     compPage.Cells[compLine, 7].Value = @"ГАЗ :  " + gaz + "л.";
 
@@ -495,7 +482,7 @@ namespace Fuel
                     // конец вывода итогов по карте
                     compLine++;
                     //присвоение данных для сводного отчета (количество заправленного топлива)
-                    cai80 += ai80; cai92 += ai92; cai95 += ai95; cai98 += ai98; cdt += dt; cgaz += gaz;
+                    cai80 += ai80; cai92 += ai92; cai95 += ai95; cdt += dt; cgaz += gaz;
                 }
                 // конец по всем картам компании
                 // итоги по компании
@@ -511,22 +498,20 @@ namespace Fuel
                 compLine++;
                 compPage.Cells["A" + compLine].Value = @"АИ-80";
                 compPage.Cells["B" + compLine].Value = @"АИ-92";
-                compPage.Cells["C" + compLine].Value = @"АИ-95";
-                compPage.Cells["D" + compLine].Value = @"АИ-98";
-                compPage.Cells["E" + compLine].Value = @"ДТ";
-                compPage.Cells["F" + compLine].Value = @"ГАЗ";
-                compPage.Cells["G" + compLine].Value = @"ИТОГО";
+                compPage.Cells["C" + compLine].Value = @"АИ-95";                
+                compPage.Cells["D" + compLine].Value = @"ДТ";
+                compPage.Cells["E" + compLine].Value = @"ГАЗ";
+                compPage.Cells["F" + compLine].Value = @"ИТОГО";
                 compLine++;
                 compPage.Cells["A" + compLine].Value = cai80;
                 compPage.Cells["B" + compLine].Value = cai92;
-                compPage.Cells["C" + compLine].Value = cai95;
-                compPage.Cells["D" + compLine].Value = cai98;
-                compPage.Cells["E" + compLine].Value = cdt;
-                compPage.Cells["F" + compLine].Value = cgaz;
-                compPage.Cells["G" + compLine].Formula = string.Format("SUM({0}:{1})", "A" + (compLine), "F" + (compLine));
+                compPage.Cells["C" + compLine].Value = cai95;                
+                compPage.Cells["D" + compLine].Value = cdt;
+                compPage.Cells["E" + compLine].Value = cgaz;
+                compPage.Cells["F" + compLine].Formula = string.Format("SUM({0}:{1})", "A" + (compLine), "E" + (compLine));
 
-                compPage.Cells["A" + (compLine-1) + ":G" + (compLine-1)].Style.Font.Bold = true;
-                using (var res = compPage.Cells["A" + (compLine - 1) +":G" + compLine])
+                compPage.Cells["A" + (compLine-1) + ":F" + (compLine-1)].Style.Font.Bold = true;
+                using (var res = compPage.Cells["A" + (compLine - 1) +":F" + compLine])
                 {
                     res.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
                     res.Style.VerticalAlignment = ExcelVerticalAlignment.Top;
@@ -556,13 +541,12 @@ namespace Fuel
                 totalPage.Cells[aLine, 2].Value = nameCompFile;
                 totalPage.Cells[aLine, 3].Value = cai80;
                 totalPage.Cells[aLine, 4].Value = cai92;
-                totalPage.Cells[aLine, 5].Value = cai95;
-                totalPage.Cells[aLine, 6].Value = cai98;
-                totalPage.Cells[aLine, 7].Value = cdt;
-                totalPage.Cells[aLine, 8].Value = cgaz;
-                totalPage.Cells[aLine, 9].Formula = string.Format("SUM({0}:{1})", "B" + aLine, "G" + aLine);
+                totalPage.Cells[aLine, 5].Value = cai95;                
+                totalPage.Cells[aLine, 6].Value = cdt;
+                totalPage.Cells[aLine, 7].Value = cgaz;
+                totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "B" + aLine, "F" + aLine);
 
-                using (var ares = totalPage.Cells[aLine, 1, aLine, 9])
+                using (var ares = totalPage.Cells[aLine, 1, aLine, 8])
                 {
                     ares.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     ares.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -583,9 +567,8 @@ namespace Fuel
             totalPage.Cells[aLine, 5].Formula = string.Format("SUM({0}:{1})", "D5", "D" + (aLine-1));
             totalPage.Cells[aLine, 6].Formula = string.Format("SUM({0}:{1})", "E5", "E" + (aLine-1));
             totalPage.Cells[aLine, 7].Formula = string.Format("SUM({0}:{1})", "F5", "F" + (aLine-1));
-            totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "G5", "G" + (aLine-1));
-            totalPage.Cells[aLine, 9].Formula = string.Format("SUM({0}:{1})", "H5", "H" + (aLine-1));
-            using(var at = totalPage.Cells[aLine, 1, aLine, 9])
+            totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "G5", "G" + (aLine-1));            
+            using(var at = totalPage.Cells[aLine, 1, aLine, 8])
             {
                 at.Style.Font.Bold = true;
                 at.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -605,5 +588,10 @@ namespace Fuel
             this.Focusable = true;
         }
         
+        private void clearSearch_Click_1(object sender, RoutedEventArgs e)
+        {
+            searchText.Text = "";
+            CompanyGrid.ItemsSource = company;
+        }
     }
 }
