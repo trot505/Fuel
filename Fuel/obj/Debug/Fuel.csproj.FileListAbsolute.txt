@@ -29,13 +29,11 @@ C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\Newtonsoft.Json.xml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.csprojResolveAssemblyReference.cache
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\addcompany.g.cs
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\MainWindow.g.cs
-C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\upDel.g.cs
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\App.g.cs
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel_MarkupCompile.cache
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel_MarkupCompile.lref
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\addcompany.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\MainWindow.baml
-C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\upDel.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.g.resources
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.Properties.Resources.resources
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.csproj.GenerateResource.Cache
@@ -54,3 +52,5 @@ D:\VS\Fuel\Fuel\obj\Debug\Themes\Core.baml
 D:\VS\Fuel\Fuel\obj\Debug\Themes\ico.baml
 D:\VS\Fuel\Fuel\obj\Debug\exC.g.cs
 D:\VS\Fuel\Fuel\obj\Debug\exC.baml
+C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\exC.g.cs
+C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\exC.baml

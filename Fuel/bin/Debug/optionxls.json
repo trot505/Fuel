@@ -8,10 +8,10 @@
     "CellDateFill": "5",
     "CellFuelT": "7",
     "CellOperation": "6",
-    "FirstRow": "5",
-    "FolderMonth": "0",
-    "FolderPatch": "d:/trew",
-    "LastRow": "60",
+    "FirstRow": "6",
+    "FolderMonth": "1",
+    "FolderPatch": "d:/ОТЧЕТЫ",
+    "LastRow": "65003",
     "ListExl": "1"
   },
   "excelComp": {
@@ -24,18 +24,18 @@
     "RangeLast": "260"
   },
   "Luk": {
-    "CellAdressAzs": "1",
+    "CellAdressAzs": "10",
     "CellAzs": "6",
-    "CellCard": "2",
+    "CellCard": "5",
     "CellCompany": "4",
-    "CellCountF": "3",
-    "CellDateFill": "4",
-    "CellFuelT": "7",
-    "CellOperation": "5",
-    "FirstRow": "5",
-    "FolderMonth": "3",
-    "FolderPatch": "d:/test",
-    "LastRow": "75",
+    "CellCountF": "12",
+    "CellDateFill": "2",
+    "CellFuelT": "11",
+    "CellOperation": "20",
+    "FirstRow": "2",
+    "FolderMonth": "1",
+    "FolderPatch": "d:/ОТЧЕТЫ",
+    "LastRow": "1299",
     "ListExl": "1"
   }
 }
