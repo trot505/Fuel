@@ -75,9 +75,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="class\cellExcel.cs" />
+    <Compile Include="class\exelComp.cs" />
     <Compile Include="class\Out.cs" />
-    <Compile Include="upDel.xaml.cs">
-      <DependentUpon>upDel.xaml</DependentUpon>
+    <Compile Include="exC.xaml.cs">
+      <DependentUpon>exC.xaml</DependentUpon>
     </Compile>
     <Page Include="addcompany.xaml">
       <SubType>Designer</SubType>
@@ -111,7 +112,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="upDel.xaml">
+    <Page Include="exC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

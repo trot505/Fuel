@@ -14,19 +14,28 @@
     "LastRow": "60",
     "ListExl": "1"
   },
+  "excelComp": {
+    "BriefName": "1",
+    "FullName": "2",
+    "BashName": "3",
+    "LukName": "4",
+    "ListPage": "1",
+    "RangeFirst": "2",
+    "RangeLast": "260"
+  },
   "Luk": {
     "CellAdressAzs": "1",
-    "CellCompany": "4",
+    "CellAzs": "6",
     "CellCard": "2",
+    "CellCompany": "4",
     "CellCountF": "3",
     "CellDateFill": "4",
-    "CellOperation": "5",
-    "CellAzs": "6",
     "CellFuelT": "7",
+    "CellOperation": "5",
     "FirstRow": "5",
-    "LastRow":"75",
-    "FolderPatch": "d:/test",
     "FolderMonth": "3",
+    "FolderPatch": "d:/test",
+    "LastRow": "75",
     "ListExl": "1"
   }
 }

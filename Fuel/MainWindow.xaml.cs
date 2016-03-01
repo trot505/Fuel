@@ -31,7 +31,9 @@ namespace Fuel
         private string companyPatch = @"company.json";
         private string cellPatch = @"optionxls.json";
         cellExcel cell = new cellExcel();
+        exelComp exc = new exelComp();
         List<Out> outArr = new List<Out>();
+        Newtonsoft.Json.Linq.JObject arr;
 
         public MainWindow()
         {
@@ -45,12 +47,14 @@ namespace Fuel
             } else {
                 System.Windows.MessageBox.Show("Файл со списком организайи не существует!", "ВНИМАНИЕ", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            
+            arr = Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(cellPatch, Encoding.UTF8));
+            exc = JsonConvert.DeserializeObject<exelComp>(arr["excelComp"].ToString());
+
         }
         
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.OpenFileDialog OPF = new System.Windows.Forms.OpenFileDialog();
+            OpenFileDialog OPF = new OpenFileDialog();
             OPF.Filter = "Файлы excel|*.xls;*.xlsx;*.xlsm";
             OPF.Title = "Выберите файл excel";
             if (OPF.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -64,10 +68,11 @@ namespace Fuel
             addcompany tr = new addcompany();
             if (tr.ShowDialog() == true)
             {
-                company.Add(new Company(tr.name.Text, tr.nameBash.Text, tr.nameLuk.Text));
+                company.Add(new Company(tr.name.Text, tr.fullName.Text, tr.nameBash.Text, tr.nameLuk.Text));
                 tr.Close();
             }
             searchText.Text = "";
+            clearSearch.Visibility = Visibility.Hidden;
         }
 
         private void deleteCompany()
@@ -79,11 +84,11 @@ namespace Fuel
             }
         }
 
-        private void updateCompany(string n, string nb, string nl)
+        private void updateCompany(string n, string fn, string nb, string nl)
         {
             if (CompanyGrid.SelectedIndex >= 0)
             {
-                Company newC = new Company(n, nb, nl);
+                Company newC = new Company(n, fn, nb, nl);
                 Company c = CompanyGrid.SelectedItem as Company;
                 company.Remove(c);
                 company.Add(newC);
@@ -92,8 +97,9 @@ namespace Fuel
 
         private void searchText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            var s = company.Where<Company>(r => (r.Name + r.NameBash + r.NameLuk).ToLower().Contains(searchText.Text.ToLower()));
+            var s = company.Where<Company>(r => (r.Name + r.FullName + r.NameBash + r.NameLuk).ToLower().Contains(searchText.Text.ToLower()));
             CompanyGrid.ItemsSource = (s.SequenceEqual(company)) ? company:s;
+            clearSearch.Visibility = Visibility.Visible;
         }
 
         private void updateC_Click(object sender, RoutedEventArgs e)
@@ -103,11 +109,12 @@ namespace Fuel
                 addcompany tr = new addcompany();
                 Company c = CompanyGrid.SelectedItem as Company;
                 tr.name.Text = c.Name;
+                tr.fullName.Text = c.FullName;
                 tr.nameBash.Text = c.NameBash;
                 tr.nameLuk.Text = c.NameLuk;
                 if (tr.ShowDialog() == true)
                 {
-                    updateCompany(tr.name.Text, tr.nameBash.Text, tr.nameLuk.Text);
+                    updateCompany(tr.name.Text, tr.fullName.Text, tr.nameBash.Text, tr.nameLuk.Text);
                 }
                 tr.Close();
             }
@@ -176,14 +183,13 @@ namespace Fuel
 
         private void radioBash_Checked(object sender, RoutedEventArgs e)
         {           
-            Newtonsoft.Json.Linq.JObject arr = Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(cellPatch, Encoding.UTF8));
+            
             cell = JsonConvert.DeserializeObject<cellExcel>(arr["Bash"].ToString());
             CellText();            
         }
 
         private void radioLuk_Checked(object sender, RoutedEventArgs e)
         {            
-            Newtonsoft.Json.Linq.JObject arr = Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(cellPatch, Encoding.UTF8));
             cell = JsonConvert.DeserializeObject<cellExcel>(arr["Luk"].ToString());
             adres.Text = cell.CellAdressAzs.ToString();
             CellText();
@@ -205,10 +211,15 @@ namespace Fuel
                     for (int i = cell.FirstRow; i <= cell.LastRow; i++)
                     {
                         pgBar.Value = i;
-                        var c = execPage.Cells[i, cell.CellCard].Value.ToString(); var s = execPage.Cells[i, cell.CellAzs].Value.ToString();
-                        var a = execPage.Cells[i, cell.CellAdressAzs].Value.ToString(); var d = execPage.Cells[i, cell.CellDateFill].Value.ToString();
-                        var o = execPage.Cells[i, cell.CellOperation].Value.ToString(); var t = execPage.Cells[i, cell.CellFuelT].Value.ToString();
-                        var co = execPage.Cells[i, cell.CellCountF].Value.ToString(); var n = execPage.Cells[i, cell.CellCompany].Value.ToString();
+                        var c = (execPage.Cells[i, cell.CellCard].Value == null) ? "" : execPage.Cells[i, cell.CellCard].Value.ToString();
+                        var s = (execPage.Cells[i, cell.CellAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAzs].Value.ToString();
+                        var a = (execPage.Cells[i, cell.CellAdressAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAdressAzs].Value.ToString();
+                        var d = (execPage.Cells[i, cell.CellDateFill].Value == null) ? "" : execPage.Cells[i, cell.CellDateFill].Value.ToString();
+                        var o = (execPage.Cells[i, cell.CellOperation].Value == null) ? "" : execPage.Cells[i, cell.CellOperation].Value.ToString();
+                        var t = (execPage.Cells[i, cell.CellFuelT].Value == null) ? "" : execPage.Cells[i, cell.CellFuelT].Value.ToString();
+                        var co = (execPage.Cells[i, cell.CellCountF].Value == null) ? "" : execPage.Cells[i, cell.CellCountF].Value.ToString();
+                        var n = (execPage.Cells[i, cell.CellCompany].Value == null) ? "" : execPage.Cells[i, cell.CellCompany].Value.ToString();
+
                         outArr.Add(new Out(c, s, a, d, o, t, co, n));
                     }
                     execPac.Dispose();
@@ -251,7 +262,7 @@ namespace Fuel
             totalPage.Cells[4, 2].Value = @"НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ";
             totalPage.Cells[4, 3].Value = @"АИ-80";
             totalPage.Cells[4, 4].Value = @"АИ-92";            
-            totalPage.Cells[4, 5].Value = @"АИ-98";
+            totalPage.Cells[4, 5].Value = @"АИ-95";
             totalPage.Cells[4, 6].Value = @"ДТ";
             totalPage.Cells[4, 7].Value = @"ГАЗ";
             totalPage.Cells[4, 8].Value = @"ИТОГО";
@@ -272,13 +283,13 @@ namespace Fuel
             {
                 double cai80 = 0, cai92 = 0, cai95 = 0, cdt = 0, cgaz = 0;
                 double ai80 = 0, ai92 = 0, ai95 = 0, dt = 0, gaz = 0;
-                var s = (radioBash.IsChecked.Value) ? company.Where(c => c.NameBash.ToLower() == row.Key.ToLower()).Select(k => k.Name)
-                    : (radioLuk.IsChecked.Value) ? company.Where(c => c.NameLuk.ToLower() == row.Key.ToLower()).Select(k => k.Name)
-                    : company.Where(c => c.Name.ToLower() == row.Key.ToLower()).Select(k => k.Name);
+                var s = (radioBash.IsChecked.Value) ? company.Where(c => c.NameBash.ToLower() == row.Key.ToLower()).Select(k => k)
+                    : (radioLuk.IsChecked.Value) ? company.Where(c => c.NameLuk.ToLower() == row.Key.ToLower()).Select(k => k)
+                    : company.Where(c => c.Name.ToLower() == row.Key.ToLower()).Select(k => k);
 
                 if (s.Count() == 1)
                 {
-                    nameCompFile = s.ElementAt(0).ToString();
+                    nameCompFile = s.ElementAt(0).Name.ToString();
                 }
                 else if (s.Count() > 1)
                 {
@@ -306,7 +317,7 @@ namespace Fuel
                         }
                         if (addC.ShowDialog() == true)
                         {
-                            company.Add(new Company(addC.name.Text, addC.nameBash.Text, addC.nameLuk.Text));
+                            company.Add(new Company(addC.name.Text, addC.fullName.Text, addC.nameBash.Text, addC.nameLuk.Text));
                             nameCompFile = addC.name.Text;
                             addC.Close();
                         }
@@ -332,15 +343,15 @@ namespace Fuel
 
 
 
-                compPage.Cells[1, 1].Value = @"ПОСТАВЩИК:";
+                compPage.Cells[1, 1].Value = @"ПОСТАВЩИК/ПРОДАВЕЦ:";
                 compPage.Cells[1, 1, 1, 3].Merge = true;
-                compPage.Cells[1, 5].Value = @"ПОТРЕБИТЕЛЬ:";
+                compPage.Cells[1, 5].Value = @"ЗАКАЗЧИК/ПОКУПАТЕЛЬ:";
                 compPage.Cells[1, 5, 1, 7].Merge = true;
 
                 compPage.Cells[2, 1].Value = @"ООО Регионсбыт";
                 compPage.Cells[2, 1, 2, 3].Merge = true;
 
-                compPage.Cells[2, 5].Value = nameCompFile;
+                compPage.Cells[2, 5].Value = s.ElementAt(0).FullName.ToString();//полное наименование компании
                 compPage.Cells[2, 5, 2, 7].Merge = true;
 
                 compPage.Cells[4, 1].Value = @"ОТЧЕТ ПО ТОПЛИВНЫМ КАРТАМ";
@@ -348,10 +359,10 @@ namespace Fuel
                 compPage.Cells[5, 1].Value = @"за " + folderMonth.Text + " " + DateTime.Now.Year.ToString() + " г";
                 compPage.Cells[5, 1, 5, 7].Merge = true;
 
-                compPage.Cells[7, 1].Value = @"№ КАРТЫ";
-                compPage.Cells[7, 2].Value = @"ДАТА";
-                compPage.Cells[7, 3].Value = @"АДРЕС АЗС";
-                compPage.Cells[7, 4].Value = @"№ АЗС";                
+                compPage.Cells[7, 1].Value = @"№ КАРТЫ";                
+                compPage.Cells[7, 2].Value = @"АДРЕС АЗС";
+                compPage.Cells[7, 3].Value = @"№ АЗС";
+                compPage.Cells[7, 4].Value = @"ДАТА";
                 compPage.Cells[7, 5].Value = @"ТИП ТОПЛИВА";
                 compPage.Cells[7, 6].Value = @"ВИД ОПЕРАЦИИ";
                 compPage.Cells[7, 7].Value = @"КОЛИЧЕСТВО ЗАПРАВЛЕННОГО ТОПЛИВА";
@@ -562,12 +573,12 @@ namespace Fuel
             }
 
             totalPage.Cells[aLine, 2].Value = @"ОБЩИЕ ИТОГИ :";
-            totalPage.Cells[aLine, 3].Formula = string.Format("SUM({0}:{1})", "B5", "B" + (aLine-1));
-            totalPage.Cells[aLine, 4].Formula = string.Format("SUM({0}:{1})", "C5", "C" + (aLine-1));
-            totalPage.Cells[aLine, 5].Formula = string.Format("SUM({0}:{1})", "D5", "D" + (aLine-1));
-            totalPage.Cells[aLine, 6].Formula = string.Format("SUM({0}:{1})", "E5", "E" + (aLine-1));
-            totalPage.Cells[aLine, 7].Formula = string.Format("SUM({0}:{1})", "F5", "F" + (aLine-1));
-            totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "G5", "G" + (aLine-1));            
+            totalPage.Cells[aLine, 3].Formula = string.Format("SUM({0}:{1})", "C5", "C" + (aLine-1));
+            totalPage.Cells[aLine, 4].Formula = string.Format("SUM({0}:{1})", "D5", "D" + (aLine-1));
+            totalPage.Cells[aLine, 5].Formula = string.Format("SUM({0}:{1})", "E5", "E" + (aLine-1));
+            totalPage.Cells[aLine, 6].Formula = string.Format("SUM({0}:{1})", "F5", "F" + (aLine-1));
+            totalPage.Cells[aLine, 7].Formula = string.Format("SUM({0}:{1})", "G5", "G" + (aLine-1));
+            totalPage.Cells[aLine, 8].Formula = string.Format("SUM({0}:{1})", "H5", "H" + (aLine-1));            
             using(var at = totalPage.Cells[aLine, 1, aLine, 8])
             {
                 at.Style.Font.Bold = true;
@@ -592,6 +603,62 @@ namespace Fuel
         {
             searchText.Text = "";
             CompanyGrid.ItemsSource = company;
+            clearSearch.Visibility = Visibility.Hidden;
+        }
+
+        // парсинго компаний
+        private void parseComp_Click(object sender, RoutedEventArgs e)
+        {
+            exC pf = new exC();
+            if (exc != null)
+            {
+                pf.briefName.Text = exc.BriefName.ToString();
+                pf.fullName.Text = exc.FullName.ToString();
+                pf.bashName.Text = exc.BashName.ToString();
+                pf.lukName.Text = exc.LukName.ToString();
+                pf.rangeFirst.Text = exc.RangeFirst.ToString();
+                pf.rangeLast.Text = exc.RangeLast.ToString();
+                pf.listPage.Text = exc.ListPage.ToString();
+            }
+            if(pf.ShowDialog() == true)
+            {
+                pg.Visibility = Visibility.Visible;
+                pgText.Text = @"ЗАГРУЗКА ДАННЫХ ПО КОМПАНИЯМ";
+                pgBar.Value = 0;
+
+                exc.BriefName = Convert.ToInt32(pf.briefName.Text);
+                exc.FullName = Convert.ToInt32(pf.fullName.Text);
+                exc.BashName = Convert.ToInt32(pf.bashName.Text);
+                exc.LukName = Convert.ToInt32(pf.lukName.Text);
+                exc.RangeFirst = Convert.ToInt32(pf.rangeFirst.Text);
+                exc.RangeLast = Convert.ToInt32(pf.rangeLast.Text);
+                exc.ListPage = Convert.ToInt32(pf.listPage.Text);
+                
+                using (ExcelPackage exlPac = new ExcelPackage(new FileInfo(pf.fileC.Text)))
+                {
+                    ExcelWorksheet exlPage = exlPac.Workbook.Worksheets[exc.ListPage];
+                    pgBar.Maximum = exc.RangeLast;
+                    company.Clear();
+                    for (int i = exc.RangeFirst; i <= exc.RangeLast; i++)
+                    {
+                        pgBar.Value = i;
+                        var n = (exlPage.Cells[i, exc.BriefName].Value == null)?"":exlPage.Cells[i, exc.BriefName].Value.ToString();
+                        var fn = (exlPage.Cells[i, exc.FullName].Value == null) ? "" : exlPage.Cells[i, exc.FullName].Value.ToString();
+                        var bn = (exlPage.Cells[i, exc.BashName].Value == null)? "": exlPage.Cells[i, exc.BashName].Value.ToString();
+                        var ln = (exlPage.Cells[i, exc.LukName].Value == null) ? "" : exlPage.Cells[i, exc.LukName].Value.ToString();                        company.Add(new Company(n,fn,bn,ln));
+                    }
+                    exlPac.Dispose();
+                }
+                System.Windows.MessageBox.Show("Добавление данных по организациям \nзавершено успешно!", "ИНФОРМАЦИЯ.", MessageBoxButton.OK);
+                pg.Visibility = Visibility.Hidden;
+                pgText.Text = "";
+                pgBar.Value = 0;
+
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

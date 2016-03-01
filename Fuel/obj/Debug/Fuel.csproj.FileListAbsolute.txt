@@ -19,8 +19,6 @@ D:\VS\Fuel\Fuel\bin\Debug\EPPlus.dll
 D:\VS\Fuel\Fuel\bin\Debug\EPPlus.xml
 D:\VS\Fuel\Fuel\obj\Debug\addcompany.g.cs
 D:\VS\Fuel\Fuel\obj\Debug\addcompany.baml
-D:\VS\Fuel\Fuel\obj\Debug\upDel.g.cs
-D:\VS\Fuel\Fuel\obj\Debug\upDel.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.exe
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Fuel.pdb
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\Fuel.exe
@@ -45,9 +43,14 @@ C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\EPPlus.dll
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\EPPlus.Extensions.dll
 D:\VS\Fuel\Fuel\bin\Debug\EPPlus.Extensions.dll
 D:\VS\Fuel\Fuel\obj\Debug\App.baml
-D:\VS\Fuel\Fuel\obj\Debug\ico.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\App.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Themes\Core.g.cs
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Themes\Brushes.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Themes\Core.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\Themes\ico.baml
+D:\VS\Fuel\Fuel\obj\Debug\Themes\Core.g.cs
+D:\VS\Fuel\Fuel\obj\Debug\Themes\Brushes.baml
+D:\VS\Fuel\Fuel\obj\Debug\Themes\Core.baml
+D:\VS\Fuel\Fuel\obj\Debug\Themes\ico.baml
+D:\VS\Fuel\Fuel\obj\Debug\exC.g.cs
+D:\VS\Fuel\Fuel\obj\Debug\exC.baml
