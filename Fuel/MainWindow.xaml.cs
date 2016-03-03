@@ -1,4 +1,4 @@
-﻿//using Microsoft.Win32;
+﻿
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Controls;
@@ -136,6 +136,7 @@ namespace Fuel
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            searchText.Text = "";
             if (!File.Exists(companyPatch))
             {
                 File.Create(companyPatch);
@@ -177,61 +178,96 @@ namespace Fuel
             CellText();
         }
 
+        //Удаляет лишние пробелы и переносы строк(заменяя на 1 пробел):	
+
+        private string RemoveSpaces(string txt)
+        {
+            txt = txt.Trim();
+            txt = txt.Replace("  ", " ");
+
+            if (txt.Contains("  "))
+                RemoveSpaces(txt);
+            return txt;
+        }
+
         private void parseBtn_Click(object sender, RoutedEventArgs e)
         {
-            //this.Visibility = Visibility.Hidden;
-            //pg.Visibility = Visibility.Visible;
-            //pgText.Text = "СКАНИРОВАНИЕ ФАЙЛА ДЛЯ ФОРМИРОВАНИЯ ДАННЫХ \nВЫПОЛНЕНО НА:";
-            //System.Threading.Thread.Sleep(5000);// пауза
-            string nameCompFile = "";
+            //сщхранение данных формы по колонкам excel
+            cell.CellCard = Convert.ToInt32(card.Text);
+            cell.CellAzs = Convert.ToInt32(azs.Text);
+            cell.CellCompany = Convert.ToInt32(holder.Text);
+            cell.CellAdressAzs = Convert.ToInt32(adres.Text);
+            cell.CellDateFill = Convert.ToInt32(date.Text);
+            cell.CellOperation = Convert.ToInt32(operation.Text);
+            cell.CellFuelT = Convert.ToInt32(fuelT.Text);
+            cell.CellCountF = Convert.ToInt32(countF.Text);
+            cell.FirstRow = Convert.ToInt32(first.Text);
+            cell.LastRow = Convert.ToInt32(last.Text);
+            cell.FolderPatch = folderPatch.Text;
+            cell.FolderMonth = folderMonth.SelectedIndex;
+            cell.ListExl = Convert.ToInt32(listExl.Text);
+            
+        //this.Visibility = Visibility.Hidden;
+        //pg.Visibility = Visibility.Visible;
+        //pgText.Text = "СКАНИРОВАНИЕ ФАЙЛА ДЛЯ ФОРМИРОВАНИЯ ДАННЫХ \nВЫПОЛНЕНО НА:";
+        //System.Threading.Thread.Sleep(5000);// пауза
+        string nameCompFile = "";
             if (File.Exists(fileName.Text))
             {
-                //using (ExcelPackage execPac = new ExcelPackage(new FileInfo(fileName.Text)))
-                //{
-                //    ExcelWorksheet execPage = execPac.Workbook.Worksheets[cell.ListExl];
-                //    pgBar.Maximum = cell.LastRow;
-                //    for (int i = cell.FirstRow; i <= cell.LastRow; i++)
-                //    {
-                //        pgBar.Value = i;
-                //        var c = (execPage.Cells[i, cell.CellCard].Value == null) ? "" : execPage.Cells[i, cell.CellCard].Value.ToString();
-                //        var s = (execPage.Cells[i, cell.CellAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAzs].Value.ToString();
-                //        var a = (execPage.Cells[i, cell.CellAdressAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAdressAzs].Value.ToString();
-                //        var d = (execPage.Cells[i, cell.CellDateFill].Value == null) ? "" : execPage.Cells[i, cell.CellDateFill].Value.ToString();
-                //        var o = (execPage.Cells[i, cell.CellOperation].Value == null) ? "" : execPage.Cells[i, cell.CellOperation].Value.ToString();
-                //        var t = (execPage.Cells[i, cell.CellFuelT].Value == null) ? "" : execPage.Cells[i, cell.CellFuelT].Value.ToString();
-                //        var co = (execPage.Cells[i, cell.CellCountF].Value == null) ? "" : execPage.Cells[i, cell.CellCountF].Value.ToString();
-                //        var n = (execPage.Cells[i, cell.CellCompany].Value == null) ? "" : execPage.Cells[i, cell.CellCompany].Value.ToString();
-
-                //        outArr.Add(new Out(c, s, a, d, o, t, co, n));
-                //    }
-                //    execPac.Dispose();
-                //}
-                //Создаём приложение.
-                Excel.Application ObjExcel = new Excel.Application();
-                //Открываем книгу.                                                                                                                                                       
-                Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(fileName.Text, 0, false, 5, "", "", false, Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                //Выбираем таблицу(лист).
-                Excel.Worksheet execPage;
-                execPage = (Excel.Worksheet)ObjWorkBook.Sheets[cell.ListExl];
-
-                //pgBar.Maximum = cell.LastRow;
-                for (int i = cell.FirstRow; i <= cell.LastRow; i++)
+                try
                 {
-                    //pgBar.Value = i;
-                    //Выбираем область таблицы. (в нашем случае просто ячейку)
-                    var c = (execPage.Cells[i, cell.CellCard].Value == null) ? "" : execPage.Cells[i, cell.CellCard].Value.ToString();
-                    var s = (execPage.Cells[i, cell.CellAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAzs].Value.ToString();
-                    var a = (execPage.Cells[i, cell.CellAdressAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAdressAzs].Value.ToString();
-                    var d = (execPage.Cells[i, cell.CellDateFill].Value == null) ? "" : execPage.Cells[i, cell.CellDateFill].Value.ToString();
-                    var o = (execPage.Cells[i, cell.CellOperation].Value == null) ? "" : execPage.Cells[i, cell.CellOperation].Value.ToString();
-                    var t = (execPage.Cells[i, cell.CellFuelT].Value == null) ? "" : execPage.Cells[i, cell.CellFuelT].Value.ToString();
-                    var co = (execPage.Cells[i, cell.CellCountF].Value == null) ? "" : execPage.Cells[i, cell.CellCountF].Value.ToString();
-                    var n = (execPage.Cells[i, cell.CellCompany].Value == null) ? "" : execPage.Cells[i, cell.CellCompany].Value.ToString();
-                    outArr.Add(new Out(c, s, a, d, o, t, co, n));
-                }
-                //Удаляем приложение (выходим из экселя) - ато будет висеть в процессах!
-                ObjExcel.Quit();
+                    //если новый офис
+                    using (ExcelPackage execPac = new ExcelPackage(new FileInfo(fileName.Text)))
+                    {
+                        ExcelWorksheet execPage = execPac.Workbook.Worksheets[cell.ListExl];
+                        pgBar.Maximum = cell.LastRow;
+                        for (int i = cell.FirstRow; i <= cell.LastRow; i++)
+                        {
+                            pgBar.Value = i;
+                            var c = (execPage.Cells[i, cell.CellCard].Value == null) ? "" : execPage.Cells[i, cell.CellCard].Value.ToString();
+                            var s = (execPage.Cells[i, cell.CellAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAzs].Value.ToString();
+                            var a = (execPage.Cells[i, cell.CellAdressAzs].Value == null) ? "" : execPage.Cells[i, cell.CellAdressAzs].Value.ToString();
+                            var d = (execPage.Cells[i, cell.CellDateFill].Value == null) ? "" : execPage.Cells[i, cell.CellDateFill].Value.ToString();
+                            var o = (execPage.Cells[i, cell.CellOperation].Value == null) ? "" : execPage.Cells[i, cell.CellOperation].Value.ToString();
+                            var t = (execPage.Cells[i, cell.CellFuelT].Value == null) ? "" : execPage.Cells[i, cell.CellFuelT].Value.ToString();
+                            var co = (execPage.Cells[i, cell.CellCountF].Value == null) ? "" : execPage.Cells[i, cell.CellCountF].Value.ToString();
+                            var n = (execPage.Cells[i, cell.CellCompany].Value == null) ? "" : execPage.Cells[i, cell.CellCompany].Value.ToString();
 
+                            outArr.Add(new Out(c, s, a, d, o, t, co, n));
+                        }
+                        execPac.Dispose();
+                    }
+                }
+                catch (Exception)
+                {
+                    //если старый офис
+
+                    //Создаём приложение.
+                    Excel.Application ObjExcel = new Excel.Application();
+                    //Открываем книгу.                                                                                                                                                       
+                    Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(fileName.Text, 0, false, 5, "", "", false, Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                    //Выбираем таблицу(лист).
+                    Excel.Worksheet exePage;
+                    exePage = (Excel.Worksheet)ObjWorkBook.Sheets[cell.ListExl];
+
+                    //pgBar.Maximum = cell.LastRow;
+                    for (int i = cell.FirstRow; i <= cell.LastRow; i++)
+                    {
+                        //pgBar.Value = i;
+                        //Выбираем область таблицы. (в нашем случае просто ячейку)
+                        var c = (exePage.Cells[i, cell.CellCard].Value == null) ? "" : exePage.Cells[i, cell.CellCard].Value.ToString();
+                        var s = (exePage.Cells[i, cell.CellAzs].Value == null) ? "" : exePage.Cells[i, cell.CellAzs].Value.ToString();
+                        var a = (exePage.Cells[i, cell.CellAdressAzs].Value == null) ? "" : exePage.Cells[i, cell.CellAdressAzs].Value.ToString();
+                        var d = (exePage.Cells[i, cell.CellDateFill].Value == null) ? "" : exePage.Cells[i, cell.CellDateFill].Value.ToString();
+                        var o = (exePage.Cells[i, cell.CellOperation].Value == null) ? "" : exePage.Cells[i, cell.CellOperation].Value.ToString();
+                        var t = (exePage.Cells[i, cell.CellFuelT].Value == null) ? "" : exePage.Cells[i, cell.CellFuelT].Value.ToString();
+                        var co = (exePage.Cells[i, cell.CellCountF].Value == null) ? "" : exePage.Cells[i, cell.CellCountF].Value.ToString();
+                        var n = (exePage.Cells[i, cell.CellCompany].Value == null) ? "" : exePage.Cells[i, cell.CellCompany].Value.ToString();
+                        outArr.Add(new Out(c, s, a, d, o, t, co, n));
+                    }
+                    //Удаляем приложение (выходим из экселя) - ато будет висеть в процессах!
+                    ObjExcel.Quit();
+                }
             }
             else {
                 System.Windows.MessageBox.Show("Не выбран файл для парсинга данных!", "ВНИАМЕНИЕ !", MessageBoxButton.OK);
@@ -287,13 +323,14 @@ namespace Fuel
             var oneC = outArr.GroupBy(f => f.NameCompany).Distinct();
             //pgBar.Maximum = oneC.Count();
             //int pgC = 0;
+            oneC = oneC.Where(s => s.Key != "");
             foreach (var row in oneC)
             {
                 double cai80 = 0, cai92 = 0, cai95 = 0, cdt = 0, cgaz = 0;
                 double ai80 = 0, ai92 = 0, ai95 = 0, dt = 0, gaz = 0;
-                var s = (radioBash.IsChecked.Value) ? company.Where(c => c.NameBash.ToLower() == row.Key.ToLower()).Select(k => k)
-                    : (radioLuk.IsChecked.Value) ? company.Where(c => c.NameLuk.ToLower() == row.Key.ToLower()).Select(k => k)
-                    : company.Where(c => c.Name.ToLower() == row.Key.ToLower()).Select(k => k);
+                var s = (radioBash.IsChecked.Value) ? company.Where(c => RemoveSpaces(c.NameBash.ToLower()) == RemoveSpaces(row.Key.ToLower())).Select(k => k)
+                    : (radioLuk.IsChecked.Value) ? company.Where(c => RemoveSpaces(c.NameLuk.ToLower()) == RemoveSpaces(row.Key.ToLower())).Select(k => k)
+                    : company.Where(c => RemoveSpaces(c.Name.ToLower()) == RemoveSpaces(row.Key.ToLower())).Select(k => k);
 
                 if (s.Count() == 1)
                 {
@@ -306,8 +343,8 @@ namespace Fuel
                     {
                         CompanyTab.IsSelected = true;
                         searchText.Text = row.Key;
-                        Directory.Delete(outDir);
-                        break;
+                        //Directory.Delete(outDir);
+                        return;
                     }
                 }
                 else {
@@ -331,37 +368,41 @@ namespace Fuel
                         }
                     }
                 }
+                char[] charInvalidFileChars = Path.GetInvalidFileNameChars();
 
+                foreach (char charInvalid in charInvalidFileChars)
+                {
+                    nameCompFile = nameCompFile.Replace(charInvalid, ' ');
+                }
                 ExcelPackage compPack = new ExcelPackage(new FileInfo(outDir + DIR_SEPARATOR + row.Key + " (" + nameCompFile + ").xlsx"));
                 var str = outArr.Where(r => r.NameCompany == row.Key);
 
                 ExcelWorksheet compPage = compPack.Workbook.Worksheets.Add("Отчет по картам");
 
-                compPage.PrinterSettings.Orientation = eOrientation.Landscape;
+                compPage.PrinterSettings.Orientation = eOrientation.Portrait;
                 compPage.PrinterSettings.PaperSize = ePaperSize.A4;
-                compPage.PrinterSettings.LeftMargin = 0.7m;
-                compPage.PrinterSettings.RightMargin = totalPage.PrinterSettings.TopMargin = totalPage.PrinterSettings.BottomMargin = 0.5m;
-                compPage.Column(1).Width = 15;
-                compPage.Column(2).Width = 30;
-                compPage.Column(3).Width = 21;
-                compPage.Column(4).Width = 20;
-                compPage.Column(5).Width = 15;
-                compPage.Column(6).Width = 15;
-                compPage.Column(7).Width = 15;
+                compPage.PrinterSettings.LeftMargin = 0.5m;
+                compPage.PrinterSettings.RightMargin = totalPage.PrinterSettings.TopMargin = totalPage.PrinterSettings.BottomMargin = 0.2m;
+                compPage.Column(1).Width = 10;
+                compPage.Column(2).Width = 22;
+                compPage.Column(3).Width = 15;
+                compPage.Column(4).Width = 17;
+                compPage.Column(5).Width = 10;
+                compPage.Column(6).Width = 12;
+                compPage.Column(7).Width = 10;
 
 
 
-                compPage.Cells[1, 1].Value = @"ПОСТАВЩИК/ПРОДАВЕЦ:";
-                compPage.Cells[1, 1, 1, 3].Merge = true;
-                compPage.Cells[1, 5].Value = @"ЗАКАЗЧИК/ПОКУПАТЕЛЬ:";
-                compPage.Cells[1, 5, 1, 7].Merge = true;
+                compPage.Cells[1, 2].Value = @"ПОСТАВЩИК/ПРОДАВЕЦ:";
+                compPage.Cells[1, 2, 1, 3].Merge = true;
+                compPage.Cells[1, 4].Value = @"ЗАКАЗЧИК/ПОКУПАТЕЛЬ:";
+                compPage.Cells[1, 4, 1, 7].Merge = true;
 
-                compPage.Cells[2, 1].Value = @"ООО Регионсбыт";
-                compPage.Cells[2, 1, 2, 3].Merge = true;
+                compPage.Cells[2, 2].Value = @"ООО Регионсбыт";
+                compPage.Cells[2, 2, 2, 3].Merge = true;
 
-                compPage.Cells[2, 5].Value = s.ElementAt(0).FullName.ToString();//полное наименование компании                
-                compPage.Cells[2, 5, 2, 7].Merge = true;
-                compPage.Cells[2, 5, 2, 7].Style.WrapText = true;
+                compPage.Cells[2, 4].Value = s.ElementAt(0).FullName.ToString();//полное наименование компании                
+                compPage.Cells[2, 4, 2, 7].Merge = true;                
 
                 compPage.Cells[4, 1].Value = @"ОТЧЕТ ПО ТОПЛИВНЫМ КАРТАМ";
                 compPage.Cells[4, 1, 4, 7].Merge = true;
@@ -374,20 +415,30 @@ namespace Fuel
                 compPage.Cells[7, 4].Value = @"ДАТА";
                 compPage.Cells[7, 5].Value = @"ТИП ТОПЛИВА";
                 compPage.Cells[7, 6].Value = @"ВИД ОПЕРАЦИИ";
-                compPage.Cells[7, 7].Value = @"КОЛИЧЕСТВО ЗАПРАВЛЕННОГО ТОПЛИВА";
+                compPage.Cells[7, 7].Value = @"ЗАПР. ЛИТРОВ";
 
                 using (var nf = compPage.Cells[1, 1, 7, 7])
                 {
-                    nf.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    nf.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                    nf.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                    nf.Style.VerticalAlignment = ExcelVerticalAlignment.Top;
+                    nf.Style.WrapText = true;
                     nf.Style.Font.Bold = true;
                     nf.Style.WrapText = true;
                 }
+                compPage.Row(2).Height = 60;
+                compPage.Row(4).Style.HorizontalAlignment = compPage.Row(5).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                
                 using (var hb = compPage.Cells[7, 1, 7, 7])
                 {
+                    hb.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     var border = hb.Style.Border;
                     border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
                 }
+
+                compPage.Cells[6, 1].Value = @"Держатель";
+                compPage.Cells[6, 2].Value = row.Key;
+                compPage.Cells[6, 1, 6, 2].Style.Font.Size = 9;
+                compPage.Cells[6, 1, 6, 2].Style.Font.Bold = false;
 
                 var cardR = str.GroupBy(c => c.Card).Distinct();
                 int compLine = 8;
@@ -397,7 +448,7 @@ namespace Fuel
                     var crd = str.Where(ca => ca.Card == cr.Key);
 
                     compPage.Cells[compLine, 1].Value = cr.Key;
-
+                    
                     //переменный для каждой карты количество топлива
                     ai80 = 0; ai92 = 0; ai95 = 0; dt = 0; gaz = 0;
                     // собираем и формируем отчет по каждой отдельной карте
@@ -414,11 +465,15 @@ namespace Fuel
                         Match mrdt = rdt.Match(r.TypeFuel);
                         Regex rgaz = new Regex(@"газ", RegexOptions.IgnoreCase);
                         Match mrgaz = rgaz.Match(r.TypeFuel);
+                        Regex raz = new Regex(@"\[.+\]", RegexOptions.IgnoreCase); 
 
-                        compPage.Cells[compLine, 2].Value = r.AdressAzs;
-                        compPage.Cells[compLine, 2].Style.Font.Size = 9;
-                        compPage.Cells[compLine, 3].Value = r.Azs;
+                        compPage.Cells[compLine, 2].Value = r.AdressAzs;                        
+                        compPage.Cells[compLine, 2].Style.Font.Size = 8;
+                        compPage.Cells[compLine, 3].Value = (provider == "Башнефть") ?raz.Replace(r.Azs,""):r.Azs;
+                        compPage.Cells[compLine, 3].Style.Font.Size = 10;
                         compPage.Cells[compLine, 4].Value = r.DateFill;
+                        compPage.Cells[compLine, 4].Style.Font.Size = 10;
+
                         double total = (provider == "Башнефть") ? -Convert.ToDouble(r.CountFuel) : Convert.ToDouble(r.CountFuel);
                         if (mr80.Success)
                         {
@@ -445,21 +500,27 @@ namespace Fuel
                             compPage.Cells[compLine, 5].Value = "ГАЗ";
                             gaz += total;
                         }
+                        
                         compPage.Cells[compLine, 6].Value = r.Operation;
-                        compPage.Cells[compLine, 6].Style.Font.Size = 9;
+                        compPage.Cells[compLine, 6].Style.Font.Size = 9;                        
                         compPage.Cells[compLine, 7].Value = total;
-
+                        
                         using (var allR = compPage.Cells[compLine, 1, compLine, 7])
                         {
-                            allR.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                            allR.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                             allR.Style.VerticalAlignment = ExcelVerticalAlignment.Top;
                             allR.Style.WrapText = true;
                             allR.Style.Border.BorderAround(ExcelBorderStyle.Thin);
                             var border = allR.Style.Border;
                             border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
                         }
+                        compPage.Cells[compLine, 2].Style.HorizontalAlignment =
+                        compPage.Cells[compLine, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                        compPage.Cells[compLine, 1].Style.Font.Bold = true;
+
                         compLine++;
                     }
+                    
                     //конец по каждой отдельной карте
 
                     //формирование раздела итогов по каждой отдельной карте
@@ -482,9 +543,9 @@ namespace Fuel
                     compLine++;
 
                     compPage.Cells[compLine, 2].Value = @"в том числе:";
-                    compPage.Cells[compLine, 3].Value = @"АИ-80 :  " + ai80 + "л.";
-                    compPage.Cells[compLine, 4].Value = @"АИ-92 :  " + ai92 + "л.";
-                    compPage.Cells[compLine, 5].Value = @"АИ-95 :  " + ai95 + "л.";
+                    compPage.Cells[compLine, 3].Value = @"АИ80 :  " + ai80 + "л.";
+                    compPage.Cells[compLine, 4].Value = @"АИ92 :  " + ai92 + "л.";
+                    compPage.Cells[compLine, 5].Value = @"АИ95 :  " + ai95 + "л.";
                     compPage.Cells[compLine, 6].Value = @"ДТ :  " + dt + "л.";
                     compPage.Cells[compLine, 7].Value = @"ГАЗ :  " + gaz + "л.";
 
@@ -493,6 +554,7 @@ namespace Fuel
                         re.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                         re.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                         re.Style.Font.Bold = true;
+                        re.Style.Font.Size = 9;                        
                         //re.Style.Fill.PatternType = ExcelFillStyle.Solid;
                         //re.Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
                         var border = re.Style.Border;
@@ -552,6 +614,7 @@ namespace Fuel
                 compPage.Cells[compLine, 4, compLine, 5].Merge = true;
                 compPage.Cells[compLine, 1, compLine, 5].Style.Font.Bold = true;
 
+                //compPage.Cells[1, 1, compLine, 7].Style.Font.Name = "Times New Roman";
                 // конец итогов по компании
                 compPack.Save(); //сохранение файла по компании
                 compPack.Dispose(); //закрытие файла компании
@@ -598,6 +661,7 @@ namespace Fuel
                 var border = at.Style.Border;
                 border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
             }
+
 
             //сохранение и закрытие файла со сводным отчетом
             totalPack.Save();
