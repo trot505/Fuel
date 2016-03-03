@@ -206,12 +206,15 @@ namespace Fuel
             cell.FolderPatch = folderPatch.Text;
             cell.FolderMonth = folderMonth.SelectedIndex;
             cell.ListExl = Convert.ToInt32(listExl.Text);
-            
+
+            //очишаем спарсенный массив excel данных из файла поставщика
+            outArr.Clear();
+
         //this.Visibility = Visibility.Hidden;
         //pg.Visibility = Visibility.Visible;
         //pgText.Text = "СКАНИРОВАНИЕ ФАЙЛА ДЛЯ ФОРМИРОВАНИЯ ДАННЫХ \nВЫПОЛНЕНО НА:";
         //System.Threading.Thread.Sleep(5000);// пауза
-        string nameCompFile = "";
+            string nameCompFile = "";
             if (File.Exists(fileName.Text))
             {
                 try
@@ -288,6 +291,10 @@ namespace Fuel
             // создание файла Сводной таблицы по всем компаниям
             ExcelPackage totalPack = new ExcelPackage(new FileInfo(outD + DIR_SEPARATOR + "Общий отчет " + provider + ".xlsx"));
             ExcelWorksheet totalPage = totalPack.Workbook.Worksheets.Add("Сводная таблица");
+            
+            totalPage.Workbook.Properties.Title = "Отчет за " + cell.FolderMonth + " " + provider;
+            totalPage.Workbook.Properties.Author = "директор";
+            totalPage.Workbook.Properties.Company = "ООО Регионсбыт";
 
             totalPage.PrinterSettings.Orientation = eOrientation.Landscape;
             totalPage.PrinterSettings.PaperSize = ePaperSize.A4;
@@ -319,11 +326,12 @@ namespace Fuel
             }
 
             int aLine = 5;
-
+            
             var oneC = outArr.GroupBy(f => f.NameCompany).Distinct();
             //pgBar.Maximum = oneC.Count();
             //int pgC = 0;
-            oneC = oneC.Where(s => s.Key != "");
+            oneC = oneC.Where(s => s.Key.Trim().Length > 0).OrderBy(nf => nf.Key).ToList();
+            
             foreach (var row in oneC)
             {
                 double cai80 = 0, cai92 = 0, cai95 = 0, cdt = 0, cgaz = 0;
@@ -379,6 +387,10 @@ namespace Fuel
 
                 ExcelWorksheet compPage = compPack.Workbook.Worksheets.Add("Отчет по картам");
 
+                compPage.Workbook.Properties.Title = "Отчет за " + cell.FolderMonth + " " + provider;
+                compPage.Workbook.Properties.Author = "директор";
+                compPage.Workbook.Properties.Company = "ООО Регионсбыт";
+                
                 compPage.PrinterSettings.Orientation = eOrientation.Portrait;
                 compPage.PrinterSettings.PaperSize = ePaperSize.A4;
                 compPage.PrinterSettings.LeftMargin = 0.5m;
@@ -437,8 +449,10 @@ namespace Fuel
 
                 compPage.Cells[6, 1].Value = @"Держатель";
                 compPage.Cells[6, 2].Value = row.Key;
-                compPage.Cells[6, 1, 6, 2].Style.Font.Size = 9;
-                compPage.Cells[6, 1, 6, 2].Style.Font.Bold = false;
+                compPage.Cells[6, 5].Value = @"АЗС";
+                compPage.Cells[6, 6].Value = provider;
+                compPage.Cells[6, 1, 6, 7].Style.Font.Size = 9;
+                compPage.Cells[6, 1, 6, 7].Style.Font.Bold = false;
 
                 var cardR = str.GroupBy(c => c.Card).Distinct();
                 int compLine = 8;
@@ -448,7 +462,7 @@ namespace Fuel
                     var crd = str.Where(ca => ca.Card == cr.Key);
 
                     compPage.Cells[compLine, 1].Value = cr.Key;
-                    
+                    compPage.Cells[compLine, 1].Style.WrapText = true;
                     //переменный для каждой карты количество топлива
                     ai80 = 0; ai92 = 0; ai95 = 0; dt = 0; gaz = 0;
                     // собираем и формируем отчет по каждой отдельной карте
@@ -465,16 +479,18 @@ namespace Fuel
                         Match mrdt = rdt.Match(r.TypeFuel);
                         Regex rgaz = new Regex(@"газ", RegexOptions.IgnoreCase);
                         Match mrgaz = rgaz.Match(r.TypeFuel);
-                        Regex raz = new Regex(@"\[.+\]", RegexOptions.IgnoreCase); 
+                        Regex raz = new Regex(@"\[.+\]", RegexOptions.IgnoreCase);
+                        Regex ic = new Regex(@"\d", RegexOptions.IgnoreCase);
 
-                        compPage.Cells[compLine, 2].Value = r.AdressAzs;                        
+                        compPage.Cells[compLine, 2].Value = r.AdressAzs;
+                        compPage.Cells[compLine, 2].Style.WrapText = true;
                         compPage.Cells[compLine, 2].Style.Font.Size = 8;
                         compPage.Cells[compLine, 3].Value = (provider == "Башнефть") ?raz.Replace(r.Azs,""):r.Azs;
                         compPage.Cells[compLine, 3].Style.Font.Size = 10;
                         compPage.Cells[compLine, 4].Value = r.DateFill;
                         compPage.Cells[compLine, 4].Style.Font.Size = 10;
-
-                        double total = (provider == "Башнефть") ? -Convert.ToDouble(r.CountFuel) : Convert.ToDouble(r.CountFuel);
+                        
+                        double total = (provider == "Башнефть") ? -Convert.ToDouble(r.CountFuel) : (ic.IsMatch(r.CountFuel) ? Convert.ToDouble(r.CountFuel) : 0);
                         if (mr80.Success)
                         {
                             compPage.Cells[compLine, 5].Value = "АИ-80";
@@ -508,8 +524,7 @@ namespace Fuel
                         using (var allR = compPage.Cells[compLine, 1, compLine, 7])
                         {
                             allR.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                            allR.Style.VerticalAlignment = ExcelVerticalAlignment.Top;
-                            allR.Style.WrapText = true;
+                            allR.Style.VerticalAlignment = ExcelVerticalAlignment.Top;                            
                             allR.Style.Border.BorderAround(ExcelBorderStyle.Thin);
                             var border = allR.Style.Border;
                             border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
@@ -616,7 +631,8 @@ namespace Fuel
 
                 //compPage.Cells[1, 1, compLine, 7].Style.Font.Name = "Times New Roman";
                 // конец итогов по компании
-                compPack.Save(); //сохранение файла по компании
+                    
+                compPack.Save(); //сохранение файла по компании                
                 compPack.Dispose(); //закрытие файла компании
 
                 // формирование данных в сводном отчете

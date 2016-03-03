@@ -25,8 +25,8 @@
   },
   "Luk": {
     "CellAdressAzs": "10",
-    "CellAzs": "6",
-    "CellCard": "5",
+    "CellAzs": "5",
+    "CellCard": "3",
     "CellCompany": "4",
     "CellCountF": "12",
     "CellDateFill": "2",
@@ -35,7 +35,7 @@
     "FirstRow": "2",
     "FolderMonth": "1",
     "FolderPatch": "d:/ОТЧЕТЫ",
-    "LastRow": "1299",
+    "LastRow": "1481",
     "ListExl": "1"
   }
 }
