@@ -54,3 +54,9 @@ D:\VS\Fuel\Fuel\obj\Debug\exC.g.cs
 D:\VS\Fuel\Fuel\obj\Debug\exC.baml
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\exC.g.cs
 C:\Users\MoBat\Desktop\VS\Fuel\Fuel\obj\Debug\exC.baml
+D:\VS\Fuel\Fuel\bin\Debug\Spire.License.dll
+D:\VS\Fuel\Fuel\bin\Debug\Spire.Pdf.dll
+D:\VS\Fuel\Fuel\bin\Debug\Spire.XLS.dll
+D:\VS\Fuel\Fuel\bin\Debug\Microsoft.mshtml.dll
+D:\VS\Fuel\Fuel\bin\Debug\Spire.Pdf.xml
+D:\VS\Fuel\Fuel\bin\Debug\Spire.XLS.xml

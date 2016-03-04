@@ -35,6 +35,5 @@ namespace Fuel {
             NameBash = nb;
             NameLuk = nl;
         }
-
     }
 }

@@ -35,7 +35,6 @@ namespace Fuel
             TypeFuel = t;
             CountFuel = co;
             NameCompany = n;
-        }        
-
+        }       
     }
 }
