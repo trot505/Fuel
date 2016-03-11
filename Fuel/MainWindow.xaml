@@ -4,8 +4,19 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 xmlns:local="clr-namespace:Fuel"
+xmlns:my="clr-namespace:System.ComponentModel;assembly=System"
 mc:Ignorable="d"
 Title="Формы документов" Height="680" Width="920" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center" Closed="Window_Closed" Icon="{Binding Mode=OneWay, Source={StaticResource gas}}" ResizeMode="NoResize">
+    <Window.Resources>
+        <my:BackgroundWorker
+      x:Key="backgroundWoker"
+      WorkerReportsProgress="True"
+      WorkerSupportsCancellation="True"
+      DoWork="BackgroundWorker_DoWork"
+      ProgressChanged="BackgroundWorker_ProgressChanged"
+      RunWorkerCompleted="BackgroundWorker_RunWorkerCompleted">
+        </my:BackgroundWorker>
+    </Window.Resources>
     <Grid>
         <TabControl x:Name="tabControl" Height="632" Margin="10,10,10,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
             <TabControl.BorderBrush>
@@ -16,6 +27,7 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
             </TabControl.BorderBrush>
             <TabItem x:Name="parseTab" Header="Парсинг" Margin="0,0,0,0" FontSize="16">
                 <Grid Margin="0">
+                    <ProgressBar x:Name="pgb" Height="51" Margin="618,290,50,235"/>
                     <GroupBox Header="НОМЕРА СТОЛБЦОВ" Margin="313,25,314,130" Padding="10">
                         <StackPanel HorizontalAlignment="Left" Height="449" VerticalAlignment="Top" Width="256" Margin="0,10,0,0">
                             <StackPanel HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="220" Margin="0,0,0,0" Orientation="Horizontal">
@@ -104,7 +116,6 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                         <Path Width="30" Height="30" Stretch="Fill" Fill="#FF85E459" Data="{StaticResource play}" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF85E459" />
                     </Button>
                     <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="588,79,0,0" TextWrapping="Wrap" Text="ПРОВЕРИТЬ ЗАПОЛНЕНИЕ ВСЕХ ПОЛЕЙ И ВЫБРАНА ЛИ ПАПКА СОХРАНЕНИЯ И ФАЙЛ ПОСТУПИВШИЙ ОТ ПОСТОВЩИКА А ТАК ЖЕ ПРОВЕРИТЬ ВЫБРАН ЛИ ПОСТАВЩИК" VerticalAlignment="Top" Width="284" Height="178" FontSize="18.667" FontWeight="Bold"/>
-                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="659,315,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="CompanyTab" Header="Фирмы" Margin="12,0,-36,0" FontSize="16">
@@ -140,6 +151,7 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                     </StackPanel>
                 </Grid>
             </TabItem>
+
         </TabControl>
 
         <Grid Name="pg" Margin="10,0,10,10" Background="White" Visibility="Hidden">
