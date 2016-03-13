@@ -60,3 +60,6 @@ D:\VS\Fuel\Fuel\bin\Debug\Spire.XLS.dll
 D:\VS\Fuel\Fuel\bin\Debug\Microsoft.mshtml.dll
 D:\VS\Fuel\Fuel\bin\Debug\Spire.Pdf.xml
 D:\VS\Fuel\Fuel\bin\Debug\Spire.XLS.xml
+C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\Microsoft.mshtml.dll
+C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\Spire.Pdf.xml
+C:\Users\MoBat\Desktop\VS\Fuel\Fuel\bin\Debug\Spire.XLS.xml
