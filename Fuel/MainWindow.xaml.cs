@@ -893,7 +893,7 @@ namespace Fuel
                 compPage.Cells[compLine, 4, compLine, 5].Merge = true;
                 compPage.Cells[compLine, 1, compLine, 5].Style.Font.Bold = true;
                 // конец итогов по компании
-
+                
                 //сохранение файла по компании                    
                 cp.Save();
                 cp.Dispose(); //закрытие файла компании
@@ -981,24 +981,63 @@ namespace Fuel
     i++)
                 {
                     Microsoft.Office.Interop.Excel.Worksheet sheet = sheets[i];
-                var w = (sheet.HPageBreaks.Count+1);
-                    string startRange = "A1";
-                    Microsoft.Office.Interop.Excel.Range endRange = sheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
-                Excel.Range range = sheet.get_Range(startRange, endRange);
-                Excel.Range l = sheet.HPageBreaks[1].Application.Selection;//
-                l.Copy();
+                //sheet.PageSetup.PrintGridlines = false;
+
+                Excel.Range r = (Excel.Range)sheet.HPageBreaks.Item[0];
+                //int rc = sheet.HPageBreaks[2].Location.Row;
+
+               // var b = new Bitmap(7937, 11225);
+
+
+                //for(int j = 1; j <= sheet.HPageBreaks.Count+1; j++)
+                //{
+                //    //rc += sheet.HPageBreaks[j].Location.Row;
+                //    int r = sheet.HPageBreaks[j].Location.Row;
+                //    int c = sheet.VPageBreaks[j].Location.Column;
+                //    string startRange = string.Empty;
+                //    string endRange = string.Empty;
+
+                //    if (j == 1)
+                //    {
+                //        startRange = "A1";                        
+                //    }
+                //    else
+                //    {
+                //        startRange = "A" + r;
+                //    }
+                //    endRange = "G" + rc;
+                //    //Excel.Range endRange = sheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
+                //    Excel.Range l = sheet.get_Range(startRange, endRange);
+                //    l.Rows.AutoFit();
+                //    l.Columns.AutoFit();
+                //    l.Copy();
+
+                //    System.Drawing.Image img = System.Windows.Forms.Clipboard.GetImage();
+
+
+                //    img.Save(fe + "_лист_" + j + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                //    System.Windows.Forms.Clipboard.Clear();
+
+                //}
+
+                //string startRange = "A1";
+                //Microsoft.Office.Interop.Excel.Range endRange = sheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
+                //Excel.Range range = sheet.get_Range(startRange, endRange);
+                ////Excel.Range l = sheet.HPageBreaks[1].Location.Row;//
+                ////l.Copy();
                 //range.Rows.AutoFit();
-                //    range.Columns.AutoFit();
-                //    range.Copy();
-                
-                System.Drawing.Image img = System.Windows.Forms.Clipboard.GetImage();
-                
+                //range.Columns.AutoFit();
+                //range.Copy();
 
-                    img.Save(fe + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                    System.Windows.Forms.Clipboard.Clear();
+                ////System.Drawing.Image img = System.Windows.Forms.Clipboard.GetImage();
+                //b = (Bitmap)System.Windows.Forms.Clipboard.GetImage();
+                //b.Save(fe + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                ////img.Save(fe + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                //System.Windows.Forms.Clipboard.Clear();
 
-                }
-            
+            }
+            wb.Save();
+            wb.Close();
         }
     }
 }
