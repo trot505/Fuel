@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fuel
 {
-    class Out
+    public class Out
     {
         //номер карты    
         public string Card { get; set; }

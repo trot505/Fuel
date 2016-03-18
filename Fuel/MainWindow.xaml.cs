@@ -1,5 +1,4 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Windows.Controls;
@@ -21,6 +20,10 @@ using System.Drawing;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 using System.Windows.Media.Imaging;
+using System.Diagnostics;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
+
 
 namespace Fuel
 {
@@ -210,13 +213,10 @@ namespace Fuel
         //парсинг файла отчета для формирования List Out (всех транзакций) 
         private void parseExcelReport()
         {
-            //очишаем спарсенный массив excel данных из файла поставщика
-            //Grid pg = (Grid)state;
-
-            pg.Visibility = Visibility.Visible;
             pgText.Text = "ФОРМИРОВАНИЕ МАССИВА ДАННЫХ \nИЗ ФАЙЛА ОБЩЕГО ОТЧЕТА";
             System.Windows.Forms.Application.DoEvents();
 
+            //очишаем спарсенный массив excel данных из файла поставщика
             outArr.Clear();
             if (File.Exists(fileName.Text))
             {
@@ -240,7 +240,7 @@ namespace Fuel
 
                             outArr.Add(new Out(c, s, a, d, o, t, co, n));
 
-                            pgBar.Value = ((i * 100) / cell.LastRow);
+                            pgBar.Value = (i * 100) / cell.LastRow;
                             System.Windows.Forms.Application.DoEvents();
                         }
                         execPac.Dispose();
@@ -257,12 +257,9 @@ namespace Fuel
                     //Выбираем таблицу(лист).
                     Excel.Worksheet exePage;
                     exePage = (Excel.Worksheet)ObjWorkBook.Sheets[cell.ListExl];
-
-                    //pgBar.Maximum = cell.LastRow;
+                    
                     for (int i = cell.FirstRow; i <= cell.LastRow; i++)
                     {
-                        //pgBar.Value = i;
-
                         //Выбираем область таблицы. (в нашем случае просто ячейку)
                         var c = (exePage.Cells[i, cell.CellCard].Value == null) ? "" : exePage.Cells[i, cell.CellCard].Value.ToString();
                         var s = (exePage.Cells[i, cell.CellAzs].Value == null) ? "" : exePage.Cells[i, cell.CellAzs].Value.ToString();
@@ -275,7 +272,7 @@ namespace Fuel
 
                         outArr.Add(new Out(c, s, a, d, o, t, co, n));
 
-                        pgBar.Value = ((i * 100) / cell.LastRow);
+                        pgBar.Value = (i * 100) / cell.LastRow;
                         System.Windows.Forms.Application.DoEvents();
                     }
                     //Удаляем приложение (выходим из экселя) - ато будет висеть в процессах!
@@ -285,9 +282,7 @@ namespace Fuel
             else {
                 System.Windows.MessageBox.Show("Не выбран файл для парсинга данных!", "ВНИАМЕНИЕ !", MessageBoxButton.OK);
                 return;
-            }
-            //pg.Visibility = Visibility.Hidden;
-            //pgText.Text = string.Empty;
+            }            
             pgBar.Value = 0;
             System.Windows.Forms.Application.DoEvents();
         }
@@ -296,33 +291,24 @@ namespace Fuel
 
         private void parseBtn_Click(object sender, RoutedEventArgs e)
         {
+            pg.Visibility = Visibility.Visible;
+            System.Windows.Forms.Application.DoEvents();
+
             //внесение изменений в массив опций для парсинга файлов
-
             cellLukBash();
+
             //запускаем парсинг файла отчета
-
-
-            //Thread t = new Thread(parseExcelReport);
-            //t.IsBackground = true;
-            //    t.Start();
             parseExcelReport();
 
-            //if(th.st)
-
-            //this.Visibility = Visibility.Hidden;
-            //pg.Visibility = Visibility.Visible;
-            //pgText.Text = "СКАНИРОВАНИЕ ФАЙЛА ДЛЯ ФОРМИРОВАНИЯ ДАННЫХ \nВЫПОЛНЕНО НА:";
-            //System.Threading.Thread.Sleep(5000);// пауза
-
-            //pgText.Text = "ФОРМИРОВАНИЕ ФАЙЛОВ ОТЧЕТА \nВЫПОЛНЕНО НА:";
-            //pgBar.Value = 0;
-
+            // запуск формирования отчетов
             creationRepeatAll();
 
             System.Windows.MessageBox.Show("Формирование файлов отчета зваершено!", "ИНФОРМАЦИЯ", MessageBoxButton.OK);
-            //pg.Visibility = Visibility.Hidden;
-            //pgBar.Value = 0;
-            //this.Visibility = Visibility.Visible;
+            pg.Visibility = Visibility.Hidden;
+            pgText.Text = string.Empty;
+            pgTName.Text = string.Empty;
+            pgBar.Value = 0;
+            System.Windows.Forms.Application.DoEvents();
         }
 
 
@@ -374,6 +360,9 @@ namespace Fuel
         // парсинго компаний
         private void parseComp_Click(object sender, RoutedEventArgs e)
         {
+            pg.Visibility = Visibility.Visible;
+            pgText.Text = "ОБРАБОТКА ФАЙЛА КОМПАНИЙ";
+            System.Windows.Forms.Application.DoEvents();
             exC pf = new exC();
             if (exc != null)
             {
@@ -387,10 +376,6 @@ namespace Fuel
             }
             if (pf.ShowDialog() == true)
             {
-                //pg.Visibility = Visibility.Visible;
-                //pgText.Text = @"ЗАГРУЗКА ДАННЫХ ПО КОМПАНИЯМ";
-                //pgBar.Value = 0;
-
                 exc.BriefName = Convert.ToInt32(pf.briefName.Text);
                 exc.FullName = Convert.ToInt32(pf.fullName.Text);
                 exc.BashName = Convert.ToInt32(pf.bashName.Text);
@@ -404,16 +389,17 @@ namespace Fuel
                     using (ExcelPackage exlPac = new ExcelPackage(new FileInfo(pf.fileC.Text)))
                     {
                         ExcelWorksheet exlPage = exlPac.Workbook.Worksheets[exc.ListPage];
-                        //pgBar.Maximum = exc.CellsLast;
+                        
                         company.Clear();
                         for (int i = exc.RangeFirst; i <= exc.RangeLast; i++)
                         {
-                            //pgBar.Value = i;
                             var n = (exlPage.Cells[i, exc.BriefName].Value == null) ? "" : exlPage.Cells[i, exc.BriefName].Value.ToString();
                             var fn = (exlPage.Cells[i, exc.FullName].Value == null) ? "" : exlPage.Cells[i, exc.FullName].Value.ToString();
                             var bn = (exlPage.Cells[i, exc.BashName].Value == null) ? "" : exlPage.Cells[i, exc.BashName].Value.ToString();
                             var ln = (exlPage.Cells[i, exc.LukName].Value == null) ? "" : exlPage.Cells[i, exc.LukName].Value.ToString();
                             company.Add(new Company(n, fn, bn, ln));
+                            pgBar.Value = (i * 100) / exc.RangeLast;
+                            System.Windows.Forms.Application.DoEvents();
                         }
                         exlPac.Dispose();
                     }
@@ -429,25 +415,26 @@ namespace Fuel
                     //Выбираем таблицу(лист).
                     Excel.Worksheet exlcPage;
                     exlcPage = (Excel.Worksheet)ObjWorkBook.Sheets[exc.ListPage];
-
-                    //pgBar.Maximum = cell.LastRow;
+                    
                     company.Clear();
                     for (int i = exc.RangeFirst; i <= exc.RangeLast; i++)
                     {
-                        //pgBar.Value = i;
                         var n = (exlcPage.Cells[i, exc.BriefName].Value == null) ? "" : exlcPage.Cells[i, exc.BriefName].Value.ToString();
                         var fn = (exlcPage.Cells[i, exc.FullName].Value == null) ? "" : exlcPage.Cells[i, exc.FullName].Value.ToString();
                         var bn = (exlcPage.Cells[i, exc.BashName].Value == null) ? "" : exlcPage.Cells[i, exc.BashName].Value.ToString();
                         var ln = (exlcPage.Cells[i, exc.LukName].Value == null) ? "" : exlcPage.Cells[i, exc.LukName].Value.ToString();
                         company.Add(new Company(n, fn, bn, ln));
+                        pgBar.Value = (i * 100) / exc.RangeLast;
+                        System.Windows.Forms.Application.DoEvents();
                     }
                     //Удаляем приложение (выходим из экселя) - ато будет висеть в процессах!
                     ObjExcel.Quit();
                 }
                 System.Windows.MessageBox.Show("Добавление данных по организациям \nзавершено успешно!", "ИНФОРМАЦИЯ.", MessageBoxButton.OK);
-                // pg.Visibility = Visibility.Hidden;
-                // pgText.Text = "";
-                // pgBar.Value = 0;
+                pg.Visibility = Visibility.Hidden;
+                pgText.Text = "";
+                pgBar.Value = 0;
+                System.Windows.Forms.Application.DoEvents();
             }
             else
             {
@@ -480,9 +467,8 @@ namespace Fuel
         // формирование данных в файлы по каждой компании и формирование общего отчета
         private void creationRepeatAll()
         {
-            //pg.Visibility = Visibility.Visible;
-            pgText.Text = "ФОРМИРОВАНИЕ ФАЙЛОВ ОТЧЕТА \nПО КАЖДОЙ КОМПАНИИ";
-            //pgBar.Value = 0;
+            
+            pgText.Text = "ФОРМИРОВАНИЕ ФАЙЛОВ ОТЧЕТА \nПО КАЖДОЙ КОМПАНИИ";            
             System.Windows.Forms.Application.DoEvents();
 
             OfficeOpenXml.Drawing.ExcelPicture img = null;
@@ -501,7 +487,7 @@ namespace Fuel
 
 
             tws.Workbook.Properties.Title = "Отчет за " + cell.FolderMonth + " " + provider;
-            tws.Workbook.Properties.Author = "директор";
+            tws.Workbook.Properties.Author = "Директор";
             tws.Workbook.Properties.Company = "ООО Регионсбыт";
 
             tws.PrinterSettings.Orientation = eOrientation.Portrait;
@@ -543,12 +529,37 @@ namespace Fuel
             var oneC = outArr.GroupBy(f => f.NameCompany).Distinct();
             oneC = oneC.Where(s => s.Key.Trim().Length > 0).OrderBy(nf => nf.Key).ToList();
 
+            var docPDF = new Document();
+            docPDF.Info.Title = "Отчет за " + cell.FolderMonth + " " + provider;
+            docPDF.Info.Subject = "Директор";
+            docPDF.Info.Author = "ООО Регионсбыт";
+            var style = docPDF.Styles["Normal"];
+            style.Font.Name = "Calibri";
+            style.Font.Size = 11;
+            //style.Font.Bold = true;
+            style.Font.Color = Colors.Black;
+            //Получает или задает значение, указывающее, является ли разрыв страницы вставляется перед абзацем.
+            style.ParagraphFormat.PageBreakBefore = true;
+            //Возвращает или задает пространство, включить после абзаца.
+            style.ParagraphFormat.SpaceAfter = 3;
+            // Set KeepWithNext for all headings to prevent headings from appearing all alone
+            // at the bottom of a page. The other headings inherit this from Heading1.
+            style.ParagraphFormat.KeepWithNext = true;
+
+
+            var section = docPDF.AddSection();
+            //section.PageSetup.OddAndEvenPagesHeaderFooter = true;
+            section.PageSetup.StartingNumber = 1;
+            
+
+            //var paragraph = document.LastSection.AddParagraph("Table Overview", "Heading1");
+            //paragraph.AddBookmark("Tables");  
+
+
             int i = 0;
             foreach (var row in oneC)
             {
-                i++;
-                pgBar.Value = ((i * 100) / row.Count());
-                System.Windows.Forms.Application.DoEvents();
+                              
                 double cai80 = 0, cai92 = 0, cai95 = 0, cdt = 0, cgaz = 0, cdef = 0;
                 double ai80 = 0, ai92 = 0, ai95 = 0, dt = 0, gaz = 0, def = 0;
                 var s = (radioBash.IsChecked.Value) ? company.Where(c => RemoveSpaces(c.NameBash.ToLower()) == RemoveSpaces(row.Key.ToLower())).Select(k => k)
@@ -597,6 +608,10 @@ namespace Fuel
                 {
                     nameCompFile = nameCompFile.Replace(charInvalid, ' ');
                 }
+                pgTName.Text = nameCompFile;
+                System.Windows.Forms.Application.DoEvents();
+
+
                 string fOutOne = outDir + DIR_SEPARATOR + row.Key + " (" + nameCompFile.Replace(".","");
                 ExcelPackage cp = new ExcelPackage(new FileInfo(fOutOne + ").xlsx"));
                 var str = outArr.Where(r => r.NameCompany == row.Key);
@@ -713,7 +728,6 @@ namespace Fuel
                     // собираем и формируем отчет по каждой отдельной карте
                     foreach (var r in crd)
                     {
-
                         Regex r80 = new Regex(@"80", RegexOptions.IgnoreCase);
                         Match mr80 = r80.Match(r.TypeFuel);
                         Regex r92 = new Regex(@"92", RegexOptions.IgnoreCase);
@@ -730,36 +744,36 @@ namespace Fuel
                         compPage.Cells[compLine, 2].Value = r.AdressAzs;
                         compPage.Cells[compLine, 2].Style.WrapText = true;
                         compPage.Cells[compLine, 2].Style.Font.Size = 8;
-                        compPage.Cells[compLine, 3].Value = (provider == "Башнефть") ? raz.Replace(r.Azs, "") : r.Azs;
+                        compPage.Cells[compLine, 3].Value = r.Azs = (provider == "Башнефть") ? raz.Replace(r.Azs, "") : r.Azs;
                         compPage.Cells[compLine, 3].Style.Font.Size = 10;
                         compPage.Cells[compLine, 4].Value = r.DateFill;
                         compPage.Cells[compLine, 4].Style.Font.Size = 10;
 
                         double total = (provider == "Башнефть") ? -Convert.ToDouble(r.CountFuel) : (ic.IsMatch(r.CountFuel) ? Convert.ToDouble(r.CountFuel) : 0);
-
+                        r.CountFuel = total.ToString();
                         if (mr80.Success)
                         {
-                            compPage.Cells[compLine, 5].Value = "АИ-80";
+                            compPage.Cells[compLine, 5].Value = r.TypeFuel = "АИ-80";                            
                             ai80 += total;
                         }
                         if (mr92.Success)
                         {
-                            compPage.Cells[compLine, 5].Value = "АИ-92";
+                            compPage.Cells[compLine, 5].Value = r.TypeFuel = "АИ-92";
                             ai92 += total;
                         }
                         if (mr95.Success)
                         {
-                            compPage.Cells[compLine, 5].Value = "АИ-95";
+                            compPage.Cells[compLine, 5].Value = r.TypeFuel = "АИ-95";
                             ai95 += total;
                         }
                         if (mrdt.Success)
                         {
-                            compPage.Cells[compLine, 5].Value = "ДТ";
+                            compPage.Cells[compLine, 5].Value = r.TypeFuel = "ДТ";
                             dt += total;
                         }
                         if (mrgaz.Success)
                         {
-                            compPage.Cells[compLine, 5].Value = "ГАЗ";
+                            compPage.Cells[compLine, 5].Value = r.TypeFuel = "ГАЗ";
                             gaz += total;
                         }
 
@@ -793,8 +807,13 @@ namespace Fuel
                             compPage.Cells[compLine, 1, compLine, 7].Style.WrapText = true;
                             def += total;
                         }
+
+                        Tables.DefineTables(docPDF, r);
+                        
                         compLine++;
                     }
+
+                   
 
                     //конец по каждой отдельной карте
 
@@ -899,7 +918,7 @@ namespace Fuel
                 cp.Dispose(); //закрытие файла компании
 
                 //(fOutOne + ").xlsx", fOutOne + ").pdf");
-                jpgco(fOutOne + ")");
+                
                 using (ExcelPackage cpr = new ExcelPackage(new FileInfo(fOutOne + ").xlsx")))
                 {
 
@@ -934,8 +953,25 @@ namespace Fuel
                 }
                 tws.Cells[aLine, 1, aLine, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 
+                i++;
+                pgBar.Value = (i * 100) / row.Count();
+                System.Windows.Forms.Application.DoEvents();
                 aLine++;
+
+                MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(docPDF, "MigraDoc.mdddl");
+
+                var renderer = new PdfDocumentRenderer(true);
+                renderer.Document = docPDF;
+
+                renderer.RenderDocument();
+                renderer.PdfDocument.Save(fOutOne + ").pdf");
+                
+                renderer.PdfDocument.Close();
+                GC.Collect();
+
             }
+
+            
 
             tws.Cells[aLine, 2].Value = @"ОБЩИЕ ИТОГИ :";
             tws.Cells[aLine, 3].Formula = string.Format("SUM({0}:{1})", "C5", "C" + (aLine - 1));
@@ -959,85 +995,11 @@ namespace Fuel
 
             //сохранение и закрытие файла со сводным отчетом
             tw.Save();
-            tw.Dispose();
-            pg.Visibility = Visibility.Hidden;
-            pgText.Text = string.Empty;
-            pgBar.Value = 0;
-            System.Windows.Forms.Application.DoEvents();
-
+            tw.Dispose();      
 
         }
-
-        private void jpgco(string fe)
-        {
-            string returnMsg = String.Empty;
-            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook wb = null;
-            
-                wb = oExcel.Workbooks.Open(fe +".xlsx", true, true, Type.Missing, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", false, false, 0, false, true, 0);
-                Microsoft.Office.Interop.Excel.Sheets sheets = wb.Worksheets as Microsoft.Office.Interop.Excel.Sheets;
-                for (int i = 1;
-    i <= sheets.Count;
-    i++)
-                {
-                    Microsoft.Office.Interop.Excel.Worksheet sheet = sheets[i];
-                //sheet.PageSetup.PrintGridlines = false;
-
-                Excel.Range r = (Excel.Range)sheet.HPageBreaks.Item[0];
-                //int rc = sheet.HPageBreaks[2].Location.Row;
-
-               // var b = new Bitmap(7937, 11225);
-
-
-                //for(int j = 1; j <= sheet.HPageBreaks.Count+1; j++)
-                //{
-                //    //rc += sheet.HPageBreaks[j].Location.Row;
-                //    int r = sheet.HPageBreaks[j].Location.Row;
-                //    int c = sheet.VPageBreaks[j].Location.Column;
-                //    string startRange = string.Empty;
-                //    string endRange = string.Empty;
-
-                //    if (j == 1)
-                //    {
-                //        startRange = "A1";                        
-                //    }
-                //    else
-                //    {
-                //        startRange = "A" + r;
-                //    }
-                //    endRange = "G" + rc;
-                //    //Excel.Range endRange = sheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
-                //    Excel.Range l = sheet.get_Range(startRange, endRange);
-                //    l.Rows.AutoFit();
-                //    l.Columns.AutoFit();
-                //    l.Copy();
-
-                //    System.Drawing.Image img = System.Windows.Forms.Clipboard.GetImage();
-
-
-                //    img.Save(fe + "_лист_" + j + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                //    System.Windows.Forms.Clipboard.Clear();
-
-                //}
-
-                //string startRange = "A1";
-                //Microsoft.Office.Interop.Excel.Range endRange = sheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
-                //Excel.Range range = sheet.get_Range(startRange, endRange);
-                ////Excel.Range l = sheet.HPageBreaks[1].Location.Row;//
-                ////l.Copy();
-                //range.Rows.AutoFit();
-                //range.Columns.AutoFit();
-                //range.Copy();
-
-                ////System.Drawing.Image img = System.Windows.Forms.Clipboard.GetImage();
-                //b = (Bitmap)System.Windows.Forms.Clipboard.GetImage();
-                //b.Save(fe + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                ////img.Save(fe + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                //System.Windows.Forms.Clipboard.Clear();
-
-            }
-            wb.Save();
-            wb.Close();
-        }
+        
+     
+     
     }
 }

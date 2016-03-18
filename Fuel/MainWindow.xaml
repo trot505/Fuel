@@ -143,7 +143,8 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
         </TabControl>
 
         <Grid Name="pg" Margin="10,0" Background="White" Height="652" VerticalAlignment="Top" Visibility="Hidden">
-            <TextBlock Name="pgText" Margin="0,106,131,0" Height="102" VerticalAlignment="Top" HorizontalAlignment="Right" Width="632" FontWeight="Bold" TextAlignment="Center" FontSize="18.667"/>
+            <TextBlock Name="pgText" Margin="0,70,131,0" Height="100" VerticalAlignment="Top" HorizontalAlignment="Right" Width="632" FontWeight="Bold" TextAlignment="Center" FontSize="18.667"/>
+            <TextBlock Name="pgTName" Margin="0,190,131,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Width="632" FontWeight="Bold" TextAlignment="Center" FontSize="18.667"/>
             <ProgressBar x:Name="pgBar" Margin="131,232" VerticalAlignment="Center" Height="30"/>
         </Grid>
     </Grid>
