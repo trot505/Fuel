@@ -117,11 +117,18 @@
   {
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
+      Format
+      {
+        Font
+        {
+          Bold = true
+        }
+        Alignment = Center
+      }
+      TopPadding = 20
       Borders
       {
-        Visible = true
+        Visible = false
       }
     ]
     {
@@ -129,842 +136,96 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
-        \row
-        {
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835018572
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, ул.Салютовская, 81
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-1
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 01:10:26
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-80
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      50
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    \table
-    [
-      TopPadding = 3
-      BottomPadding = 3
-      Borders
-      {
-        Visible = true
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = 100
-        ]
-        \column
-        [
-          Width = 120
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 90
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 70
-        ]
-        \column
-        [
-          Width = 50
-        ]
-      }
-      \rows
-      {
-        \row
-        {
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835018569
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, ул.Салютовская, 81
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-1
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 01:29:48
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-80
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      50
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    \table
-    [
-      TopPadding = 3
-      BottomPadding = 3
-      Borders
-      {
-        Visible = true
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = 100
-        ]
-        \column
-        [
-          Width = 120
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 90
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 70
-        ]
-        \column
-        [
-          Width = 50
-        ]
-      }
-      \rows
-      {
-        \row
-        {
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835018565
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, ул.Салютовская, 81
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-1
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 01:38:07
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-80
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    \table
-    [
-      TopPadding = 3
-      BottomPadding = 3
-      Borders
-      {
-        Visible = true
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = 100
-        ]
-        \column
-        [
-          Width = 120
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 90
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 70
-        ]
-        \column
-        [
-          Width = 50
-        ]
-      }
-      \rows
-      {
-        \row
-        {
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835018566
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, ул.Салютовская, 81
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-1
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 01:47:35
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      50
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
         \row
         {
           \cell
           [
-            MergeRight = 6
+            MergeDown = 1
           ]
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      sdkjfhkjd
-                    }
-                  }
-                }
-              }
-            }
+            \image("log.png")
+          }
+          \cell
+          [
+            MergeRight = 2
+          ]
+          {
+            ПОСТАВЩИК/ПРОДАВЕЦ:
+          }
+          \cell
+          \cell
+          \cell
+          [
+            MergeRight = 2
+          ]
+          {
+            ЗАКАЗЧИК/ПОКУПАТЕЛЬ:
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            MergeRight = 2
+          ]
+          {
+            ООО "Регионсбыт"
+          }
+          \cell
+          \cell
+          \cell
+          [
+            MergeRight = 2
+          ]
+          {
+            ГКУЗ "3 РПБ МЗ УР"
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
+      Format
+      {
+        Font
+        {
+          Bold = true
+        }
+        Alignment = Center
+      }
       Borders
       {
-        Visible = true
+        Visible = false
       }
     ]
     {
@@ -972,31 +233,7 @@
       {
         \column
         [
-          Width = 100
-        ]
-        \column
-        [
-          Width = 120
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 90
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 70
-        ]
-        \column
-        [
-          Width = 50
+          Width = "20cm"
         ]
       }
       \rows
@@ -1004,176 +241,38 @@
         \row
         {
           \cell
-          {
-            \textframe
+          [
+            Format
             {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835011753
-                    }
-                  }
-                }
-              }
+              SpaceBefore = "0.5cm"
             }
+          ]
+          {
+            ОТЧЕТ ПО ТОПЛИВНЫМ КАРТАМ
           }
+        }
+        \row
+        {
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      УР, Якшур-Бодьинский район, 39 км. а/д Ижевск - Якшур-Бодья
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-42
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 03:55:28
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            за Февраль 2016 г
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
+      Format
+      {
+        Font
+        {
+          Bold = true
+        }
+        Alignment = Center
+      }
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -1181,208 +280,108 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Font
+            {
+              Size = 9
+            }
+          }
+          Borders
+          {
+            Visible = false
+          }
+        ]
         {
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835011838
-                    }
-                  }
-                }
-              }
-            }
+            Держатель
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Ижевск, ул.Маяковского, 35
-                    }
-                  }
-                }
-              }
-            }
+            Регионсбыт 207
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          {
+            АЗС
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-41
-                    }
-                  }
-                }
-              }
-            }
+            Башнефть
+          }
+        }
+        \row
+        {
+          \cell
+          {
+            № КАРТЫ
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 04:12:15
-                    }
-                  }
-                }
-              }
-            }
+            АДРЕС АЗС
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
+            № АЗС
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
+            ДАТА
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      50
-                    }
-                  }
-                }
-              }
-            }
+            ТИП ТОПЛИВА
+          }
+          \cell
+          {
+            ВИД ОПЕРАЦИИ
+          }
+          \cell
+          {
+            ЗАПР. ЛИТРОВ
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -1390,208 +389,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835012433
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835014252
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, ул.Союзная, 2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, ул.Салютовская, 81
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-40
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-1
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 06:52:51
           }
           \cell
           {
-            \textframe
+            ДТ
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 04:19:54
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      ДТ
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      30
-                    }
-                  }
-                }
-              }
-            }
+            70
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -1599,208 +488,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835011916
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835007565
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г. Ижевск, ул. 40 лет Победы, 1
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      п.Игра, ул.Магистральная, 1а
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-34
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:07:59
           }
           \cell
           {
-            \textframe
+            АИ-95
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:08:38
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      30
-                    }
-                  }
-                }
-              }
-            }
+            30
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -1808,208 +587,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835012394
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835013561
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Ижевск, ул.Маяковского, 35
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-24
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-41
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:10:17
           }
           \cell
           {
-            \textframe
+            АИ-95
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:18:21
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      30
-                    }
-                  }
-                }
-              }
-            }
+            20
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -2017,208 +686,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835008463
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835011619
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, ул.Ново-Ажимова,9
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, ул. 40 лет Победы, 1
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-8
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-2
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:10:58
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:27:34
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            20
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -2226,208 +785,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835018488
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835018498
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, ул.Союзная, 2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Сарапул, К.Маркса, 62
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-40
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-24
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:14:08
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:28:09
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            20
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -2435,208 +884,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835013443
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835006939
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, проспект Калашникова,2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      с.Малая Пурга, Советская, 2ж
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-7
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-46
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:14:14
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:37:38
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      60
-                    }
-                  }
-                }
-              }
-            }
+            13
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -2644,208 +983,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835013443
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835011821
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, проспект Калашникова,2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Сарапул, К.Маркса, 62
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-7
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-24
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:15:07
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:42:01
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-95
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            13
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -2853,208 +1082,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835011756
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835010306
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г. Ижевск, ул. 40 лет Победы, 1
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г. Ижевск, Воткинское шоссе, 168
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-12
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:15:38
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 06:52:35
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-95
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      30
-                    }
-                  }
-                }
-              }
-            }
+            30
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -3062,208 +1181,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835012533
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835010355
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            пгт.Ува, ул.Земляничная, 2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Ижевск, ул.Маяковского, 35
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-39
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-41
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:18:14
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:40:06
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      15
-                    }
-                  }
-                }
-              }
-            }
+            15
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -3271,208 +1280,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835012464
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835014333
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г .Ижевск, ул.Холмогорова, 5
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г .Ижевск, ул.Холмогорова, 5
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-3
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-3
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:21:07
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:40:18
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-95
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            20
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -3480,208 +1379,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835013873
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835016672
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Глазов, Окружное шоссе, 1
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Ижевск, Областная, 4
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-19
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-21
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:23:23
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:40:58
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      10
-                    }
-                  }
-                }
-              }
-            }
+            30
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -3689,208 +1478,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835010297
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835012456
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, ул.Союзная, 2
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г .Ижевск, ул.Холмогорова, 5
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-40
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-3
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:30:54
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:44:26
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            30
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -3898,208 +1577,98 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835013898
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835012469
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск ул.Советская, 39а
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Ижевск ул.Советская, 39а
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-35
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-35
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:31:12
           }
           \cell
           {
-            \textframe
+            АИ-92
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:49:15
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      40
-                    }
-                  }
-                }
-              }
-            }
+            30
           }
         }
       }
     }
     \table
     [
-      TopPadding = 3
-      BottomPadding = 3
       Borders
       {
-        Visible = true
+        Width = 0.75
       }
     ]
     {
@@ -4107,406 +1676,89 @@
       {
         \column
         [
-          Width = 100
+          Width = "2.2cm"
         ]
         \column
         [
-          Width = 120
+          Width = "3.5cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 90
+          Width = "3.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 70
+          Width = "2.3cm"
         ]
         \column
         [
-          Width = 50
+          Width = "2.3cm"
         ]
       }
       \rows
       {
         \row
+        [
+          Format
+          {
+            Alignment = Center
+          }
+        ]
         {
           \cell
           {
-            \textframe
+            835012270
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835016781
-                    }
-                  }
-                }
+                Size = 9
               }
+              Alignment = Left
             }
+          ]
+          {
+            г.Ижевск, Областная, 4
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      г.Ижевск ул.Советская, 39а
-                    }
-                  }
-                }
-              }
-            }
+             АЗС №18-21
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-35
-                    }
-                  }
-                }
-              }
-            }
+            01.02.2016 07:37:02
           }
           \cell
           {
-            \textframe
+            ГАЗ
+          }
+          \cell
+          [
+            Format
             {
-              \table
+              Font
               {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:55:51
-                    }
-                  }
-                }
+                Size = 9
               }
             }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-92
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      60
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    \table
-    [
-      TopPadding = 3
-      BottomPadding = 3
-      Borders
-      {
-        Visible = true
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = 100
-        ]
-        \column
-        [
-          Width = 120
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 90
-        ]
-        \column
-        [
-          Width = 50
-        ]
-        \column
-        [
-          Width = 70
-        ]
-        \column
-        [
-          Width = 50
-        ]
-      }
-      \rows
-      {
-        \row
-        {
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      835010464
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Завьяловский район, п.Первомайский
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                       АЗС №18-29
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      01.02.2016 07:58:09
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      АИ-95
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      Обслуживание
-                    }
-                  }
-                }
-              }
-            }
-          }
-          \cell
-          {
-            \textframe
-            {
-              \table
-              {
-                \columns
-                {
-                  \column
-                }
-                \rows
-                {
-                  \row
-                  {
-                    \cell
-                    {
-                      20
-                    }
-                  }
-                }
-              }
-            }
+            30
           }
         }
       }

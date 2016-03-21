@@ -118,7 +118,7 @@
     <Compile Include="class\exelComp.cs" />
     <Compile Include="class\Out.cs" />
     <Compile Include="class\Styles.cs" />
-    <Compile Include="class\Tables.cs" />
+    <Compile Include="class\ConToPdf.cs" />
     <Compile Include="exC.xaml.cs">
       <DependentUpon>exC.xaml</DependentUpon>
     </Compile>

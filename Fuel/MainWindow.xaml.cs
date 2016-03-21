@@ -529,37 +529,38 @@ namespace Fuel
             var oneC = outArr.GroupBy(f => f.NameCompany).Distinct();
             oneC = oneC.Where(s => s.Key.Trim().Length > 0).OrderBy(nf => nf.Key).ToList();
 
-            var docPDF = new Document();
-            docPDF.Info.Title = "Отчет за " + cell.FolderMonth + " " + provider;
-            docPDF.Info.Subject = "Директор";
-            docPDF.Info.Author = "ООО Регионсбыт";
-            var style = docPDF.Styles["Normal"];
-            style.Font.Name = "Calibri";
-            style.Font.Size = 11;
-            //style.Font.Bold = true;
-            style.Font.Color = Colors.Black;
-            //Получает или задает значение, указывающее, является ли разрыв страницы вставляется перед абзацем.
-            style.ParagraphFormat.PageBreakBefore = true;
-            //Возвращает или задает пространство, включить после абзаца.
-            style.ParagraphFormat.SpaceAfter = 3;
-            // Set KeepWithNext for all headings to prevent headings from appearing all alone
-            // at the bottom of a page. The other headings inherit this from Heading1.
-            style.ParagraphFormat.KeepWithNext = true;
-
-
-            var section = docPDF.AddSection();
-            //section.PageSetup.OddAndEvenPagesHeaderFooter = true;
-            section.PageSetup.StartingNumber = 1;
             
-
-            //var paragraph = document.LastSection.AddParagraph("Table Overview", "Heading1");
-            //paragraph.AddBookmark("Tables");  
-
 
             int i = 0;
             foreach (var row in oneC)
             {
-                              
+                var docPDF = new Document();
+
+                docPDF.Info.Title = "Отчет за " + cell.FolderMonth + " " + provider;
+                docPDF.Info.Subject = "Директор";
+                docPDF.Info.Author = "ООО Регионсбыт";
+                docPDF.DefaultPageSetup.LeftMargin = Unit.FromCentimeter(1.5);
+                docPDF.DefaultPageSetup.BottomMargin = docPDF.DefaultPageSetup.RightMargin =
+                docPDF.DefaultPageSetup.TopMargin = Unit.FromCentimeter(0.3);
+                var style = docPDF.Styles["Normal"];
+                style.Font.Name = "Calibri";
+                style.Font.Size = 11;
+
+                //style.Font.Bold = true;
+                style.Font.Color = Colors.Black;
+                //Получает или задает значение, указывающее, является ли разрыв страницы вставляется перед абзацем.
+                style.ParagraphFormat.PageBreakBefore = true;
+                //Возвращает или задает пространство, включить после абзаца.
+                style.ParagraphFormat.SpaceAfter = 3;
+                // Set KeepWithNext for all headings to prevent headings from appearing all alone
+                // at the bottom of a page. The other headings inherit this from Heading1.
+                style.ParagraphFormat.KeepWithNext = true;
+
+
+                var section = docPDF.AddSection();
+                //section.PageSetup.OddAndEvenPagesHeaderFooter = true;
+                section.PageSetup.StartingNumber = 1;
+
                 double cai80 = 0, cai92 = 0, cai95 = 0, cdt = 0, cgaz = 0, cdef = 0;
                 double ai80 = 0, ai92 = 0, ai95 = 0, dt = 0, gaz = 0, def = 0;
                 var s = (radioBash.IsChecked.Value) ? company.Where(c => RemoveSpaces(c.NameBash.ToLower()) == RemoveSpaces(row.Key.ToLower())).Select(k => k)
@@ -648,9 +649,11 @@ namespace Fuel
                 compPage.Cells[2, 2].Value = "ООО \"Регионсбыт\"";
                 compPage.Cells[2, 2, 2, 3].Merge = true;
 
-
-                compPage.Cells[2, 4].Value = s.ElementAt(0).FullName.ToString();//полное наименование компании                
+                string FullNameComp = s.ElementAt(0).FullName.ToString();
+                compPage.Cells[2, 4].Value = FullNameComp;//полное наименование компании                
                 compPage.Cells[2, 4, 2, 7].Merge = true;
+
+                ConToPdf.HeadDoc(docPDF, FullNameComp);
 
                 compPage.Cells[4, 1].Value = @"ОТЧЕТ ПО ТОПЛИВНЫМ КАРТАМ";
                 compPage.Cells[4, 1, 4, 7].Merge = true;
@@ -693,6 +696,8 @@ namespace Fuel
                 compPage.Cells[6, 6].Value = provider;
                 compPage.Cells[6, 1, 6, 7].Style.Font.Size = 9;
                 compPage.Cells[6, 1, 6, 7].Style.Font.Bold = false;
+
+                ConToPdf.ThLineCard(docPDF, folderMonth.Text, row.Key, provider);
 
                 var cardR = str.GroupBy(c => c.Card).Distinct();
                 int compLine = 8;
@@ -808,7 +813,7 @@ namespace Fuel
                             def += total;
                         }
 
-                        Tables.DefineTables(docPDF, r);
+                        ConToPdf.LineCard(docPDF, r);
                         
                         compLine++;
                     }
@@ -960,14 +965,18 @@ namespace Fuel
 
                 MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(docPDF, "MigraDoc.mdddl");
 
+
+
                 var renderer = new PdfDocumentRenderer(true);
                 renderer.Document = docPDF;
 
+                
                 renderer.RenderDocument();
                 renderer.PdfDocument.Save(fOutOne + ").pdf");
-                
+
                 renderer.PdfDocument.Close();
-                GC.Collect();
+                
+                //GC.Collect();
 
             }
 
