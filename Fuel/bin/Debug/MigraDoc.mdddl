@@ -2,7 +2,7 @@
 [
   Info
   {
-    Title = "Отчет за 1 Башнефть"
+    Title = "Отчет за 2 Башнефть"
     Subject = "Директор"
     Author = "ООО Регионсбыт"
   }
@@ -208,7 +208,7 @@
             MergeRight = 2
           ]
           {
-            ГКУЗ "3 РПБ МЗ УР"
+            БПОУ УР "Сарапульский политехнологический техникум"
           }
         }
       }
@@ -255,7 +255,7 @@
         {
           \cell
           {
-            за Февраль 2016 г
+            за Март 2016 г
           }
         }
       }
@@ -330,7 +330,7 @@
           }
           \cell
           {
-            Регионсбыт 207
+            Регионсбыт 164
           }
           \cell
           \cell
@@ -379,6 +379,10 @@
     }
     \table
     [
+      Format
+      {
+        Alignment = Center
+      }
       Borders
       {
         Width = 0.75
@@ -419,16 +423,19 @@
       \rows
       {
         \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
         {
           \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+          ]
           {
-            835012433
+            835014319
           }
           \cell
           [
@@ -442,15 +449,2079 @@
             }
           ]
           {
-            г.Ижевск, ул.Союзная, 2
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            01.03.2016 08:32:36
           }
           \cell
           {
-             АЗС №18-40
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
           }
           \cell
           {
-            01.02.2016 06:52:51
+            40
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            03.03.2016 16:47:54
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            04.03.2016 16:40:18
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            20
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            09.03.2016 08:23:59
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            11.03.2016 15:51:52
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            20
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, ул.Азина, 89а
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-30
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            15.03.2016 09:46:29
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            16.03.2016 15:47:51
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            25
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г. Ижевск, ул. 40 лет Победы, 1
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-2
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            18.03.2016 10:03:53
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            УР, г.Можга, 89 км. а/д Ижевск-Елабуга
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-16
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            19.03.2016 15:21:06
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            40
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            21.03.2016 08:22:38
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            20
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            УР, г.Можга, 89 км. а/д Ижевск-Елабуга
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-16
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            23.03.2016 10:21:18
+          }
+          \cell
+          {
+            АИ-95
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+              Alignment = Right
+            }
+            MergeRight = 4
+          ]
+          {
+            ИТОГО по карте (835014319) :
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+            MergeRight = 1
+          ]
+          {
+            315
+          }
+        }
+        \row
+        [
+          Format
+          {
+            Font
+            {
+              Bold = true
+            }
+            Alignment = Center
+          }
+        ]
+        {
+          \cell
+          {
+            в т.ч :
+          }
+          \cell
+          {
+            АИ80 :  0
+          }
+          \cell
+          {
+            АИ92 :  0
+          }
+          \cell
+          {
+            АИ95 :  0
+          }
+          \cell
+          {
+            ДТ :  0
+          }
+          \cell
+          {
+            ГАЗ :  0
+          }
+          \cell
+          {
+            ПРОЧ :  315
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+          ]
+          {
+            835014318
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            01.03.2016 12:44:45
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            01.03.2016 14:15:17
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            40
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            04.03.2016 13:42:22
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            09.03.2016 13:23:46
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            25
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            10.03.2016 17:48:20
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            40
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            13.03.2016 15:46:47
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            14.03.2016 08:32:33
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            15.03.2016 10:15:49
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            35
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            18.03.2016 09:36:23
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            30
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, К.Маркса, 62
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-24
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            23.03.2016 11:23:48
+          }
+          \cell
+          {
+            АИ-92
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            10
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+              Alignment = Right
+            }
+            MergeRight = 4
+          ]
+          {
+            ИТОГО по карте (835014318) :
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+            MergeRight = 1
+          ]
+          {
+            300
+          }
+        }
+        \row
+        [
+          Format
+          {
+            Font
+            {
+              Bold = true
+            }
+            Alignment = Center
+          }
+        ]
+        {
+          \cell
+          {
+            в т.ч :
+          }
+          \cell
+          {
+            АИ80 :  0
+          }
+          \cell
+          {
+            АИ92 :  0
+          }
+          \cell
+          {
+            АИ95 :  0
+          }
+          \cell
+          {
+            ДТ :  0
+          }
+          \cell
+          {
+            ГАЗ :  0
+          }
+          \cell
+          {
+            ПРОЧ :  300
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+          ]
+          {
+            835006933
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            10.03.2016 09:08:49
+          }
+          \cell
+          {
+            АИ-80
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            60
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            17.03.2016 10:51:03
+          }
+          \cell
+          {
+            АИ-80
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            60
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+              Alignment = Right
+            }
+            MergeRight = 4
+          ]
+          {
+            ИТОГО по карте (835006933) :
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+            MergeRight = 1
+          ]
+          {
+            120
+          }
+        }
+        \row
+        [
+          Format
+          {
+            Font
+            {
+              Bold = true
+            }
+            Alignment = Center
+          }
+        ]
+        {
+          \cell
+          {
+            в т.ч :
+          }
+          \cell
+          {
+            АИ80 :  0
+          }
+          \cell
+          {
+            АИ92 :  0
+          }
+          \cell
+          {
+            АИ95 :  0
+          }
+          \cell
+          {
+            ДТ :  0
+          }
+          \cell
+          {
+            ГАЗ :  0
+          }
+          \cell
+          {
+            ПРОЧ :  120
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+          ]
+          {
+            835007524
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            10.03.2016 09:13:55
+          }
+          \cell
+          {
+            АИ-80
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            80
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            16.03.2016 09:35:33
+          }
+          \cell
+          {
+            АИ-80
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            100
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            22.03.2016 09:11:34
+          }
+          \cell
+          {
+            АИ-80
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            90
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+              Alignment = Right
+            }
+            MergeRight = 4
+          ]
+          {
+            ИТОГО по карте (835007524) :
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+            MergeRight = 1
+          ]
+          {
+            270
+          }
+        }
+        \row
+        [
+          Format
+          {
+            Font
+            {
+              Bold = true
+            }
+            Alignment = Center
+          }
+        ]
+        {
+          \cell
+          {
+            в т.ч :
+          }
+          \cell
+          {
+            АИ80 :  0
+          }
+          \cell
+          {
+            АИ92 :  0
+          }
+          \cell
+          {
+            АИ95 :  0
+          }
+          \cell
+          {
+            ДТ :  0
+          }
+          \cell
+          {
+            ГАЗ :  0
+          }
+          \cell
+          {
+            ПРОЧ :  270
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+          ]
+          {
+            835014320
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            10.03.2016 09:15:20
           }
           \cell
           {
@@ -471,13 +2542,317 @@
           }
           \cell
           {
-            70
+            200
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+              Alignment = Right
+            }
+            MergeRight = 4
+          ]
+          {
+            ИТОГО по карте (835014320) :
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+            MergeRight = 1
+          ]
+          {
+            200
+          }
+        }
+        \row
+        [
+          Format
+          {
+            Font
+            {
+              Bold = true
+            }
+            Alignment = Center
+          }
+        ]
+        {
+          \cell
+          {
+            в т.ч :
+          }
+          \cell
+          {
+            АИ80 :  0
+          }
+          \cell
+          {
+            АИ92 :  0
+          }
+          \cell
+          {
+            АИ95 :  0
+          }
+          \cell
+          {
+            ДТ :  0
+          }
+          \cell
+          {
+            ГАЗ :  0
+          }
+          \cell
+          {
+            ПРОЧ :  200
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+          ]
+          {
+            835014321
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            10.03.2016 09:24:31
+          }
+          \cell
+          {
+            ДТ
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            200
+          }
+        }
+        \row
+        {
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+              Alignment = Left
+            }
+          ]
+          {
+            г.Сарапул, Путейская, 68
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+             АЗС №18-25
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 10
+              }
+            }
+          ]
+          {
+            10.03.2016 09:34:15
+          }
+          \cell
+          {
+            ДТ
+          }
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Size = 9
+              }
+            }
+          ]
+          {
+            Обслуживание
+          }
+          \cell
+          {
+            200
+          }
+        }
+        \row
+        {
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+              Alignment = Right
+            }
+            MergeRight = 4
+          ]
+          {
+            ИТОГО по карте (835014321) :
+          }
+          \cell
+          \cell
+          \cell
+          \cell
+          \cell
+          [
+            Format
+            {
+              Font
+              {
+                Bold = true
+              }
+            }
+            MergeRight = 1
+          ]
+          {
+            400
+          }
+        }
+        \row
+        [
+          Format
+          {
+            Font
+            {
+              Bold = true
+            }
+            Alignment = Center
+          }
+        ]
+        {
+          \cell
+          {
+            в т.ч :
+          }
+          \cell
+          {
+            АИ80 :  0
+          }
+          \cell
+          {
+            АИ92 :  0
+          }
+          \cell
+          {
+            АИ95 :  0
+          }
+          \cell
+          {
+            ДТ :  0
+          }
+          \cell
+          {
+            ГАЗ :  0
+          }
+          \cell
+          {
+            ПРОЧ :  400
           }
         }
       }
     }
     \table
     [
+      Format
+      {
+        Font
+        {
+          Bold = true
+        }
+        Alignment = Center
+      }
       Borders
       {
         Width = 0.75
@@ -521,1244 +2896,130 @@
         [
           Format
           {
-            Alignment = Center
+            SpaceBefore = "1cm"
+            SpaceAfter = "0.5cm"
+          }
+          Borders
+          {
+            Visible = false
           }
         ]
         {
           \cell
-          {
-            835011916
-          }
-          \cell
           [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
+            MergeRight = 6
           ]
           {
-            г. Ижевск, ул. 40 лет Победы, 1
+            ИТОГО ПО ТИПАМ ТОПЛИВА
+          }
+        }
+        \row
+        {
+          \cell
+          {
+            АИ-80
           }
           \cell
           {
-             АЗС №18-2
-          }
-          \cell
-          {
-            01.02.2016 07:07:59
+            АИ-92
           }
           \cell
           {
             АИ-95
           }
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
           {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835012394
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Сарапул, К.Маркса, 62
-          }
-          \cell
-          {
-             АЗС №18-24
-          }
-          \cell
-          {
-            01.02.2016 07:10:17
-          }
-          \cell
-          {
-            АИ-95
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            20
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835008463
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, ул.Ново-Ажимова,9
-          }
-          \cell
-          {
-             АЗС №18-8
-          }
-          \cell
-          {
-            01.02.2016 07:10:58
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            20
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835018488
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, ул.Союзная, 2
-          }
-          \cell
-          {
-             АЗС №18-40
-          }
-          \cell
-          {
-            01.02.2016 07:14:08
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            20
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835013443
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, проспект Калашникова,2
-          }
-          \cell
-          {
-             АЗС №18-7
-          }
-          \cell
-          {
-            01.02.2016 07:14:14
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            13
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835013443
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, проспект Калашникова,2
-          }
-          \cell
-          {
-             АЗС №18-7
-          }
-          \cell
-          {
-            01.02.2016 07:15:07
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            13
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835011756
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г. Ижевск, ул. 40 лет Победы, 1
-          }
-          \cell
-          {
-             АЗС №18-2
-          }
-          \cell
-          {
-            01.02.2016 07:15:38
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835012533
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            пгт.Ува, ул.Земляничная, 2
-          }
-          \cell
-          {
-             АЗС №18-39
-          }
-          \cell
-          {
-            01.02.2016 07:18:14
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            15
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835012464
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г .Ижевск, ул.Холмогорова, 5
-          }
-          \cell
-          {
-             АЗС №18-3
-          }
-          \cell
-          {
-            01.02.2016 07:21:07
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            20
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835013873
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Глазов, Окружное шоссе, 1
-          }
-          \cell
-          {
-             АЗС №18-19
-          }
-          \cell
-          {
-            01.02.2016 07:23:23
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835010297
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, ул.Союзная, 2
-          }
-          \cell
-          {
-             АЗС №18-40
-          }
-          \cell
-          {
-            01.02.2016 07:30:54
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835013898
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск ул.Советская, 39а
-          }
-          \cell
-          {
-             АЗС №18-35
-          }
-          \cell
-          {
-            01.02.2016 07:31:12
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-      }
-    }
-    \table
-    [
-      Borders
-      {
-        Width = 0.75
-      }
-    ]
-    {
-      \columns
-      {
-        \column
-        [
-          Width = "2.2cm"
-        ]
-        \column
-        [
-          Width = "3.5cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "3.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-        \column
-        [
-          Width = "2.3cm"
-        ]
-      }
-      \rows
-      {
-        \row
-        [
-          Format
-          {
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            835012270
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, Областная, 4
-          }
-          \cell
-          {
-             АЗС №18-21
-          }
-          \cell
-          {
-            01.02.2016 07:37:02
+            ДТ
           }
           \cell
           {
             ГАЗ
           }
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
           {
-            Обслуживание
+            ПРОЧЕЕ
           }
           \cell
           {
-            30
+            ИТОГО
+          }
+        }
+        \row
+        {
+          \cell
+          {
+            390
+          }
+          \cell
+          {
+            300
+          }
+          \cell
+          {
+            315
+          }
+          \cell
+          {
+            600
+          }
+          \cell
+          {
+            0
+          }
+          \cell
+          {
+            0
+          }
+          \cell
+          {
+            1605
+          }
+        }
+        \row
+        [
+          Format
+          {
+            SpaceBefore = "2cm"
+          }
+          TopPadding = "0.5cm"
+          Borders
+          {
+            Visible = false
+          }
+        ]
+        {
+          \cell
+          [
+            Format
+            {
+              Alignment = Right
+            }
+            MergeRight = 1
+          ]
+          {
+            Директор ООО Регионсбыт
+          }
+          \cell
+          \cell
+          {
+            \image("stamp.png")
+          }
+          \cell
+          [
+            Format
+            {
+              SpaceBefore = "1cm"
+            }
+          ]
+          {
+            \image("sign.png")
+          }
+          \cell
+          [
+            MergeRight = 1
+          ]
+          {
+            М.А. Хомченко
           }
         }
       }

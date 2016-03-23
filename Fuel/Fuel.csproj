@@ -114,13 +114,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="class\cellExcel.cs" />
-    <Compile Include="class\Documents.cs" />
     <Compile Include="class\exelComp.cs" />
     <Compile Include="class\Out.cs" />
     <Compile Include="class\Styles.cs" />
     <Compile Include="class\ConToPdf.cs" />
     <Compile Include="exC.xaml.cs">
       <DependentUpon>exC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSelect.xaml.cs">
+      <DependentUpon>WinSelect.xaml</DependentUpon>
     </Compile>
     <Page Include="addcompany.xaml">
       <SubType>Designer</SubType>
@@ -155,6 +157,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="exC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

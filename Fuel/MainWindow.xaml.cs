@@ -40,9 +40,7 @@ namespace Fuel
         exelComp exc = new exelComp();
         List<Out> outArr = new List<Out>();
         Newtonsoft.Json.Linq.JObject arrOpt;
-
-
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -744,12 +742,14 @@ namespace Fuel
                         Regex rgaz = new Regex(@"газ", RegexOptions.IgnoreCase);
                         Match mrgaz = rgaz.Match(r.TypeFuel);
                         Regex raz = new Regex(@"\[.+\]", RegexOptions.IgnoreCase);
+                        Regex raz1 = new Regex(@".\(регионсбыт\)", RegexOptions.IgnoreCase);
                         Regex ic = new Regex(@"\d", RegexOptions.IgnoreCase);
 
                         compPage.Cells[compLine, 2].Value = r.AdressAzs;
                         compPage.Cells[compLine, 2].Style.WrapText = true;
                         compPage.Cells[compLine, 2].Style.Font.Size = 8;
-                        compPage.Cells[compLine, 3].Value = r.Azs = (provider == "Башнефть") ? raz.Replace(r.Azs, "") : r.Azs;
+                        compPage.Cells[compLine, 3].Value = r.Azs = (provider == "Башнефть") ? raz.Replace(raz1.Replace(r.Azs,""), "") : r.Azs;
+                        compPage.Cells[compLine, 3].Style.WrapText = true;
                         compPage.Cells[compLine, 3].Style.Font.Size = 10;
                         compPage.Cells[compLine, 4].Value = r.DateFill;
                         compPage.Cells[compLine, 4].Style.Font.Size = 10;
@@ -811,9 +811,7 @@ namespace Fuel
                             }
                             compPage.Cells[compLine, 1, compLine, 7].Style.WrapText = true;
                             def += total;
-                        }
-
-                        ConToPdf.LineCard(docPDF, r);
+                        }                     
                         
                         compLine++;
                     }
@@ -857,14 +855,17 @@ namespace Fuel
                         var border = re.Style.Border;
                         border.Top.Style = border.Left.Style = border.Bottom.Style = border.Right.Style = ExcelBorderStyle.Thin;
                     }
-
+                    
                     // конец вывода итогов по карте
                     compLine++;
                     //присвоение данных для сводного отчета (количество заправленного топлива)
                     cai80 += ai80; cai92 += ai92; cai95 += ai95; cdt += dt; cgaz += gaz; cdef += def;
                 }
+                //отправка на формирование pdf по картам
+                ConToPdf.LineCard(docPDF, str, provider);
                 // конец по всем картам компании
                 // итоги по компании
+                double[] genTotal = new double[7];
                 compLine = compLine + 2;
                 compPage.Cells["A" + compLine].Value = @"Итого по типам топлива";
                 using (var ac = compPage.Cells["A" + compLine + ":G" + compLine])
@@ -883,13 +884,15 @@ namespace Fuel
                 compPage.Cells["F" + compLine].Value = @"ПРОЧЕЕ";
                 compPage.Cells["G" + compLine].Value = @"ИТОГО";
                 compLine++;
-                compPage.Cells["A" + compLine].Value = cai80;
-                compPage.Cells["B" + compLine].Value = cai92;
-                compPage.Cells["C" + compLine].Value = cai95;
-                compPage.Cells["D" + compLine].Value = cdt;
-                compPage.Cells["E" + compLine].Value = cgaz;
-                compPage.Cells["F" + compLine].Value = cdef;
+                compPage.Cells["A" + compLine].Value = genTotal[0] = cai80;
+                compPage.Cells["B" + compLine].Value = genTotal[1] = cai92;
+                compPage.Cells["C" + compLine].Value = genTotal[2] = cai95;
+                compPage.Cells["D" + compLine].Value = genTotal[3] = cdt;
+                compPage.Cells["E" + compLine].Value = genTotal[4] = cgaz;
+                compPage.Cells["F" + compLine].Value = genTotal[5] = cdef;
                 compPage.Cells["G" + compLine].Formula = string.Format("SUM({0}:{1})", "A" + (compLine), "F" + (compLine));
+
+                genTotal[6] = cai80 + cai92 + cai95 + cdt + cgaz + cdef;
 
                 compPage.Cells["A" + (compLine - 1) + ":G" + (compLine - 1)].Style.Font.Bold = true;
                 using (var res = compPage.Cells["A" + (compLine - 1) + ":G" + compLine])
@@ -904,11 +907,11 @@ namespace Fuel
 
                 compLine = compLine + 2;
 
-                img = compPage.Drawings.AddPicture("stamp", System.Drawing.Image.FromFile(@"stamp.png"));
-                img.SetPosition(compLine, 2, 1, 2);
+                //img = compPage.Drawings.AddPicture("stamp", System.Drawing.Image.FromFile(@"stamp.png"));
+                //img.SetPosition(compLine, 2, 1, 2);
 
-                img = compPage.Drawings.AddPicture("sign", System.Drawing.Image.FromFile(@"sign.png"));
-                img.SetPosition(compLine++, 2, 2, 2);
+                //img = compPage.Drawings.AddPicture("sign", System.Drawing.Image.FromFile(@"sign.png"));
+                //img.SetPosition(compLine++, 2, 2, 2);
 
                 compLine = compLine + 2;
                 compPage.Cells[compLine, 1].Value = @"Директор ООО Регионсбыт";
@@ -917,22 +920,24 @@ namespace Fuel
                 compPage.Cells[compLine, 4, compLine, 5].Merge = true;
                 compPage.Cells[compLine, 1, compLine, 5].Style.Font.Bold = true;
                 // конец итогов по компании
-                
+
+                //отправка на формирование общих итогов и подписи печати pdf
+                ConToPdf.FooterCard(docPDF, genTotal);
                 //сохранение файла по компании                    
                 cp.Save();
                 cp.Dispose(); //закрытие файла компании
 
                 //(fOutOne + ").xlsx", fOutOne + ").pdf");
                 
-                using (ExcelPackage cpr = new ExcelPackage(new FileInfo(fOutOne + ").xlsx")))
-                {
+                //using (ExcelPackage cpr = new ExcelPackage(new FileInfo(fOutOne + ").xlsx")))
+                //{
 
-                    ExcelWorksheet cmpr = cpr.Workbook.Worksheets[1];
-                    cmpr.Drawings.Remove("stamp");
-                    cmpr.Drawings.Remove("sign");
-                    //cpr.SaveAs(new FileInfo(fOutOne + ").jpg"));
-                    cpr.Save();
-                }
+                //    ExcelWorksheet cmpr = cpr.Workbook.Worksheets[1];
+                //    cmpr.Drawings.Remove("stamp");
+                //    cmpr.Drawings.Remove("sign");
+                //    //cpr.SaveAs(new FileInfo(fOutOne + ").jpg"));
+                //    cpr.Save();
+                //}
 
                 // формирование данных в сводном отчете
                 tws.Cells[aLine, 1].Value = row.Key;

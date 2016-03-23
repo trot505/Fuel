@@ -103,7 +103,10 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                     <Button x:Name="parseBtn" ToolTip="Старт обработки" HorizontalAlignment="Left" Height="50" Margin="726,484,0,0" VerticalAlignment="Top" Width="50" Click="parseBtn_Click">
                         <Path Width="30" Height="30" Stretch="Fill" Fill="#FF85E459" Data="{StaticResource play}" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF85E459" />
                     </Button>
-                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="588,79,0,0" TextWrapping="Wrap" Text="ПРОВЕРИТЬ ЗАПОЛНЕНИЕ ВСЕХ ПОЛЕЙ И ВЫБРАНА ЛИ ПАПКА СОХРАНЕНИЯ И ФАЙЛ ПОСТУПИВШИЙ ОТ ПОСТОВЩИКА А ТАК ЖЕ ПРОВЕРИТЬ ВЫБРАН ЛИ ПОСТАВЩИК" VerticalAlignment="Top" Width="284" Height="178" FontSize="18.667" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="588,275,0,0" TextWrapping="Wrap" Text="ПРОВЕРИТЬ ЗАПОЛНЕНИЕ ВСЕХ ПОЛЕЙ И ВЫБРАНА ЛИ ПАПКА СОХРАНЕНИЯ И ФАЙЛ ПОСТУПИВШИЙ ОТ ПОСТОВЩИКА А ТАК ЖЕ ПРОВЕРИТЬ ВЫБРАН ЛИ ПОСТАВЩИК" VerticalAlignment="Top" Width="284" Height="178" FontSize="18.667" FontWeight="Bold"/>
+                    <GroupBox Header="ОТЧЕТ НА ДАТУ" Margin="600,25,12,339" Padding="10">
+                        <Calendar HorizontalAlignment="Center" Margin="24,-6,24,-2" VerticalAlignment="Center" Height="166" Width="200" FontSize="16"/>
+                    </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem x:Name="CompanyTab" Header="Фирмы" Margin="12,0,-36,0" FontSize="16">
