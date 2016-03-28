@@ -22,6 +22,7 @@ namespace Fuel
         public WinSelect()
         {
             InitializeComponent();
+            selectGrid.UnselectAllCells();
         }
         
         private void selecC_Click(object sender, RoutedEventArgs e)
@@ -39,6 +40,11 @@ namespace Fuel
         private void cancelC_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
+        }
+
+        private void selectGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            selecC_Click(this, e);
         }
     }
 }

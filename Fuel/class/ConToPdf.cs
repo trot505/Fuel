@@ -9,6 +9,7 @@ namespace Fuel
 {
     public class ConToPdf
     {
+        
         //добавление шапки документа по отчету и 
         #region HeadDoc
         public static void HeadDoc(Document document, string FullNameComp)
@@ -45,7 +46,7 @@ namespace Fuel
 
         // наименований столбцов
         #region ThLineCard
-        public static void ThLineCard(Document document, string mon, string nComp, string nPost)
+        public static void ThLineCard(Document document, string[] dateP, string nComp, string nPost)
         {
             var par = new Table();
             par.Borders.Visible = false;
@@ -56,7 +57,7 @@ namespace Fuel
             r.Cells[0].AddParagraph(@"ОТЧЕТ ПО ТОПЛИВНЫМ КАРТАМ");
             r.Cells[0].Format.SpaceBefore = Unit.FromCentimeter(0.5);
             r = par.AddRow();
-            r.Cells[0].AddParagraph(@"за " + mon + " " + DateTime.Now.Year.ToString() + " г");
+            r.Cells[0].AddParagraph(@"за период c " + dateP[0] + " по " + dateP[1]);
             document.LastSection.Add(par);
 
             var table = new Table();

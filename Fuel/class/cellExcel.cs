@@ -9,7 +9,6 @@ namespace Fuel
     //[JsonObject(MemberSerialization.OptIn)]
     class cellExcel
     {
-
         // [JsonProperty("CellCard")]
         public int CellCard { get; set; }
         public int CellAzs{ get; set; }        
@@ -22,7 +21,7 @@ namespace Fuel
         public int FirstRow { get; set; }
         public int LastRow { get; set; }
         public string FolderPatch { get; set; }
-        public int FolderMonth { get; set; }
+        //public int FolderMonth { get; set; }       
         public int ListExl { get; set; }
 
     }

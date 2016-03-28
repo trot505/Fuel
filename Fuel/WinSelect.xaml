@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fuel"
         mc:Ignorable="d"
-        Title="Выбор держателя" Height="238" Width="400" Background="#FF787777" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False">
+        Height="250" Width="500" Background="#FF787777" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False">
     <Grid>
         <Label Content="ВЫБЕРИТЕ ОРГАНИЗАЦИЮ" Foreground="#FFFDFDFD" FontSize="16" HorizontalAlignment="Center" Margin="94,0,94,207"/>
-        <DataGrid x:Name="selectGrid" Margin="10,31,10,0" IsSynchronizedWithCurrentItem="True" ClipToBounds="True" CanUserReorderColumns="False" CanUserResizeColumns="False" ColumnWidth="Auto" CanUserAddRows="False" MinColumnWidth="90" IsReadOnly="True" BorderBrush="{x:Null}" Background="{x:Null}" MaxColumnWidth="120" Height="151" VerticalAlignment="Top" />
+        <DataGrid x:Name="selectGrid" Margin="10,31,10,0" IsSynchronizedWithCurrentItem="True" ClipToBounds="True" CanUserReorderColumns="False" CanUserResizeColumns="False" ColumnWidth="Auto" CanUserAddRows="False" MinColumnWidth="90" IsReadOnly="True" BorderBrush="{x:Null}" Background="{x:Null}" MaxColumnWidth="120" Height="151" VerticalAlignment="Top" MouseDoubleClick="selectGrid_MouseDoubleClick" />
 
-        <Button x:Name="selecC" ToolTip="Выбрать организацию" HorizontalAlignment="Center" Margin="290,187,80,8" VerticalAlignment="Stretch" Width="30" Height="30" Background="{x:Null}" Click="selecC_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button x:Name="selecC" ToolTip="Выбрать организацию" HorizontalAlignment="Center" Margin="392,208,78,12" VerticalAlignment="Stretch" Width="30" Height="30" Background="{x:Null}" Click="selecC_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Path Width="20" Height="25" Stretch="Fill" Fill="#FF49F559" Data="{StaticResource CheckMarker}" />
         </Button>
-        <Button x:Name="cancelC" ToolTip="Выбрать организацию" HorizontalAlignment="Center" Margin="341,187,29,8" VerticalAlignment="Stretch" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="cancelC_Click">
+        <Button x:Name="cancelC" ToolTip="Отмена" HorizontalAlignment="Center" Margin="443,208,27,12" VerticalAlignment="Stretch" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="cancelC_Click">
             <Path Width="20" Height="25" Stretch="Fill" Fill="#FFF54949" Data="{StaticResource close}" />
         </Button>
 

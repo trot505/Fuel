@@ -71,9 +71,9 @@
                                 BorderBrush="{StaticResource ControlActiveBorderBrush}" Margin="{StaticResource MarginBorderButton}"/>
                         <Border x:Name="HighlightElement" BorderBrush="{StaticResource ControlHighlight}" BorderThickness="{StaticResource BorderThicknessButtonOutline}" CornerRadius="2" />
                         <ContentPresenter x:Name="ContentHost" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                            <ContentPresenter.Effect>
+                            <!--<ContentPresenter.Effect>
                                 <DropShadowEffect Color="{StaticResource ColorForegroundShadowColor}" Direction="-90" BlurRadius="1" ShadowDepth="1" Opacity="0.5" />
-                            </ContentPresenter.Effect>
+                            </ContentPresenter.Effect>-->
                         </ContentPresenter>
                     </Grid>
                 </ControlTemplate>
@@ -2463,7 +2463,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Calendar}">
                     <StackPanel x:Name="PART_Root" HorizontalAlignment="Center">
-                        <CalendarItem x:Name="PART_CalendarItem"/> <!--BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"-->
+                        <CalendarItem x:Name="PART_CalendarItem"/>
+                        <!--BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"-->
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
@@ -2483,157 +2484,157 @@
                         <!--<Border Margin="0,2,0,2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
                                 Background="{TemplateBinding Background}" CornerRadius="3">
                             <Border BorderBrush="{StaticResource ControlBorderBrush}" BorderThickness="2" CornerRadius="1">-->
-                                <Grid>
-                                    <Grid.Resources>
-                                        <ControlTemplate x:Key="PreviousButtonTemplate" TargetType="{x:Type Button}">
-                                            <Grid Cursor="Hand" Background="Transparent">
-                                                <Path x:Name="path" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        <Grid>
+                            <Grid.Resources>
+                                <ControlTemplate x:Key="PreviousButtonTemplate" TargetType="{x:Type Button}">
+                                    <Grid Cursor="Hand" Background="Transparent">
+                                        <Path x:Name="path" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                           Width="6" Stretch="Fill" Data="M288.75,232.25 L288.75,240.625 L283,236.625 z">
-                                                    <Path.Fill>
-                                                        <SolidColorBrush Color="{StaticResource ColorForegroundWhite}"/>
-                                                    </Path.Fill>
-                                                </Path>
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Trigger.EnterActions>
-                                                        <BeginStoryboard>
-                                                            <Storyboard>
-                                                                <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                            <Path.Fill>
+                                                <SolidColorBrush Color="{StaticResource ColorForegroundWhite}"/>
+                                            </Path.Fill>
+                                        </Path>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
                                                                         Duration="0:0:0.3" To="{StaticResource BorderBrushGradientColor2}"/>
-                                                            </Storyboard>
-                                                        </BeginStoryboard>
-                                                    </Trigger.EnterActions>
-                                                    <Trigger.ExitActions>
-                                                        <BeginStoryboard>
-                                                            <Storyboard>
-                                                                <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.EnterActions>
+                                            <Trigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
                                                                         Duration="0:0:0.3" To="{StaticResource ColorForegroundWhite}"/>
-                                                            </Storyboard>
-                                                        </BeginStoryboard>
-                                                    </Trigger.ExitActions>
-                                                </Trigger>
-                                                <Trigger Property="IsEnabled" Value="False">
-                                                    <Setter Property="Fill" Value="Black" TargetName="path"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                        <ControlTemplate x:Key="NextButtonTemplate" TargetType="{x:Type Button}">
-                                            <Grid Cursor="Hand">
-                                                <Path x:Name="path" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.ExitActions>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Fill" Value="Black" TargetName="path"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                                <ControlTemplate x:Key="NextButtonTemplate" TargetType="{x:Type Button}">
+                                    <Grid Cursor="Hand">
+                                        <Path x:Name="path" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                       Width="6" Stretch="Fill" Data="M282.875,231.875 L282.875,240.375 L288.625,236 z">
-                                                    <Path.Fill>
-                                                        <SolidColorBrush Color="{StaticResource ColorForegroundWhite}"/>
-                                                    </Path.Fill>
-                                                </Path>
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Trigger.EnterActions>
-                                                        <BeginStoryboard>
-                                                            <Storyboard>
-                                                                <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                            <Path.Fill>
+                                                <SolidColorBrush Color="{StaticResource ColorForegroundWhite}"/>
+                                            </Path.Fill>
+                                        </Path>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
                                                                         Duration="0:0:0.3" To="{StaticResource BorderBrushGradientColor2}"/>
-                                                            </Storyboard>
-                                                        </BeginStoryboard>
-                                                    </Trigger.EnterActions>
-                                                    <Trigger.ExitActions>
-                                                        <BeginStoryboard>
-                                                            <Storyboard>
-                                                                <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.EnterActions>
+                                            <Trigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
                                                                         Duration="0:0:0.3" To="{StaticResource ColorForegroundWhite}"/>
-                                                            </Storyboard>
-                                                        </BeginStoryboard>
-                                                    </Trigger.ExitActions>
-                                                </Trigger>
-                                                <Trigger Property="IsEnabled" Value="False">
-                                                    <Setter Property="Fill" Value="Black" TargetName="path"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                        <ControlTemplate x:Key="HeaderButtonTemplate" TargetType="{x:Type Button}">
-                                            <Grid Cursor="Hand" Background="Transparent">
-                                                <ContentControl x:Name="buttonContent" IsTabStop="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.ExitActions>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Fill" Value="Black" TargetName="path"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                                <ControlTemplate x:Key="HeaderButtonTemplate" TargetType="{x:Type Button}">
+                                    <Grid Cursor="Hand" Background="Transparent">
+                                        <ContentControl x:Name="buttonContent" IsTabStop="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" 
                                                                 ContentTemplate="{TemplateBinding ContentTemplate}" Margin="10,3,10,3" Foreground="{StaticResource ControlForegroundWhite}"/>
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Trigger.EnterActions>
-                                                        <BeginStoryboard>
-                                                            <Storyboard>
-                                                                <ColorAnimation Storyboard.TargetName="buttonContent" 
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="buttonContent" 
                                                                                 Storyboard.TargetProperty="(ContentControl.Foreground).(SolidColorBrush.Color)"
                                                                         Duration="0:0:0.3" To="{StaticResource ColorForeground}"/>
-                                                            </Storyboard>
-                                                        </BeginStoryboard>
-                                                    </Trigger.EnterActions>
-                                                    <Trigger.ExitActions>
-                                                        <BeginStoryboard>
-                                                            <Storyboard>
-                                                                <ColorAnimation Storyboard.TargetName="buttonContent"
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.EnterActions>
+                                            <Trigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="buttonContent"
                                                                                 Storyboard.TargetProperty="(ContentControl.Foreground).(SolidColorBrush.Color)"
                                                                         Duration="0:0:0.3" To="{StaticResource ColorForegroundWhite}"/>
-                                                            </Storyboard>
-                                                        </BeginStoryboard>
-                                                    </Trigger.ExitActions>
-                                                </Trigger>
-                                                <Trigger Property="IsEnabled" Value="False">
-                                                    <Setter Property="Foreground" TargetName="buttonContent" Value="Black"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Grid.Resources>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Button x:Name="PART_PreviousButton" Grid.Column="0" Grid.Row="0" Focusable="False" HorizontalAlignment="Left" Height="20" 
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.ExitActions>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Foreground" TargetName="buttonContent" Value="Black"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Button x:Name="PART_PreviousButton" Grid.Column="0" Grid.Row="0" Focusable="False" HorizontalAlignment="Left" Height="20" 
                                             Template="{StaticResource PreviousButtonTemplate}" Width="25"/>
-                                    <Button x:Name="PART_HeaderButton" Grid.Column="1" Grid.Row="0" FontWeight="Bold" Focusable="False" FontSize="10.5" 
+                            <Button x:Name="PART_HeaderButton" Grid.Column="1" Grid.Row="0" FontWeight="Bold" Focusable="False" FontSize="10.5" 
                                             HorizontalAlignment="Center" Template="{StaticResource HeaderButtonTemplate}" VerticalAlignment="Center"/>
-                                    <Button x:Name="PART_NextButton" Grid.Column="2" Grid.Row="0" Focusable="False" HorizontalAlignment="Right" Height="20" 
+                            <Button x:Name="PART_NextButton" Grid.Column="2" Grid.Row="0" Focusable="False" HorizontalAlignment="Right" Height="20" 
                                             Template="{StaticResource NextButtonTemplate}" Width="25"/>
-                                    <Grid x:Name="PART_MonthView" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="6,3,6,6" Grid.Row="1" Visibility="Visible">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                    </Grid>
-                                    <Grid x:Name="PART_YearView" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="6,3,7,6" Grid.Row="1" Visibility="Hidden">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                    </Grid>
-                                </Grid>
-                            <!--</Border>
+                            <Grid x:Name="PART_MonthView" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="6,3,6,6" Grid.Row="1" Visibility="Visible">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                            </Grid>
+                            <Grid x:Name="PART_YearView" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="6,3,7,6" Grid.Row="1" Visibility="Hidden">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </Grid>
+                        <!--</Border>
                         </Border>-->
                         <Rectangle x:Name="PART_DisabledVisual" Margin="0,2,0,2" Fill="{StaticResource DisabledBrush}" Opacity="0.6" RadiusY="2" RadiusX="2" Stretch="Fill" StrokeThickness="0" Visibility="Collapsed"/>
                     </Grid>
@@ -2912,7 +2913,14 @@
     <Style TargetType="{x:Type DatePicker}">
         <Setter Property="IsTodayHighlighted" Value="True"/>
         <Setter Property="SelectedDateFormat" Value="Short"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF585555" Offset="0"/>
+                    <GradientStop Color="#FE8F8D8D" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Padding" Value="2"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -2963,18 +2971,18 @@
                                             </VisualState>
                                         </VisualStateGroup>
                                     </VisualStateManager.VisualStateGroups>
-                                    <Grid Background="#11FFFFFF" FlowDirection="LeftToRight" HorizontalAlignment="Center" Height="18" Margin="0" VerticalAlignment="Center" Width="19">
+                                    <Grid Background="#11FFFFFF" FlowDirection="LeftToRight" HorizontalAlignment="Center" Height="25" Margin="0" VerticalAlignment="Center" Width="26">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="20*"/>
-                                            <ColumnDefinition Width="20*"/>
-                                            <ColumnDefinition Width="20*"/>
-                                            <ColumnDefinition Width="20*"/>
+                                            <ColumnDefinition Width="27*"/>
+                                            <ColumnDefinition Width="27*"/>
+                                            <ColumnDefinition Width="27*"/>
+                                            <ColumnDefinition Width="27*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="23*"/>
-                                            <RowDefinition Height="19*"/>
-                                            <RowDefinition Height="19*"/>
-                                            <RowDefinition Height="19*"/>
+                                            <RowDefinition Height="30*"/>
+                                            <RowDefinition Height="26*"/>
+                                            <RowDefinition Height="26*"/>
+                                            <RowDefinition Height="26*"/>
                                         </Grid.RowDefinitions>
                                         <Border x:Name="Background" Margin="0" Opacity="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3" 
                                                 Background="{StaticResource ControlBackgroundNormal}" CornerRadius=".5"/>
@@ -2995,7 +3003,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Center" Width="20"/>
+                        <Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="1,0,1,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Center" Width="27"/>
                         <DatePickerTextBox x:Name="PART_TextBox" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" Height="{TemplateBinding Height}"/>
                         <Grid x:Name="PART_DisabledVisual" Grid.ColumnSpan="2" Grid.Column="0" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
                             <Grid.ColumnDefinitions>
@@ -3003,8 +3011,8 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <Rectangle Grid.Column="0" Fill="#a6FFFFFF" RadiusY="1" Grid.Row="0" RadiusX="1"/>
-                            <Rectangle Grid.Column="1" Fill="#a6FFFFFF" Height="18" Margin="3,0,3,0" RadiusY="1" Grid.Row="0" RadiusX="1" Width="19"/>
-                            <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+                            <Rectangle Grid.Column="1" Fill="#a6FFFFFF" Height="25" Margin="3,0,3,0" RadiusY="1" Grid.Row="0" RadiusX="1" Width="26"/>
+                            <Popup x:Name="PART_Popup" AllowsTransparency="False" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False" PopupAnimation="Slide" HorizontalAlignment="Right" ScrollViewer.VerticalScrollBarVisibility="Disabled" OpacityMask="#FF666565" />
                         </Grid>
                     </Grid>
                 </ControlTemplate>

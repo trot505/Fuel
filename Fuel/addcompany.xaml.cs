@@ -22,6 +22,7 @@ namespace Fuel
         public addcompany()
         {
             InitializeComponent();
+            name.Focus();
         }
 
         private void addCompany_Click(object sender, RoutedEventArgs e)
