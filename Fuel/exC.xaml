@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fuel"
         mc:Ignorable="d"
-        Title="Настройки для файла компаний" Height="397" Width="350" Background="#FF787777" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False"
+        Height="397" Width="350" Background="#FF787777" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False"
         >
-    <Grid Background="#FF595959">
+    <Grid>
         <Label x:Name="label" Content="УКАЖИТЕ НОМЕРА СТОЛБЦОВ :" HorizontalAlignment="Center" Margin="10,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontSize="18.667" Width="324" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="33"/>
 
         <StackPanel HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="210" Margin="20,47,0,0">
@@ -34,7 +34,9 @@
             <Label x:Name="label1_Copy5" Content="ФАЙЛ С ФИРМАМИ" Foreground="White" FontSize="13.333" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Grid>
                 <TextBox x:Name="fileC" Height="32" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" UndoLimit="5" Margin="0,2,0,3" Width="265" Padding="5,5,30,5" IsEnabled="False"/>
-                <Path x:Name="addF" ToolTip="Выбрать файл" Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" Margin="231.969,6,8,6" HorizontalAlignment="Right" VerticalAlignment="Center" MouseDown="addF_MouseDown" Stroke="#FF134B7A" Focusable="True" />
+                <Button x:Name="addF" ToolTip="Выбрать файл" Width="28" Height="28" Margin="232,0,2,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="addF_Click" Padding="0" TabIndex="8" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <Path Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="#FF134B7A" Focusable="True" />
+                </Button>
             </Grid>
         </StackPanel>
         <StackPanel Height="45" VerticalAlignment="Top" Margin="221,341,9,0" Orientation="Horizontal">

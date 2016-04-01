@@ -74,3 +74,5 @@ D:\VS\Fuel\Fuel\bin\Debug\MigraDoc.Rendering-wpf.xml
 D:\VS\Fuel\Fuel\bin\Debug\MigraDoc.RtfRendering-wpf.xml
 D:\VS\Fuel\Fuel\obj\Debug\WinSelect.g.cs
 D:\VS\Fuel\Fuel\obj\Debug\WinSelect.baml
+D:\VS\Fuel\Fuel\obj\Debug\option.g.cs
+D:\VS\Fuel\Fuel\obj\Debug\option.baml

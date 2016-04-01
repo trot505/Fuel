@@ -23,7 +23,7 @@ using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.Rendering;
-
+using Newtonsoft.Json.Linq;
 
 namespace Fuel
 {
@@ -39,25 +39,36 @@ namespace Fuel
         cellExcel cell = new cellExcel();
         exelComp exc = new exelComp();
         List<Out> outArr = new List<Out>();
+        Option option = new Option();
         Newtonsoft.Json.Linq.JObject arrOpt;
+
         //DateTime[] period;
         
         public MainWindow()
         {
             InitializeComponent();
-            if (File.Exists(companyPatch))
+            if (!File.Exists(companyPatch)) File.Create(companyPatch);
+            if (!File.Exists(cellPatch)) File.Create(cellPatch);
+           
+            string fileC = File.ReadAllText(companyPatch, UTF8Encoding.UTF8);
+            if(fileC.Trim().Count() > 0)
             {
-                string fileC = File.ReadAllText(companyPatch, UTF8Encoding.UTF8);
-                company = JsonConvert.DeserializeObject<List<Company>>(fileC);
-                CompanyGrid.ItemsSource = company;               
-                CompanyGrid.UnselectAllCells();
+            company = JsonConvert.DeserializeObject<List<Company>>(fileC);
+            CompanyGrid.ItemsSource = company;               
+            CompanyGrid.UnselectAllCells();
             }
-            else {
-                System.Windows.MessageBox.Show("Файл со списком организайи не существует!", "ВНИМАНИЕ", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            arrOpt = Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(cellPatch, Encoding.UTF8));
-            exc = JsonConvert.DeserializeObject<exelComp>(arrOpt["excelComp"].ToString());
 
+            arrOpt = Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(cellPatch, Encoding.UTF8));
+            foreach (var ar in arrOpt)
+            {
+                if(ar.Key == "excelComp")
+                    exc = JsonConvert.DeserializeObject<exelComp>(ar.Value.ToString());
+                
+                if(ar.Key == "Option")
+                    option = JsonConvert.DeserializeObject<Option>(arrOpt["Option"].ToString());
+            }
+            
+            
         }
 
 
@@ -90,13 +101,10 @@ namespace Fuel
         //метод изменение взаимосвязи компании
         private void updateCompany(string n, string fn, string nb, string nl)
         {
-            if (CompanyGrid.SelectedIndex >= 0)
-            {
                 Company newC = new Company(n, fn, nb, nl);
                 Company c = CompanyGrid.SelectedItem as Company;
                 company.Remove(c);
                 company.Add(newC);
-            }
         }
 
         //поиск по таблице взаимосвязей компаний
@@ -298,8 +306,6 @@ namespace Fuel
             System.Windows.Forms.Application.DoEvents();
         }
 
-
-
         private void parseBtn_Click(object sender, RoutedEventArgs e)
         {
             pg.Visibility = Visibility.Visible;
@@ -313,6 +319,8 @@ namespace Fuel
 
             //запускаем парсинг файла отчета
             parseExcelReport();
+
+            // запуск формирования отчетов
             if (oneRep.IsChecked.Value)
             {
                 creationRepeatOne();
@@ -320,8 +328,6 @@ namespace Fuel
             {
                 creationRepeatAll();
             }
-
-            // запуск формирования отчетов
 
             System.Windows.MessageBox.Show("Формирование файлов отчета зваершено!", "ИНФОРМАЦИЯ", MessageBoxButton.OK);
             pg.Visibility = Visibility.Hidden;
@@ -471,7 +477,7 @@ namespace Fuel
         }
 
         //выбор каталога сохранения отчетов
-        private void folderBtn_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void folderBtn_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
             if (folder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -481,7 +487,7 @@ namespace Fuel
         }
 
         //выбор файла с исходным отчетом
-        private void reportBtn_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void reportBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog OPF = new OpenFileDialog();
             OPF.Filter = "Файлы excel|*.xls;*.xlsx;*.xlsm";
@@ -1445,6 +1451,15 @@ namespace Fuel
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             return origin.AddSeconds(timestamp);
         }
-       
+
+        //опции по организации (печать фио)
+        private void optionBtn_Click(object sender, RoutedEventArgs e)
+        {
+            pg.Visibility = Visibility.Visible;
+            System.Windows.Forms.Application.DoEvents();
+            option opt = new option();
+            opt.ShowDialog();
+
+        }
     }
 }

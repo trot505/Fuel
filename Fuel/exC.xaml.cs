@@ -36,8 +36,8 @@ namespace Fuel
         {
             DialogResult = false;
         }
-
-        private void addF_MouseDown(object sender, MouseButtonEventArgs e)
+                
+        private void addF_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog OPF = new OpenFileDialog();
             OPF.Filter = "Файлы excel|*.xls;*.xlsx;*.xlsm";
@@ -46,7 +46,7 @@ namespace Fuel
             {
                 fileC.Text = OPF.FileName;
             }
+        }
 
-        }        
     }
 }

@@ -1,0 +1,61 @@
+﻿<Window x:Class="Fuel.option"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fuel"
+        mc:Ignorable="d"
+        Height="579" Width="350" Background="#FF787777" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False">
+    <Grid>
+        <StackPanel Margin="10,10,10,50">
+            <Label Content="НАСТРОЙКИ ОРГАНИЗАЦИИ" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,10" Height="35" Width="330" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF323231"/>
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="330" Margin="0,0,0,10">
+                <Label Content="НАЗВАНИЕ ОРГАНИЗАЦИИ" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" IsHitTestVisible="False" Height="30" Width="330" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="nameOrg" HorizontalAlignment="Left" Height="65" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" FontSize="16" FontFamily="Times New Roman" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="330" Margin="0,0,0,10">
+                <Label Content="ДОЛЖНОСТЬ РУКОВОДИТЕЛЯ" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" IsHitTestVisible="False" Height="30" Width="330" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="postName" HorizontalAlignment="Left" Height="30" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" FontSize="16" FontFamily="Times New Roman" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="330" Margin="0,0,0,10">
+                <Label Content="РУКОВОДИТЕЛЬ ОРГАНИЗАЦИИ" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" IsHitTestVisible="False" Height="30" Width="330" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="fioPost" HorizontalAlignment="Left" Height="30" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" FontSize="16" FontFamily="Times New Roman" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="330" Margin="0,0,0,10">
+                <Label Content="ФАЙЛ ЛОГОТИПА ОРГАНИЗАЦИИ" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" IsHitTestVisible="False" Height="30" Width="330" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <Grid>
+                    <TextBox x:Name="fileLogo" HorizontalAlignment="Left" Height="40" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" UndoLimit="5"  Padding="5,5,30,5" IsEnabled="False" Width="330" RenderTransformOrigin="5.692,0.652"/>
+                    <Button x:Name="fileLogoBtn" ToolTip="Выбрать файл" Width="28" Height="28" Margin="295,0,2,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Padding="0" TabIndex="8" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <Path Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" />
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="330" Margin="0,0,0,10">
+                <Label Content="ФАЙЛ ПОДПИСИ ОРГАНИЗАЦИИ" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" IsHitTestVisible="False" Height="30" Width="330" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <Grid>
+                    <TextBox x:Name="fileSign" HorizontalAlignment="Left" Height="40" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" UndoLimit="5"  Padding="5,5,30,5" IsEnabled="False" Width="330" RenderTransformOrigin="5.692,0.652"/>
+                    <Button x:Name="fileSignBtn" ToolTip="Выбрать файл" Width="28" Height="28" Margin="295,0,2,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Padding="0" TabIndex="8" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <Path Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" />
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="330" Margin="0,0,0,10">
+                <Label Content="ФАЙЛ ПЕЧАТИ ОРГАНИЗАЦИИ" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" IsHitTestVisible="False" Height="30" Width="330" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <Grid>
+                    <TextBox x:Name="fileStamp" HorizontalAlignment="Left" Height="40" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" UndoLimit="5"  Padding="5,5,30,5" IsEnabled="False" Width="330" RenderTransformOrigin="5.692,0.652"/>
+                    <Button x:Name="fileStampBtn" ToolTip="Выбрать файл" Width="28" Height="28" Margin="295,0,2,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Padding="0" TabIndex="8" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <Path Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" />
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Width="90" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="250,0,10,5">
+            <Button x:Name="save" ToolTip="Сохранить настройки" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="35" Height="35" Margin="0,0,15,0" TabIndex="9">
+                <Path Width="25" Height="25" Stretch="Fill" Fill="#FF85E459" Data="{StaticResource check}" />
+            </Button>
+            <Button x:Name="cancel" ToolTip="Отмена" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="35" Height="35" Margin="0,0,15,0" TabIndex="10">
+                <Path Width="25" Height="25" Stretch="Fill" Fill="#FFDC4C4C" Data="{StaticResource close}" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

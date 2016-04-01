@@ -5,18 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fuel"
         mc:Ignorable="d"
-        Background="#FF787777" Height="332" Width="304.255" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False">
+        Background="#FF787777" Height="344" Width="304.255" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsHitTestVisible="True" IsTabStop="True" WindowStyle="None" UseLayoutRounding="False">
     <Grid>
-        <Button x:Name="addCompany" Content="Сохранить" HorizontalAlignment="Left" Margin="124,287,0,0" VerticalAlignment="Top" Width="75" Click="addCompany_Click" Height="30" TabIndex="5"/>
-        <TextBox x:Name="name" HorizontalAlignment="Left" Height="49" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="1"/>
-        <Button x:Name="cancel" Content="Отмена" HorizontalAlignment="Left" Margin="207,287,0,0" VerticalAlignment="Top" Width="75" Click="cancel_Click" Height="30" TabIndex="6"/>
-        <Label x:Name="label" Content="КРАТКОЕ НАИМЕНОВАНИЕ ФИРМЫ" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
-        <TextBox x:Name="nameBash" HorizontalAlignment="Left" Height="28" Margin="10,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="3"/>
-        <Label x:Name="label_Copy" Content="БАШ НЕФТЬ" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
-        <TextBox x:Name="nameLuk" HorizontalAlignment="Left" Height="28" Margin="10,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="4"/>
-        <Label x:Name="label_Copy1" Content="ЛУКОЙЛ" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
-        <TextBox x:Name="fullName" HorizontalAlignment="Left" Height="49" Margin="10,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="2"/>
-        <Label x:Name="label_Copy2" Content="ПОЛНОЕ НАИМЕНОВАНИЕ ФИРМЫ" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
+
+        <Label Content="ДОБАВЛЕНИЕ (ИЗМЕНЕНИЕ) ОРГАНИЗАЦИИ" FontSize="13.333" FontWeight="Bold" Background="#FF323231" Height="25" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
+        <Button x:Name="addCompany" ToolTip="Сохранить" HorizontalAlignment="Left" Margin="200,300,0,0" VerticalAlignment="Top" Width="40" Click="addCompany_Click" Height="35" TabIndex="5">
+            <Path Width="25" Height="25" Stretch="Fill" Fill="#FF85E459" Data="{StaticResource check}" />
+        </Button>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="49" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="1"/>
+        <Button x:Name="cancel" ToolTip="Отмена" HorizontalAlignment="Left" Margin="250,300,0,0" VerticalAlignment="Top" Width="40" Click="cancel_Click" Height="35" TabIndex="6">
+            <Path Width="25" Height="25" Stretch="Fill" Fill="#FFDC4C4C" Data="{StaticResource close}" />
+        </Button>
+        <Label x:Name="label" Content="КРАТКОЕ НАИМЕНОВАНИЕ ФИРМЫ" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
+        <TextBox x:Name="nameBash" HorizontalAlignment="Left" Height="28" Margin="10,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="3"/>
+        <Label x:Name="label_Copy" Content="БАШ НЕФТЬ" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
+        <TextBox x:Name="nameLuk" HorizontalAlignment="Left" Height="28" Margin="10,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="4"/>
+        <Label x:Name="label_Copy1" Content="ЛУКОЙЛ" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
+        <TextBox x:Name="fullName" HorizontalAlignment="Left" Height="49" Margin="10,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" TabIndex="2"/>
+        <Label x:Name="label_Copy2" Content="ПОЛНОЕ НАИМЕНОВАНИЕ ФИРМЫ" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"/>
 
     </Grid>
 </Window>

@@ -2,7 +2,7 @@
 [
   Info
   {
-    Title = "Отчет за 30.03.2016 Башнефть"
+    Title = "Отчет за 31.03.2016 Башнефть"
     Subject = "Директор"
     Author = "ООО Регионсбыт"
   }
@@ -208,7 +208,7 @@
             MergeRight = 2
           ]
           {
-            ГКУЗ "3 РПБ МЗ УР"
+            УПФР В КИЯСОВСКОМ РАЙОНЕ УДМУРТСКОЙ РЕСПУБЛИКИ
           }
         }
       }
@@ -255,7 +255,7 @@
         {
           \cell
           {
-            за период c 08.03.2016 по 30.03.2016
+            за период c 01.03.2016 по 31.03.2016
           }
         }
       }
@@ -330,7 +330,7 @@
           }
           \cell
           {
-            Регионсбыт 207
+            Регионсбыт 184
           }
           \cell
           \cell
@@ -435,7 +435,7 @@
             }
           ]
           {
-            835012433
+            835013843
           }
           \cell
           [
@@ -449,7 +449,7 @@
             }
           ]
           {
-            г.Ижевск, ул.Союзная, 2
+            УР, Завьяловский район, с.Каменное
           }
           \cell
           [
@@ -462,7 +462,7 @@
             }
           ]
           {
-             АЗС №18-40
+             АЗС №18-9
           }
           \cell
           [
@@ -475,165 +475,11 @@
             }
           ]
           {
-            01.02.2016 06:52:51
+            02.03.2016 16:59:36
           }
           \cell
           {
-            ДТ
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            70
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835012433) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            70
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  70
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835011916
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г. Ижевск, ул. 40 лет Победы, 1
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-2
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:07:59
-          }
-          \cell
-          {
-            АИ-95
+            АИ-92
           }
           \cell
           [
@@ -656,95 +502,6 @@
         \row
         {
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835011916) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            30
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835012394
-          }
           \cell
           [
             Format
@@ -757,7 +514,7 @@
             }
           ]
           {
-            г.Сарапул, К.Маркса, 62
+            г.Ижевск, ул.Маяковского, 35
           }
           \cell
           [
@@ -770,7 +527,7 @@
             }
           ]
           {
-             АЗС №18-24
+             АЗС №18-41
           }
           \cell
           [
@@ -783,11 +540,11 @@
             }
           ]
           {
-            01.02.2016 07:10:17
+            10.03.2016 13:48:25
           }
           \cell
           {
-            АИ-95
+            АИ-92
           }
           \cell
           [
@@ -804,101 +561,12 @@
           }
           \cell
           {
-            20
+            30
           }
         }
         \row
         {
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835012394) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            20
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  20
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835008463
-          }
           \cell
           [
             Format
@@ -911,7 +579,7 @@
             }
           ]
           {
-            г.Ижевск, ул.Ново-Ажимова,9
+            г.Ижевск, ул.Маяковского, 35
           }
           \cell
           [
@@ -924,7 +592,7 @@
             }
           ]
           {
-             АЗС №18-8
+             АЗС №18-41
           }
           \cell
           [
@@ -937,7 +605,7 @@
             }
           ]
           {
-            01.02.2016 07:10:58
+            14.03.2016 15:03:16
           }
           \cell
           {
@@ -964,95 +632,6 @@
         \row
         {
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835008463) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            20
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  20
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835018488
-          }
           \cell
           [
             Format
@@ -1065,7 +644,7 @@
             }
           ]
           {
-            г.Ижевск, ул.Союзная, 2
+            г.Ижевск, ул.Маяковского, 35
           }
           \cell
           [
@@ -1078,7 +657,7 @@
             }
           ]
           {
-             АЗС №18-40
+             АЗС №18-41
           }
           \cell
           [
@@ -1091,7 +670,7 @@
             }
           ]
           {
-            01.02.2016 07:14:08
+            17.03.2016 12:47:27
           }
           \cell
           {
@@ -1118,95 +697,6 @@
         \row
         {
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835018488) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            20
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  20
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835013443
-          }
           \cell
           [
             Format
@@ -1219,7 +709,7 @@
             }
           ]
           {
-            г.Ижевск, проспект Калашникова,2
+            г.Ижевск, ул.Маяковского, 35
           }
           \cell
           [
@@ -1232,7 +722,7 @@
             }
           ]
           {
-             АЗС №18-7
+             АЗС №18-41
           }
           \cell
           [
@@ -1245,534 +735,7 @@
             }
           ]
           {
-            01.02.2016 07:14:14
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            13
-          }
-        }
-        \row
-        {
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, проспект Калашникова,2
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-7
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:15:07
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            13
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835013443) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            26
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  26
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835011756
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г. Ижевск, ул. 40 лет Победы, 1
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-2
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:15:38
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835011756) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            30
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835012533
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            пгт.Ува, ул.Земляничная, 2
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-39
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:18:14
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            15
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835012533) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            15
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  15
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835012464
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г .Ижевск, ул.Холмогорова, 5
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-3
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:21:07
+            23.03.2016 14:35:33
           }
           \cell
           {
@@ -1799,95 +762,6 @@
         \row
         {
           \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835012464) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            20
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  20
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835013873
-          }
           \cell
           [
             Format
@@ -1900,7 +774,7 @@
             }
           ]
           {
-            г.Глазов, Окружное шоссе, 1
+            г.Ижевск, ул.Маяковского, 35
           }
           \cell
           [
@@ -1913,7 +787,7 @@
             }
           ]
           {
-             АЗС №18-19
+             АЗС №18-41
           }
           \cell
           [
@@ -1926,7 +800,7 @@
             }
           ]
           {
-            01.02.2016 07:23:23
+            29.03.2016 14:10:13
           }
           \cell
           {
@@ -1947,7 +821,7 @@
           }
           \cell
           {
-            30
+            10
           }
         }
         \row
@@ -1965,7 +839,7 @@
             MergeRight = 4
           ]
           {
-            ИТОГО по карте (835013873) :
+            ИТОГО по карте (835013843) :
           }
           \cell
           \cell
@@ -1983,7 +857,7 @@
             MergeRight = 1
           ]
           {
-            30
+            130
           }
         }
         \row
@@ -2024,469 +898,7 @@
           }
           \cell
           {
-            ПРОЧ :  30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835010297
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, ул.Союзная, 2
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-40
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:30:54
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835010297) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            30
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835013898
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск ул.Советская, 39а
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-35
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:31:12
-          }
-          \cell
-          {
-            АИ-92
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835013898) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            30
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-          ]
-          {
-            835012270
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-              Alignment = Left
-            }
-          ]
-          {
-            г.Ижевск, Областная, 4
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-             АЗС №18-21
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 10
-              }
-            }
-          ]
-          {
-            01.02.2016 07:37:02
-          }
-          \cell
-          {
-            ГАЗ
-          }
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Size = 9
-              }
-            }
-          ]
-          {
-            Обслуживание
-          }
-          \cell
-          {
-            30
-          }
-        }
-        \row
-        {
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-              Alignment = Right
-            }
-            MergeRight = 4
-          ]
-          {
-            ИТОГО по карте (835012270) :
-          }
-          \cell
-          \cell
-          \cell
-          \cell
-          \cell
-          [
-            Format
-            {
-              Font
-              {
-                Bold = true
-              }
-            }
-            MergeRight = 1
-          ]
-          {
-            30
-          }
-        }
-        \row
-        [
-          Format
-          {
-            Font
-            {
-              Bold = true
-            }
-            Alignment = Center
-          }
-        ]
-        {
-          \cell
-          {
-            в т.ч :
-          }
-          \cell
-          {
-            АИ80 :  0
-          }
-          \cell
-          {
-            АИ92 :  0
-          }
-          \cell
-          {
-            АИ95 :  0
-          }
-          \cell
-          {
-            ДТ :  0
-          }
-          \cell
-          {
-            ГАЗ :  0
-          }
-          \cell
-          {
-            ПРОЧ :  30
+            ПРОЧ :  130
           }
         }
       }
@@ -2600,19 +1012,7 @@
           }
           \cell
           {
-            221
-          }
-          \cell
-          {
-            50
-          }
-          \cell
-          {
-            70
-          }
-          \cell
-          {
-            30
+            130
           }
           \cell
           {
@@ -2620,7 +1020,19 @@
           }
           \cell
           {
-            371
+            0
+          }
+          \cell
+          {
+            0
+          }
+          \cell
+          {
+            0
+          }
+          \cell
+          {
+            130
           }
         }
         \row

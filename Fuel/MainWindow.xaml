@@ -16,7 +16,12 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
             </TabControl.BorderBrush>
             <TabItem x:Name="parseTab" Header="Парсинг" Margin="0,0,0,0" FontSize="16">
                 <Grid Margin="0">
-                    <GroupBox Header="НОМЕРА СТОЛБЦОВ" Margin="313,25,309,130" Padding="10" Width="260">
+                    <ToolBar Height="50" Margin="-20,0,-20,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="{x:Null}" Padding="30,0,0,0">
+                        <Button x:Name="optionBtn" ToolTip="Настройки" HorizontalAlignment="Center" Margin="5,6,0,5" VerticalAlignment="Stretch" Width="35" Height="35" Background="{x:Null}" Padding="0" Click="optionBtn_Click">
+                            <Path Width="25" Height="25" Stretch="Fill" Data="{StaticResource equalizer}" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="2" Fill="White" />
+                        </Button>
+                    </ToolBar>
+                    <GroupBox Header="НОМЕРА СТОЛБЦОВ" Margin="313,61,309,94" Padding="10" Width="260">
                         <StackPanel HorizontalAlignment="Left" Height="364" VerticalAlignment="Top" Width="245" Margin="0,6,-12,-3">
                             <StackPanel HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="220" Margin="0,0,0,0" Orientation="Horizontal">
                                 <Label x:Name="label" Content="№ КАРТЫ" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" IsHitTestVisible="False" Height="40" Width="140" Foreground="White" FontSize="16" VerticalContentAlignment="Center" FontWeight="Bold"/>
@@ -56,7 +61,7 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="ИНТЕРВАЛ СТРОК" Margin="14,353,608,128" Padding="10" Height="95" Width="260">
+                    <GroupBox Header="ИНТЕРВАЛ СТРОК" Margin="14,389,608,92" Padding="10" Height="95" Width="260">
                         <StackPanel HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Margin="0,0,0,0">
                             <StackPanel HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Margin="0,0,0,0" Orientation="Horizontal">
                                 <TextBox x:Name="first" HorizontalAlignment="Left" Height="35" Margin="5,0,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" RenderTransformOrigin="5.692,0.652" FontWeight="Bold"/>
@@ -65,19 +70,23 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="ПАПКА СОХРАНЕНИЯ ОТЧЕТОВ" Margin="14,236,608,240" Padding="10" Width="260">
-                        <Grid>
+                    <GroupBox Header="ПАПКА СОХРАНЕНИЯ ОТЧЕТОВ" Margin="14,272,608,204" Padding="10" Width="260">
+                        <Grid VerticalAlignment="Center">
                             <TextBox x:Name="folderPatch" HorizontalAlignment="Left" Height="40" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" UndoLimit="5"  Padding="5,5,30,5" IsEnabled="False" Width="230" RenderTransformOrigin="5.692,0.652"/>
-                            <Path x:Name="folderBtn" ToolTip="Путь до папки" Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" Margin="200,5,0,7" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" MouseDown="folderBtn_MouseDown" />
+                            <Button x:Name="folderBtn" ToolTip="Выбрать файл" Width="28" Height="28" Margin="190,0,2,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Padding="0" TabIndex="8" ScrollViewer.VerticalScrollBarVisibility="Disabled" Click="folderBtn_Click">
+                                <Path Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" />
+                            </Button>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="ВХОДНОЙ ФАЙЛ ОТЧЕТА" Margin="14,125,608,354" Padding="10" Width="260">
+                    <GroupBox Header="ВХОДНОЙ ФАЙЛ ОТЧЕТА" Margin="14,161,608,318" Padding="10" Width="260">
                         <Grid>
                             <TextBox x:Name="fileName" HorizontalAlignment="Left" Height="40" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" UndoLimit="5"  Padding="5,5,30,5" IsEnabled="False" Width="230" RenderTransformOrigin="5.692,0.652"/>
-                            <Path x:Name="reportBtn" ToolTip="Выбрать файл" Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" Margin="200,8,0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" MouseDown="reportBtn_MouseDown" />
+                            <Button x:Name="reportBtn" ToolTip="Выбрать файл" Width="28" Height="28" Margin="190,0,2,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Padding="0" TabIndex="8" ScrollViewer.VerticalScrollBarVisibility="Disabled" Click="reportBtn_Click">
+                                <Path Width="20" Height="20" Stretch="Fill" Fill="#FF134B7A" Data="{StaticResource add}" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF134B7A" />
+                            </Button>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="ВЫБОР ПОСТАВЩИКА" Margin="14,25,608,472" Padding="10" Width="260">
+                    <GroupBox Header="ВЫБОР ПОСТАВЩИКА" Margin="14,61,608,436" Padding="10" Width="260">
                         <StackPanel Margin="-4,-28,4,-17" Orientation="Horizontal" Height="70" VerticalAlignment="Bottom">
                             <RadioButton x:Name="radioBash" Content="БАШНЕФТЬ" HorizontalAlignment="Left" Margin="5,28,0,23" VerticalAlignment="Center" Checked="radioBash_Checked" Width="135" Height="20" FontSize="16" Padding="0" BorderThickness="0" FontWeight="Bold"/>
                             <RadioButton x:Name="radioLuk" Content="ЛУКОЙЛ" Margin="5,28,73,22" VerticalAlignment="Center" Checked="radioLuk_Checked" FontSize="16" Padding="0" Height="20" FontWeight="Bold"/>
@@ -87,8 +96,8 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                     <Button x:Name="parseBtn" ToolTip="Старт обработки" HorizontalAlignment="Left" Height="50" Margin="726,484,0,0" VerticalAlignment="Top" Width="50" Click="parseBtn_Click">
                         <Path Width="30" Height="30" Stretch="Fill" Fill="#FF85E459" Data="{StaticResource play}" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="#FF85E459" />
                     </Button>
-                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,464,0,0" TextWrapping="Wrap" Text="ПРОВЕРИТЬ ЗАПОЛНЕНИЕ ВСЕХ ПОЛЕЙ И ВЫБРАНА ЛИ ПАПКА СОХРАНЕНИЯ И ФАЙЛ ПОСТУПИВШИЙ ОТ ПОСТОВЩИКА А ТАК ЖЕ ПРОВЕРИТЬ ВЫБРАН ЛИ ПОСТАВЩИК" VerticalAlignment="Top" Width="559" Height="102" FontSize="18.667" FontWeight="Bold"/>
-                    <GroupBox Header="ПАРАМЕТРЫ ОТЧЕТА" Margin="600,25,12,350" Padding="10" Height="200" Width="260">
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,489,0,0" TextWrapping="Wrap" Text="ПРОВЕРИТЬ ЗАПОЛНЕНИЕ ВСЕХ ПОЛЕЙ И ВЫБРАНА ЛИ ПАПКА СОХРАНЕНИЯ И ФАЙЛ ПОСТУПИВШИЙ ОТ ПОСТОВЩИКА А ТАК ЖЕ ПРОВЕРИТЬ ВЫБРАН ЛИ ПОСТАВЩИК" VerticalAlignment="Top" Width="637" Height="77" FontSize="18.667" FontWeight="Bold"/>
+                    <GroupBox Header="ПАРАМЕТРЫ ОТЧЕТА" Margin="605,62,17,314" Padding="10" Height="200" Width="260">
                         <StackPanel Height="150" VerticalAlignment="Top" Margin="0,0,0,-4">
                             <StackPanel Orientation="Horizontal" Height="35" Margin="0,10,0,0">
                                 <CheckBox x:Name="oneRep" Content="ПРОМЕЖУТОЧНЫЙ" FontWeight="Bold" Width="238" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,7" Padding="7,0"/>
@@ -103,7 +112,6 @@ Title="Формы документов" Height="680" Width="920" WindowStartupLo
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
-
                 </Grid>
             </TabItem>
             <TabItem x:Name="CompanyTab" Header="Фирмы" Margin="12,0,-36,0" FontSize="16">
